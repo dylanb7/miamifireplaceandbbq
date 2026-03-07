@@ -1,7 +1,7 @@
 import type { Product, Promotion } from "../../data/types";
-import { ProductCard } from "./ProductCard";
 import { SimpleCarousel } from "@/components/ui/simple-carousel";
 import { cn } from "@/lib/utils";
+import { ProductImageCard } from "./ProductImageCard";
 
 interface ProductCarouselProps {
     products: Product[];
@@ -10,7 +10,6 @@ interface ProductCarouselProps {
 }
 
 export const ProductCarousel: React.FC<ProductCarouselProps> = ({ products, promotions, className }) => {
-    // Helper to get promotion
     const getPromotionForProduct = (product: Product) => {
         return promotions.find(p => p.eligibleProducts?.includes(product.id));
     };
@@ -20,8 +19,8 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({ products, prom
     return (
         <SimpleCarousel className={cn(className)}>
             {products.map(product => (
-                <div key={product.id} className="snap-start shrink-0 first:pl-0 md:first:pl-0 w-[280px]">
-                    <ProductCard
+                <div key={product.id} className="snap-start shrink-0 first:pl-0 md:first:pl-0 w-[85vw] md:w-[280px]">
+                    <ProductImageCard
                         product={product}
                         promotion={getPromotionForProduct(product)}
                     />

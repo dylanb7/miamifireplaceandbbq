@@ -1,6 +1,113 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@plugin "daisyui" {
+  themes: all
+}
+
+/* Light Theme (Warm Cream) */
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: oklch(0.98 0.01 85);
+  /* --background */
+  --color-base-200: oklch(0.92 0.02 85);
+  /* --muted */
+  --color-base-300: oklch(0.9 0.02 85);
+  /* --border/input */
+  --color-base-content: oklch(0.2 0.02 50);
+  /* --foreground */
+
+  --color-primary: oklch(0.55 0.2 50);
+  /* --primary */
+  --color-primary-content: oklch(0.98 0.01 85);
+  /* --primary-foreground */
+
+  --color-secondary: oklch(0.45 0.1 200);
+  /* --secondary */
+  --color-secondary-content: oklch(0.98 0.01 85);
+
+  --color-accent: oklch(0.92 0.02 85);
+  /* --accent */
+  --color-accent-content: oklch(0.2 0.02 50);
+
+  --color-neutral: oklch(0.2 0.02 50);
+  /* Neutral = Foreground */
+  --color-neutral-content: oklch(0.98 0.01 85);
+
+  --color-info: oklch(0.7 0.2 220);
+  --color-info-content: oklch(0.98 0.01 220);
+
+  --color-success: oklch(0.65 0.25 140);
+  --color-success-content: oklch(0.98 0.01 140);
+
+  --color-warning: oklch(0.8 0.25 80);
+  --color-warning-content: oklch(0.2 0.05 80);
+
+  --color-error: oklch(0.577 0.245 27.325);
+  /* --destructive */
+  --color-error-content: oklch(0.98 0.01 85);
+
+  --radius-selector: 0.625rem;
+  --radius-field: 0.625rem;
+  --radius-box: 0.625rem;
+  --border: 1px;
+}
+
+/* Dark Theme (Warm Charcoal) */
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: false;
+  prefersdark: true;
+  color-scheme: dark;
+
+  --color-base-100: oklch(0.15 0.02 50);
+  /* --background */
+  --color-base-200: oklch(0.18 0.02 50);
+  /* --card / muted approx */
+  --color-base-300: oklch(0.3 0.02 50);
+  /* --border */
+  --color-base-content: oklch(0.98 0.01 85);
+  /* --foreground */
+
+  --color-primary: oklch(0.55 0.2 50);
+  /* --primary */
+  --color-primary-content: oklch(0.98 0.01 85);
+
+  --color-secondary: oklch(0.55 0.1 200);
+  /* --secondary */
+  --color-secondary-content: oklch(0.98 0.01 85);
+
+  --color-accent: oklch(0.25 0.02 50);
+  /* --accent */
+  --color-accent-content: oklch(0.98 0.01 85);
+
+  --color-neutral: oklch(0.25 0.02 50);
+  /* --muted */
+  --color-neutral-content: oklch(0.7 0.05 50);
+
+  --color-info: oklch(0.7 0.2 220);
+  --color-info-content: oklch(0.98 0.01 220);
+
+  --color-success: oklch(0.65 0.25 140);
+  --color-success-content: oklch(0.98 0.01 140);
+
+  --color-warning: oklch(0.8 0.25 80);
+  --color-warning-content: oklch(0.2 0.05 80);
+
+  --color-error: oklch(0.704 0.191 22.216);
+  /* --destructive */
+  --color-error-content: oklch(0.98 0.01 85);
+
+  --radius-selector: 0.625rem;
+  --radius-field: 0.625rem;
+  --radius-box: 0.625rem;
+  --border: 1px;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 body {
@@ -39,13 +146,13 @@ code {
   --color-border: var(--border);
   --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
+  /* --color-accent: var(--accent); LEAVE TO DAISY */
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
+  /* --color-secondary: var(--secondary); LEAVE TO DAISY */
   --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
+  /* --color-primary: var(--primary); LEAVE TO DAISY */
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -58,99 +165,54 @@ code {
 
 :root {
   --radius: 0.625rem;
-  /* Warm Cream Background */
-  --background: oklch(0.98 0.01 85);
-  /* Dark Warm Charcoal */
-  --foreground: oklch(0.2 0.02 50);
 
-  /* Slightly darker cream for cards */
-  --card: oklch(0.96 0.01 85);
-  --card-foreground: oklch(0.2 0.02 50);
+  /* Map shadcn/ui variables to DaisyUI variables */
+  /* This ensures shadcn components using direct var(...) calls work */
+  --background: var(--color-base-100);
+  --foreground: var(--color-base-content);
 
-  --popover: oklch(0.98 0.01 85);
-  --popover-foreground: oklch(0.2 0.02 50);
+  --card: var(--color-base-100);
+  --card-foreground: var(--color-base-content);
 
-  /* Primary: Burnt Orange (Fire/Cozy) */
-  --primary: oklch(0.55 0.2 50);
-  --primary-foreground: oklch(0.98 0.01 85);
+  --popover: var(--color-base-100);
+  --popover-foreground: var(--color-base-content);
 
-  /* Secondary: Deep Teal (Premium/Water) */
-  --secondary: oklch(0.45 0.1 200);
-  --secondary-foreground: oklch(0.98 0.01 85);
+  --primary: var(--color-primary);
+  --primary-foreground: var(--color-primary-content);
 
-  --muted: oklch(0.92 0.02 85);
-  --muted-foreground: oklch(0.5 0.05 50);
+  --secondary: var(--color-secondary);
+  --secondary-foreground: var(--color-secondary-content);
 
-  --accent: oklch(0.92 0.02 85);
-  --accent-foreground: oklch(0.2 0.02 50);
+  --muted: var(--color-base-200);
+  --muted-foreground: var(--color-base-content);
 
-  --destructive: oklch(0.577 0.245 27.325);
+  /* shadcn 'accent' is usually for hover states (row highlight), while daisy 'accent' is a brand color.
+     Mapping shadcn accent to base-200/300 is safer for generic UI structures. */
+  --accent: var(--color-base-200);
+  --accent-foreground: var(--color-base-content);
 
-  --border: oklch(0.9 0.02 85);
-  --input: oklch(0.9 0.02 85);
-  --ring: oklch(0.55 0.2 50);
+  --destructive: var(--color-error);
+  --destructive-foreground: var(--color-error-content);
 
-  --chart-1: oklch(0.55 0.2 50);
-  --chart-2: oklch(0.45 0.1 200);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --border: var(--color-base-300);
+  --input: var(--color-base-300);
+  --ring: var(--color-primary);
 
-  --sidebar: oklch(0.96 0.01 85);
-  --sidebar-foreground: oklch(0.2 0.02 50);
-  --sidebar-primary: oklch(0.55 0.2 50);
-  --sidebar-primary-foreground: oklch(0.98 0.01 85);
-  --sidebar-accent: oklch(0.92 0.02 85);
-  --sidebar-accent-foreground: oklch(0.2 0.02 50);
-  --sidebar-border: oklch(0.9 0.02 85);
-  --sidebar-ring: oklch(0.55 0.2 50);
-}
+  /* Charts remain custom or map to primary/secondary/accent/neutral/info */
+  --chart-1: var(--color-primary);
+  --chart-2: var(--color-secondary);
+  --chart-3: var(--color-accent);
+  --chart-4: var(--color-neutral);
+  --chart-5: var(--color-info);
 
-.dark {
-  /* Deep Dark Warm Brown/Grey */
-  --background: oklch(0.15 0.02 50);
-  --foreground: oklch(0.98 0.01 85);
-
-  --card: oklch(0.18 0.02 50);
-  --card-foreground: oklch(0.98 0.01 85);
-
-  --popover: oklch(0.15 0.02 50);
-  --popover-foreground: oklch(0.98 0.01 85);
-
-  /* Primary: Matching Light Mode Red/Orange Tone */
-  --primary: oklch(0.55 0.2 50);
-  --primary-foreground: oklch(0.98 0.01 85);
-
-  /* Secondary: Brighter Teal */
-  --secondary: oklch(0.55 0.1 200);
-  --secondary-foreground: oklch(0.98 0.01 85);
-
-  --muted: oklch(0.25 0.02 50);
-  --muted-foreground: oklch(0.7 0.05 50);
-
-  --accent: oklch(0.25 0.02 50);
-  --accent-foreground: oklch(0.98 0.01 85);
-
-  --destructive: oklch(0.704 0.191 22.216);
-
-  --border: oklch(0.3 0.02 50);
-  --input: oklch(0.3 0.02 50);
-  --ring: oklch(0.65 0.2 50);
-
-  --chart-1: oklch(0.65 0.2 50);
-  --chart-2: oklch(0.55 0.1 200);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-
-  --sidebar: oklch(0.18 0.02 50);
-  --sidebar-foreground: oklch(0.98 0.01 85);
-  --sidebar-primary: oklch(0.65 0.2 50);
-  --sidebar-primary-foreground: oklch(0.15 0.02 50);
-  --sidebar-accent: oklch(0.25 0.02 50);
-  --sidebar-accent-foreground: oklch(0.98 0.01 85);
-  --sidebar-border: oklch(0.3 0.02 50);
-  --sidebar-ring: oklch(0.65 0.2 50);
+  --sidebar: var(--color-base-200);
+  --sidebar-foreground: var(--color-base-content);
+  --sidebar-primary: var(--color-primary);
+  --sidebar-primary-foreground: var(--color-primary-content);
+  --sidebar-accent: var(--color-base-300);
+  --sidebar-accent-foreground: var(--color-base-content);
+  --sidebar-border: var(--color-base-300);
+  --sidebar-ring: var(--color-primary);
 }
 
 @layer base {
@@ -161,4 +223,33 @@ code {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Backyard Hero Animations */
+@keyframes flicker {
+
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: translateX(-50%) scale(1);
+  }
+
+  25% {
+    opacity: 0.9;
+    transform: translateX(-50%) scale(1.1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: translateX(-50%) scale(0.95);
+  }
+
+  75% {
+    opacity: 0.85;
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
+.animate-flicker {
+  animation: flicker 1.5s ease-in-out infinite;
 }

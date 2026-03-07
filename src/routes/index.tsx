@@ -11,16 +11,17 @@ import { generateSeo } from '@/lib/seo'
 export const Route = createFileRoute('/')({
   component: HomePage,
   head: () => generateSeo({
-    title: 'Miami Fireplace & BBQ | Premium Outdoor Living',
-    description: 'Transform your backyard with our premium selection of hot tubs, outdoor kitchens, grills, and fireplaces. Visit our showroom today.',
-    keywords: 'miami fireplace, bbq, hot tubs, outdoor kitchens, grills'
+    title: 'Miami Fireplace & BBQ | Grills, Outdoor Kitchens & Fireplaces in Miami',
+    description: 'Transform your backyard with our premium selection of outdoor kitchens, grills, and fireplaces. Visit our showroom today.',
+    keywords: 'miami fireplace, bbq, outdoor kitchens, grills'
   })
 })
 
 function HomePage() {
   return (
-    <PageLayout>
+    <PageLayout noPadding>
       <Hero />
+
       <FeaturedBrands />
       <FinancingSection />
       <Showrooms />

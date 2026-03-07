@@ -9,12 +9,23 @@ const Tabs = React.forwardRef<
         onValueChange?: (value: string) => void
     }
 >(({ className, value, defaultValue, onValueChange, children, ...props }, ref) => {
-    // Simple context or just managing state if it's uncontrolled. 
-    // For simplicity matching the specific use case, we'll assume controlled for now since ProductsBrowser uses it controlled.
-    // But let's build a mini context to be safe.
+    const [internalValue, setInternalValue] = React.useState(value || defaultValue)
+
+    React.useEffect(() => {
+        if (value !== undefined) {
+            setInternalValue(value)
+        }
+    }, [value])
+
+    const handleValueChange = (newValue: string) => {
+        if (value === undefined) {
+            setInternalValue(newValue)
+        }
+        onValueChange?.(newValue)
+    }
 
     return (
-        <TabsContext.Provider value={{ value: value || defaultValue, onValueChange }}>
+        <TabsContext.Provider value={{ value: internalValue, onValueChange: handleValueChange }}>
             <div ref={ref} className={cn("w-full", className)} {...props}>
                 {children}
             </div>

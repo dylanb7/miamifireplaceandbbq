@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, ChefHat, Flame, Waves } from "lucide-react";
+import { ArrowRight, ChefHat, Flame } from "lucide-react";
 
 export function FeaturedCategories() {
     return (
@@ -13,26 +13,6 @@ export function FeaturedCategories() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                    {/* Hot Tubs */}
-                    <Link to="/products/$type" params={{ type: "hot-tubs" }} className="group relative aspect-[3/4] overflow-hidden rounded-xl bg-muted isolate">
-                        <img
-                            src="https://images.unsplash.com/photo-1627447477382-3d5f4705021a?q=80&w=2070&auto=format&fit=crop"
-                            alt="Hot Tubs"
-                            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-80" />
-                        <div className="absolute bottom-0 left-0 p-8 w-full transform transition-transform duration-300 translate-y-2 group-hover:translate-y-0">
-                            <Waves className="w-10 h-10 text-white mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100" />
-                            <h3 className="text-2xl font-bold text-white mb-2">Relaxation</h3>
-                            <p className="text-stone-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-150 transform translate-y-4 group-hover:translate-y-0">
-                                Discover our range of premium hot tubs and spas.
-                            </p>
-                            <div className="mt-4 flex items-center text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
-                                Shop Hot Tubs <ArrowRight className="ml-2 w-4 h-4" />
-                            </div>
-                        </div>
-                    </Link>
-
                     {/* Outdoor Kitchens / Grills */}
                     <Link to="/products/$type" params={{ type: "grills" }} className="group relative aspect-[3/4] overflow-hidden rounded-xl bg-muted isolate">
                         <img

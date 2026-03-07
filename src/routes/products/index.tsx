@@ -1,12 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { products } from '@/data/products'
+import { getAllProducts } from '@/data/product-service'
 import { promotions } from '@/data/promotions'
 import { ProductsBrowser } from '@/components/products/ProductsBrowser'
 import PageLayout from '@/components/PageLayout'
 
 export const Route = createFileRoute('/products/')({
     component: ProductsIndexPage,
-    loader: () => {
+    loader: async () => {
+        const products = await getAllProducts();
         return {
             products,
             promotions

@@ -1,7 +1,6 @@
 import type { ContactOption } from "@/components/contact-us";
 
 export const interestOptions: ContactOption[] = [
-    { label: "Hot Tubs", value: "hot-tubs" },
     { label: "Outdoor Kitchens", value: "kitchens" },
     { label: "Grills", value: "grills" },
     { label: "Fireplaces", value: "fireplaces" },

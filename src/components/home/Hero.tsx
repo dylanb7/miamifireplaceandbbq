@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
-import { Waves, ChefHat, Flame } from "lucide-react";
+import { ChefHat, Flame } from "lucide-react";
 
 export function Hero() {
     return (
-        <section className="relative h-[85vh] w-full flex items-center justify-center overflow-hidden bg-black">
+        <section className="relative min-h-[85vh] pt-32 pb-16 w-full flex items-center justify-center overflow-hidden bg-black">
             <div
                 className="absolute inset-0 z-0 opacity-70"
                 style={{
@@ -31,7 +31,10 @@ export function Hero() {
                     {/* Main CTA */}
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         <Button size="lg" className="rounded-full px-8 text-lg h-12 shadow-lg shadow-primary/20" asChild>
-                            Visit Showroom
+                            <a href="#showrooms">Visit Showroom</a>
+                        </Button>
+                        <Button size="lg" variant="outline" className="rounded-full px-8 text-lg h-12 text-white border-white/20 hover:bg-white/10 hover:text-white" asChild>
+                            <a href="tel:3055550123">Call Us Today</a>
                         </Button>
                     </div>
 
@@ -40,7 +43,6 @@ export function Hero() {
                         <p className="text-sm uppercase tracking-widest text-white/60 mb-6 font-semibold">Explore Collections</p>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                             {[
-                                { name: "Hot Tubs", link: "/products/$type", params: { type: "hot-tubs" }, icon: Waves },
                                 { name: "Grills", link: "/products/$type", params: { type: "grills" }, icon: ChefHat },
                                 { name: "Fireplaces", link: "/products/$type", params: { type: "fireplaces" }, icon: Flame },
                                 { name: "Kitchens", link: "/products/outdoor-kitchens", params: { type: "outdoor-kitchens" }, icon: ChefHat }

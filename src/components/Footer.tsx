@@ -10,7 +10,7 @@ interface FooterProps {
 
 export function Footer({ showContactForm = true }: FooterProps) {
     return (
-        <footer className="bg-muted/50 border-t mt-auto">
+        <footer className="bg-base-200 text-base-content border-t border-base-300 mt-auto">
             <div className="container mx-auto py-12 px-4">
                 <div className={`grid grid-cols-1 ${showContactForm ? 'lg:grid-cols-3' : 'lg:grid-cols-2 justify-center'} gap-12`}>
                     <div className={`${showContactForm ? 'lg:col-span-2' : 'lg:col-span-2'} grid md:grid-cols-2 gap-8`}>
@@ -18,7 +18,7 @@ export function Footer({ showContactForm = true }: FooterProps) {
                             <Logo variant="sheet" />
                             <h2 className="text-2xl font-bold mt-4 mb-2">Ready to relax? Visit us today.</h2>
                             <p className="text-muted-foreground max-w-prose">
-                                Experience our premium collection of hot tubs and outdoor kitchens in person.
+                                Experience our premium collection of outdoor kitchens and grills in person.
                                 Our experts are here to help you design your perfect backyard oasis.
                             </p>
                         </div>
@@ -99,7 +99,7 @@ export function Footer({ showContactForm = true }: FooterProps) {
 
                     {showContactForm && (
                         <div className="lg:col-span-1">
-                            <div className="bg-card rounded-lg shadow-sm border p-1">
+                            <div className="card bg-base-100 shadow-sm border border-base-300 p-1">
                                 <ContactUs
                                     interestOptions={interestOptions}
                                     productOptions={productOptions}

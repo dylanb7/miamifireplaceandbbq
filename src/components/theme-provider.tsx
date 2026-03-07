@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react"
 
-type Theme = "dark" | "light" | "system"
+type Theme = string
 
 type ThemeProviderProps = {
     children: React.ReactNode
@@ -37,7 +37,12 @@ export function ThemeProvider({
     useEffect(() => {
         const root = window.document.documentElement
 
+        // Remove old theme classes/attributes if needed, but mainly we update data-theme
         root.classList.remove("light", "dark")
+        // If we want to support class-based themes for other daisyUI themes, we might need to add them as classes too?
+        // Usually data-theme is enough for DaisyUI.
+        // However, the explicit "light" and "dark" themes defined in CSS might rely on classes if using .dark class variant.
+        // The CSS has `@custom-variant dark (&:is(.dark *));`
 
         if (theme === "system") {
             const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
@@ -46,10 +51,12 @@ export function ThemeProvider({
                 : "light"
 
             root.classList.add(systemTheme)
+            root.setAttribute("data-theme", systemTheme)
             return
         }
 
         root.classList.add(theme)
+        root.setAttribute("data-theme", theme)
     }, [theme])
 
     const value = {

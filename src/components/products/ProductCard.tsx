@@ -48,7 +48,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, promotion }) 
             </CardContent>
             <CardFooter className="p-3 pt-0 mt-auto flex items-center justify-between">
                 <div className="font-semibold text-lg">
-                    ${product.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                    {product.price > 0 ? `$${product.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : "Call for Price"}
                 </div>
                 <Button size="icon" variant="ghost" className="h-8 w-8 rounded-full text-muted-foreground hover:text-primary relative z-20">
                     <ChevronRight className="h-4 w-4" />

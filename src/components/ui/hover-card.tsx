@@ -1,19 +1,34 @@
 import * as React from "react"
-import * as HoverCardPrimitive from "@radix-ui/react-hover-card"
-
 import { cn } from "@/lib/utils"
 
 function HoverCard({
+  children,
   ...props
-}: React.ComponentProps<typeof HoverCardPrimitive.Root>) {
-  return <HoverCardPrimitive.Root data-slot="hover-card" {...props} />
+}: {
+  children: React.ReactNode
+  openDelay?: number
+  closeDelay?: number
+}) {
+  return (
+    <div data-slot="hover-card" className="relative inline-block group/hover-card" {...props}>
+      {children}
+    </div>
+  )
 }
 
 function HoverCardTrigger({
+  children,
+  className,
   ...props
-}: React.ComponentProps<typeof HoverCardPrimitive.Trigger>) {
+}: React.ComponentProps<"div">) {
   return (
-    <HoverCardPrimitive.Trigger data-slot="hover-card-trigger" {...props} />
+    <div
+      data-slot="hover-card-trigger"
+      className={cn("cursor-default", className)}
+      {...props}
+    >
+      {children}
+    </div>
   )
 }
 
@@ -21,21 +36,27 @@ function HoverCardContent({
   className,
   align = "center",
   sideOffset = 4,
+  children,
   ...props
-}: React.ComponentProps<typeof HoverCardPrimitive.Content>) {
+}: React.ComponentProps<"div"> & {
+  align?: "start" | "center" | "end"
+  sideOffset?: number
+}) {
   return (
-    <HoverCardPrimitive.Portal data-slot="hover-card-portal">
-      <HoverCardPrimitive.Content
-        data-slot="hover-card-content"
-        align={align}
-        sideOffset={sideOffset}
-        className={cn(
-          "bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 w-64 origin-(--radix-hover-card-content-transform-origin) rounded-md border p-4 shadow-md outline-hidden",
-          className
-        )}
-        {...props}
-      />
-    </HoverCardPrimitive.Portal>
+    <div
+      data-slot="hover-card-content"
+      className={cn(
+        "absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 w-64 rounded-md border bg-base-200 p-4 shadow-lg",
+        "opacity-0 invisible scale-95 transition-all duration-200",
+        "group-hover/hover-card:opacity-100 group-hover/hover-card:visible group-hover/hover-card:scale-100",
+        align === "start" && "left-0 translate-x-0",
+        align === "end" && "left-auto right-0 translate-x-0",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </div>
   )
 }
 

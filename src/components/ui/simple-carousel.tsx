@@ -43,10 +43,19 @@ export const SimpleCarousel: React.FC<SimpleCarouselProps> = ({ children, classN
         <div className={cn("relative group/carousel", className)}>
             {/* Left Arrow */}
             <div className={cn(
-                "absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background via-background/80 to-transparent z-10 flex items-center justify-start pl-2 transition-opacity duration-300",
-                canScrollLeft ? "opacity-100" : "opacity-0 pointer-events-none"
+                "absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background via-background/80 to-transparent z-30 flex items-center justify-start pl-2 transition-opacity duration-300 pointer-events-none",
+                canScrollLeft ? "opacity-100" : "opacity-0"
             )}>
-                <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full shadow-md pointer-events-auto" onClick={() => scroll('left')}>
+                <Button
+                    variant="secondary"
+                    size="icon"
+                    className="h-8 w-8 rounded-full shadow-md pointer-events-auto"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        scroll('left');
+                    }}
+                >
                     <ChevronLeft className="h-4 w-4" />
                 </Button>
             </div>
@@ -69,10 +78,19 @@ export const SimpleCarousel: React.FC<SimpleCarouselProps> = ({ children, classN
 
             {/* Right Arrow */}
             <div className={cn(
-                "absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background via-background/80 to-transparent z-10 flex items-center justify-end pr-2 transition-opacity duration-300",
-                canScrollRight ? "opacity-100" : "opacity-0 pointer-events-none"
+                "absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background via-background/80 to-transparent z-30 flex items-center justify-end pr-2 transition-opacity duration-300 pointer-events-none",
+                canScrollRight ? "opacity-100" : "opacity-0"
             )}>
-                <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full shadow-md pointer-events-auto" onClick={() => scroll('right')}>
+                <Button
+                    variant="secondary"
+                    size="icon"
+                    className="h-8 w-8 rounded-full shadow-md pointer-events-auto"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        scroll('right');
+                    }}
+                >
                     <ChevronRight className="h-4 w-4" />
                 </Button>
             </div>

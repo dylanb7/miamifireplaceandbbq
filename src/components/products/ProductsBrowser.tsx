@@ -3,15 +3,15 @@ import type { Product, ProductType, Promotion } from "../../data/types";
 import { BrandSection } from "./BrandSection";
 import { useParams } from '@tanstack/react-router';
 import { PromotionBanner } from "../PromotionBanner";
+import { BrandFilter } from "./BrandFilter";
 
-const PRODUCT_TYPES: (ProductType | "All")[] = ["All", "Hot Tubs", "Outdoor Kitchens", "Grills", "Fireplaces", "Gas Logs"];
+const PRODUCT_TYPES: (ProductType | "All")[] = ["All", "Outdoor Kitchens", "Grills", "Fireplaces", "Gas Logs"];
 
 import { slugify } from '../../lib/utils';
 
 const deslugify = (slug: string): ProductType | "All" => {
     if (!slug || slug === 'all') return "All";
     const map: Record<string, ProductType> = {
-        "hot-tubs": "Hot Tubs",
         "outdoor-kitchens": "Outdoor Kitchens",
         "grills": "Grills",
         "fireplaces": "Fireplaces",
@@ -28,7 +28,10 @@ interface ProductsBrowserProps {
     initialBrand?: string;
 }
 
+import { FloatingToc } from './FloatingToc';
+
 export const ProductsBrowser: React.FC<ProductsBrowserProps> = ({ className, products, promotions, initialType, initialBrand }) => {
+    // ... (rest of the state setup)
     const [selectedType, setSelectedType] = useState<ProductType | "All">(initialType ? deslugify(initialType) : "All");
 
     useEffect(() => {
@@ -39,9 +42,12 @@ export const ProductsBrowser: React.FC<ProductsBrowserProps> = ({ className, pro
 
     const brandSlugMatch = (name: string, targetSlug: string) => name?.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '') === targetSlug;
 
-    const params = useParams({ strict: false });
+    const params: any = useParams({ strict: false });
+
 
     const effectiveBrand = initialBrand || params.brand;
+
+
 
     const typeFilteredProducts = useMemo(() => {
         if (selectedType === "All") return products;
@@ -127,79 +133,120 @@ export const ProductsBrowser: React.FC<ProductsBrowserProps> = ({ className, pro
         }
     }, [displayedProducts, isAllMode, isSingleBrandMode]);
 
+    const tocItems = useMemo(() => {
+        if (isSingleBrandMode || displayGroups.length <= 1) return [];
+        return displayGroups.map(g => ({
+            id: slugify(g.title),
+            title: g.title
+        }));
+    }, [displayGroups, isSingleBrandMode]);
+
     return (
-        <div className={`space-y-8 px-4 md:px-0 ${className}`}>
-            <div className="space-y-6">
-                <div className="flex flex-col gap-4">
-                    {/* Promotion Filtering Logic */}
-                    {(() => {
-                        const categoryPromotions = promotions.filter(p =>
-                            selectedType === "All" || p.eligibleCategories.includes(selectedType) &&
-                            !p.eligibleBrands &&
-                            !p.eligibleProducts
-                        );
+        <div className={`px-4 md:px-0 relative ${className || ""}`}>
 
-                        return (
-                            <>
-                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                                    <div>
-                                        <h2 className="text-3xl font-bold tracking-tight">
-                                            {isSingleBrandMode
-                                                ? displayGroups[0]?.title
-                                                : selectedType === "All" ? "Our Products" : selectedType
-                                            }
-                                        </h2>
-                                        <p className="text-muted-foreground mt-1">
-                                            {selectedType === "All"
-                                                ? "Browse our complete collection of premium outdoor living products."
-                                                : isSingleBrandMode
-                                                    ? `Browse all ${displayGroups[0]?.title || selectedType} models.`
-                                                    : `Explore our selection of ${selectedType.toLowerCase()}.`
-                                            }
-                                        </p>
-                                    </div>
-                                </div>
+            <div className="w-full">
+                <div className="space-y-8">
+                    <div className="space-y-6">
+                        <div className="flex flex-col gap-4">
+                            {/* Promotion Filtering Logic */}
+                            {(() => {
+                                const categoryPromotions = promotions.filter(p =>
+                                    selectedType === "All" || p.eligibleCategories.includes(selectedType) &&
+                                    !p.eligibleBrands &&
+                                    !p.eligibleProducts
+                                );
 
-                                {/* Category Level Promotions */}
-                                {categoryPromotions.length > 0 && (
-                                    <div className="space-y-4">
-                                        {categoryPromotions.map(promo => (
-                                            <PromotionBanner key={promo.id} promotion={promo} />
-                                        ))}
-                                    </div>
+                                return (
+                                    <>
+                                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                            {!isSingleBrandMode && (
+                                                <div>
+                                                    <h2 className="text-3xl font-bold tracking-tight">
+                                                        {selectedType === "All" ? "Our Products" : selectedType}
+                                                    </h2>
+                                                    <p className="text-muted-foreground mt-1">
+                                                        {selectedType === "All"
+                                                            ? "Browse our complete collection of premium outdoor living products."
+                                                            : `Explore our selection of ${selectedType.toLowerCase()}.`
+                                                        }
+                                                    </p>
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        {/* Category Level Promotions */}
+                                        {categoryPromotions.length > 0 && (
+                                            <div className="space-y-4">
+                                                {categoryPromotions.map(promo => (
+                                                    <PromotionBanner key={promo.id} promotion={promo} />
+                                                ))}
+                                            </div>
+                                        )}
+                                    </>
+                                );
+                            })()}
+
+                            {/* Brand Filter Row - Always visible for quick switching/clearing */}
+                            {(() => {
+                                const availableBrands = Array.from(new Set(typeFilteredProducts.map(p => p.brand || "Other"))).filter(b => b !== "Other");
+                                if (availableBrands.length <= 1) return null;
+
+                                return (
+                                    <BrandFilter
+                                        availableBrands={availableBrands}
+                                        selectedBrand={effectiveBrand && effectiveBrand !== 'all' ? displayedProducts[0]?.brand : undefined}
+                                        getBrandLink={(brandName) => {
+                                            if (brandName) {
+                                                return {
+                                                    to: '/products/$type/$brand',
+                                                    params: {
+                                                        type: selectedType === "All" ? "all" : slugify(selectedType),
+                                                        brand: slugify(brandName)
+                                                    }
+                                                };
+                                            } else {
+                                                return {
+                                                    to: '/products/$type',
+                                                    params: { type: selectedType === "All" ? "all" : slugify(selectedType) }
+                                                };
+                                            }
+                                        }}
+                                    />
+                                );
+                            })()}
+                        </div>
+                    </div>
+
+                    <div className={`space-y-16 animate-in fade-in slide-in-from-bottom-4 duration-500 min-h-[50vh]`}>
+                        {displayGroups.map((group) => (
+                            <div key={group.title} id={slugify(group.title)} className="space-y-6 scroll-mt-24">
+                                {isAllMode && (
+                                    <h3 className="text-xl font-semibold text-foreground border-b pb-2">{group.title}</h3>
                                 )}
-                            </>
-                        );
-                    })()}
+
+                                {isAllMode ? (
+                                    <TypeGroupView products={group.products} promotions={promotions} />
+                                ) : (
+                                    <BrandSection
+                                        brandName={group.title}
+                                        products={group.products}
+                                        promotions={promotions}
+                                        hideHeader={isSingleBrandMode}
+                                    />
+                                )}
+                            </div>
+                        ))}
+
+                        {displayedProducts.length === 0 && (
+                            <div className="text-center py-12 text-muted-foreground">
+                                <p>No products found in this category.</p>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
 
-            <div className={`space-y-16 animate-in fade-in slide-in-from-bottom-4 duration-500 min-h-[50vh]`}>
-                {displayGroups.map((group) => (
-                    <div key={group.title} id={slugify(group.title)} className="space-y-6 scroll-mt-24">
-                        {isAllMode && (
-                            <h3 className="text-xl font-semibold text-foreground border-b pb-2">{group.title}</h3>
-                        )}
-
-                        {isAllMode ? (
-                            <TypeGroupView products={group.products} promotions={promotions} />
-                        ) : (
-                            <BrandSection
-                                brandName={group.title}
-                                products={group.products}
-                                promotions={promotions}
-                                simpleLayout={isSingleBrandMode || (group as any).forceGrid}
-                            />
-                        )}
-                    </div>
-                ))}
-
-                {displayedProducts.length === 0 && (
-                    <div className="text-center py-12 text-muted-foreground">
-                        <p>No products found in this category.</p>
-                    </div>
-                )}
-            </div>
+            <FloatingToc items={tocItems} />
         </div>
     );
 };

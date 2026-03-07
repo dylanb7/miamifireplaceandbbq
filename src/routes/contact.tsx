@@ -1,9 +1,11 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, useNavigate } from '@tanstack/react-router'
+import { ArrowLeft } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 import PageLayout from '@/components/PageLayout'
 import { ContactUs } from '@/components/contact-us'
 import { interestOptions, productOptions } from '@/data/contact-options'
 import { generateSeo } from '@/lib/seo'
-import { products } from '@/data/products'
+import { getProductById } from '@/data/product-service'
 
 type ContactSearchParams = {
     productId?: string
@@ -20,7 +22,8 @@ export const Route = createFileRoute('/contact')({
         return { productId: search.productId };
     },
     loader: async ({ deps: { productId } }) => {
-        const product = await products.find(p => p.id === productId);
+        if (!productId) return { product: undefined };
+        const product = await getProductById(productId);
         return { product };
     },
     head: () => generateSeo({
@@ -32,11 +35,22 @@ export const Route = createFileRoute('/contact')({
 
 function ContactPage() {
     const { product } = Route.useLoaderData();
+    const navigate = useNavigate();
 
     return (
         <PageLayout hideFooterContact>
             <div className="container mx-auto py-12 px-4 max-w-4xl">
-                <div className="text-center mb-12">
+                <div className="mb-8">
+                    <Button
+                        variant="ghost"
+                        className="gap-2 pl-0 hover:bg-transparent hover:text-primary transition-colors"
+                        onClick={() => window.history.length > 2 ? window.history.back() : navigate({ to: '/' })}
+                    >
+                        <ArrowLeft size={16} /> Back
+                    </Button>
+                </div>
+
+                <div className="text-center ">
                     <h1 className="text-4xl font-bold tracking-tight mb-4 text-foreground">Contact Us</h1>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                         {product ? (

@@ -6,23 +6,15 @@ export const promotions: Promotion[] = [
         title: "Hot Tub Financing Event",
         description: "Available from now until the end of the month.",
         details: "0% APR for 60 Months\nor 0% APR for 36 Months*",
-        eligibleCategories: ["Hot Tubs"]
+        eligibleCategories: ["Grills"]
     },
     {
         id: "caldera-upgrade-event",
         title: "Caldera Spas Upgrade",
         description: "Receive a free cover lifter with any purchase.",
         details: "Free Cover Lifter",
-        eligibleCategories: ["Hot Tubs"],
+        eligibleCategories: ["Fireplaces"],
         eligibleBrands: ["Caldera Spas"]
-    },
-    {
-        id: "fantasy-clearance",
-        title: "Drift Clearance",
-        description: "Floor model clearance sale.",
-        details: "Save $500",
-        eligibleCategories: ["Hot Tubs"],
-        eligibleProducts: ["fantasy-drift"]
     },
     {
         id: "bull-grill-cover",

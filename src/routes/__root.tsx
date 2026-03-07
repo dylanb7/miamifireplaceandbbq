@@ -43,6 +43,13 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           <Scripts />
           <Toaster />
         </ThemeProvider>
+        <noscript>
+          <style>{`
+            .no-js-hidden {
+              display: none !important;
+            }
+          `}</style>
+        </noscript>
       </body>
     </html>
   )

@@ -1,0 +1,36 @@
+[
+  {
+    "id": "about-us",
+    "name": "About Us",
+    "description": "",
+    "price": 0,
+    "category": "Gas Logs",
+    "brand": "Real Fyre",
+    "image": "/images/products/gas-logs/about-us.jpg",
+    "features": [],
+    "specs": [],
+    "accessories": [],
+    "subCategories": [
+      "Vented"
+    ],
+    "misc": [],
+    "sourceUrl": "https://mail.eveningsdelight.com/gas-logs.html"
+  },
+  {
+    "id": "vent-free-logs",
+    "name": "Vent Free Logs",
+    "description": "",
+    "price": 0,
+    "category": "Gas Logs",
+    "brand": "Real Fyre",
+    "image": "/images/products/gas-logs/vent-free-logs.jpg",
+    "features": [],
+    "specs": [],
+    "accessories": [],
+    "subCategories": [
+      "Vent-Free"
+    ],
+    "misc": [],
+    "sourceUrl": "https://mail.eveningsdelight.com/vent-free-logs.html"
+  }
+]

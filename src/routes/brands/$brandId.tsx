@@ -1,20 +1,19 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 import { BrandSection } from '@/components/products/BrandSection'
-import { products } from '@/data/products'
+import { getAllProducts } from '@/data/product-service'
 import { promotions } from '@/data/promotions'
 import PageLayout from '@/components/PageLayout'
 import { generateSeo } from '@/lib/seo'
 
 const slugify = (text: string) => text.toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '-');
 
-const getBrandNameFromSlug = (slug: string) => {
-    const allBrands = Array.from(new Set(products.map(p => p.brand)));
-    return allBrands.find(b => b && slugify(b) === slug);
-}
-
 export const Route = createFileRoute('/brands/$brandId')({
-    loader: ({ params }) => {
-        const brandName = getBrandNameFromSlug(params.brandId);
+    loader: async ({ params }) => {
+        const products = await getAllProducts();
+
+        const allBrands = Array.from(new Set(products.map(p => p.brand)));
+        const brandName = allBrands.find(b => b && slugify(b) === params.brandId);
+
         if (!brandName) {
             throw notFound();
         }

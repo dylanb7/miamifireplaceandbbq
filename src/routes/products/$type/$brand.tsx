@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { generateSeo } from '@/lib/seo'
 import { ProductsBrowser } from '@/components/products/ProductsBrowser'
-import { products } from '@/data/products'
+import { getProductsByCategory } from '@/data/product-service'
 import { promotions } from '@/data/promotions'
 import PageLayout from '@/components/PageLayout'
 
@@ -13,14 +13,13 @@ export const Route = createFileRoute('/products/$type/$brand')({
         const typeMap: Record<string, string> = {
             "hot-tubs": "Hot Tubs",
             "outdoor-kitchens": "Outdoor Kitchens",
-            "grills": "Grills",
             "fireplaces": "Fireplaces",
             "gas-logs": "Gas Logs"
         };
 
         const category = typeMap[type];
 
-        const categoryProducts = category ? products.filter(p => p.category === category) : [];
+        const categoryProducts = await getProductsByCategory(type);
 
         return {
             products: categoryProducts,

@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 import { ProductView } from '@/components/products/ProductView'
-import { products } from '@/data/products'
+import { getAllProducts } from '@/data/product-service'
 import { promotions } from '@/data/promotions'
 import { PRODUCT_INFO } from '@/data/product-info'
 import PageLayout from '@/components/PageLayout'
@@ -9,6 +9,7 @@ import { generateSeo } from '@/lib/seo'
 
 export const Route = createFileRoute('/product/$productId')({
     loader: async ({ params }) => {
+        const products = await getAllProducts();
         const product = products.find((p) => p.id === params.productId)
 
         if (!product) {
@@ -56,7 +57,7 @@ function ProductPage() {
     const { product, info, relatedProducts, promotions } = loaderData
 
     return (
-        <PageLayout>
+        <PageLayout noPadding={product.category === 'Outdoor Kitchens'}>
             <ProductView
                 product={product}
                 info={info}

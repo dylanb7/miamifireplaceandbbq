@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export function FinancingSection() {
     return (
-        <section className="relative w-full py-24 md:py-32 overflow-hidden bg-stone-900 text-white isolate">
+        <section className="relative w-full py-24 md:py-32 overflow-hidden bg-neutral text-neutral-content isolate">
             <div
                 className="absolute inset-0 z-0 opacity-20"
                 style={{
@@ -17,12 +17,12 @@ export function FinancingSection() {
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
                         Dream Big. <br /> Pay Later.
                     </h2>
-                    <p className="text-xl md:text-2xl text-stone-300 mb-8 leading-relaxed font-light">
+                    <p className="text-xl md:text-2xl text-neutral-content/80 mb-8 leading-relaxed font-light">
                         Transform your home today with our flexible financing options.
-                        Enjoy <span className="text-white font-semibold">0% interest</span> for up to 18 months on qualifying purchases.
+                        Enjoy <span className="text-primary font-semibold">0% interest</span> for up to 18 months on qualifying purchases.
                     </p>
-                    <Button size="lg" variant="default" className="text-base px-8 h-12">
-                        See Financing Options
+                    <Button size="lg" variant="default" className="text-base px-8 h-12" asChild>
+                        <a href="tel:3055550123">Call to Discuss Financing</a>
                     </Button>
                 </div>
             </div>

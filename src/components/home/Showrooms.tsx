@@ -3,7 +3,7 @@ import { MapPin, Phone, Clock } from "lucide-react";
 
 export function Showrooms() {
     return (
-        <section className="py-20 bg-muted/30">
+        <section id="showrooms" className="py-20 bg-muted/30">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold tracking-tight mb-4">Visit Our Showroom</h2>
@@ -24,8 +24,8 @@ export function Showrooms() {
                                 <p>12345 S Dixie Hwy</p>
                                 <p>Miami, FL 33156</p>
                                 <div className="pt-2">
-                                    <Button variant="outline" className="w-full sm:w-auto" asChild>
-                                        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">
+                                    <Button className="w-full sm:w-auto" asChild>
+                                        <a href="https://www.google.com/maps/dir/?api=1&destination=12345+S+Dixie+Hwy,+Miami,+FL+33156" target="_blank" rel="noopener noreferrer">
                                             Get Directions
                                         </a>
                                     </Button>
@@ -41,8 +41,8 @@ export function Showrooms() {
                                     <Phone className="text-primary h-4 w-4" /> Contact
                                 </h3>
                                 <div className="space-y-2 text-muted-foreground">
-                                    <p>(305) 555-0123</p>
-                                    <p>sales@miamifireplace.com</p>
+                                    <p><a href="tel:3055550123" className="hover:text-primary transition-colors">(305) 555-0123</a></p>
+                                    <p><a href="mailto:sales@miamifireplace.com" className="hover:text-primary transition-colors">sales@miamifireplace.com</a></p>
                                 </div>
                             </div>
                             <div>

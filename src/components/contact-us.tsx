@@ -9,13 +9,7 @@ import { Field, FieldContent, FieldLabel, FieldGroup, FieldLegend, FieldSeparato
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { Button } from "../components/ui/button";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "../components/ui/select";
+import { NativeSelect } from "../components/ui/select";
 import { toast } from "sonner"
 
 import { useForm } from "@tanstack/react-form";
@@ -71,7 +65,7 @@ export function ContactUs({ className, interestOptions, productOptions, productI
     });
 
     return (
-        <Card className={`max-w-prose w-full shadow-none border-0 ${className}`} >
+        <Card className={`max-w-prose w-full shadow-none border-0 bg-base-100 ${className}`} >
             <CardHeader>
                 {!hideTitle && <CardTitle>Contact Us</CardTitle>}
                 <CardDescription>
@@ -90,7 +84,7 @@ export function ContactUs({ className, interestOptions, productOptions, productI
                     className="flex flex-col gap-6"
                 >
                     <div className="flex flex-wrap gap-4">
-                        {/* Name/Email/Phone Fields (Unchanged) */}
+                        {/* NameField */}
                         <form.Field
                             name="name"
                             children={(field) => {
@@ -113,6 +107,7 @@ export function ContactUs({ className, interestOptions, productOptions, productI
                                 </Field>)
                             }}
                         />
+                        {/* EmailField */}
                         <form.Field
                             name="email"
                             children={(field) => {
@@ -136,6 +131,7 @@ export function ContactUs({ className, interestOptions, productOptions, productI
                                 </Field>)
                             }}
                         />
+                        {/* PhoneField */}
                         <form.Field
                             name="phone"
                             children={(field) => {
@@ -165,7 +161,7 @@ export function ContactUs({ className, interestOptions, productOptions, productI
 
                     {/* Product Inquiry Context or Interest Selectors */}
                     {productInquiry ? (
-                        <div className="bg-muted/30 rounded-lg p-4 border flex items-center gap-4">
+                        <div className="bg-base-200 rounded-lg p-4 flex items-center gap-4">
                             <div className="h-16 w-16 bg-white rounded-md border p-1 shrink-0 overflow-hidden">
                                 <img
                                     src={productInquiry.image}
@@ -175,7 +171,7 @@ export function ContactUs({ className, interestOptions, productOptions, productI
                             </div>
                             <div className="flex-1">
                                 <p className="text-xs font-semibold text-primary uppercase tracking-wider">{productInquiry.brand}</p>
-                                <p className="font-medium text-foreground">{productInquiry.name}</p>
+                                <p className="font-medium text-base-content">{productInquiry.name}</p>
 
                             </div>
                         </div>
@@ -190,24 +186,19 @@ export function ContactUs({ className, interestOptions, productOptions, productI
                                         children={(field) => (
                                             <Field className="flex-1">
                                                 <FieldContent>
-                                                    <Select
+                                                    <NativeSelect
+                                                        className="w-full"
                                                         value={field.state.value}
-                                                        onValueChange={(value: string | undefined) => {
+                                                        onValueChange={(value: string) => {
                                                             field.handleChange(value);
                                                             form.setFieldValue("product", "all");
                                                         }}
-                                                    >
-                                                        <SelectTrigger className="w-full">
-                                                            <SelectValue placeholder="Select Interest" />
-                                                        </SelectTrigger>
-                                                        <SelectContent>
-                                                            {interestOptions.map((option) => (
-                                                                <SelectItem key={option.value} value={option.value}>
-                                                                    {option.label}
-                                                                </SelectItem>
-                                                            ))}
-                                                        </SelectContent>
-                                                    </Select>
+                                                        placeholder="Select Interest"
+                                                        options={interestOptions.map((option) => ({
+                                                            value: option.value,
+                                                            label: option.label,
+                                                        }))}
+                                                    />
                                                 </FieldContent>
                                             </Field>
                                         )}
@@ -227,22 +218,18 @@ export function ContactUs({ className, interestOptions, productOptions, productI
                                                 children={(field) => (
                                                     <Field className="flex-1">
                                                         <FieldContent>
-                                                            <Select
+                                                            <NativeSelect
+                                                                className="w-full"
                                                                 value={field.state.value}
                                                                 onValueChange={field.handleChange}
-                                                            >
-                                                                <SelectTrigger className="w-full">
-                                                                    <SelectValue defaultValue={"all"} />
-                                                                </SelectTrigger>
-                                                                <SelectContent>
-                                                                    <SelectItem value="all">All</SelectItem>
-                                                                    {currentProductOptions.map((option) => (
-                                                                        <SelectItem key={option.value} value={option.value}>
-                                                                            {option.label}
-                                                                        </SelectItem>
-                                                                    ))}
-                                                                </SelectContent>
-                                                            </Select>
+                                                                options={[
+                                                                    { value: "all", label: "All" },
+                                                                    ...currentProductOptions.map((option) => ({
+                                                                        value: option.value,
+                                                                        label: option.label,
+                                                                    })),
+                                                                ]}
+                                                            />
                                                         </FieldContent>
                                                     </Field>
                                                 )}
@@ -275,7 +262,7 @@ export function ContactUs({ className, interestOptions, productOptions, productI
                     <form.Subscribe
                         selector={(state) => [state.canSubmit, state.isSubmitting]}
                         children={([canSubmit, isSubmitting]) => (
-                            <Button type="submit" disabled={!canSubmit}>
+                            <Button type="submit" disabled={!canSubmit} className="btn-primary w-full mt-2 mb-4">
                                 {isSubmitting ? "Sending..." : "Send Message"}
                             </Button>
                         )}
@@ -285,4 +272,5 @@ export function ContactUs({ className, interestOptions, productOptions, productI
         </Card>
     );
 }
+
 

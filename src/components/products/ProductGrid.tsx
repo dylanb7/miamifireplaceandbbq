@@ -1,5 +1,6 @@
+import { cn } from "../../lib/utils";
 import type { Product, Promotion } from "../../data/types";
-import { ProductCard } from "./ProductCard";
+import { ProductImageCard } from "./ProductImageCard";
 
 interface ProductGridProps {
     products: Product[];
@@ -8,7 +9,6 @@ interface ProductGridProps {
 }
 
 export const ProductGrid: React.FC<ProductGridProps> = ({ products, promotions, className }) => {
-    // Helper to get promotion
     const getPromotionForProduct = (product: Product) => {
         return promotions.find(p => p.eligibleProducts?.includes(product.id));
     };
@@ -16,10 +16,13 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products, promotions, 
     if (products.length === 0) return null;
 
     return (
-        <div className={`flex flex-wrap gap-4 animate-in fade-in duration-300 ${className}`}>
+        <div className={cn(
+            "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-in px-2 fade-in duration-300",
+            className
+        )}>
             {products.map(product => (
-                <div key={product.id} className="w-[280px]">
-                    <ProductCard
+                <div key={product.id} className="w-full">
+                    <ProductImageCard
                         product={product}
                         promotion={getPromotionForProduct(product)}
                     />
