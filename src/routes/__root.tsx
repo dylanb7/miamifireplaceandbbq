@@ -3,7 +3,6 @@ import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 
 
 import appCss from '../styles.css?url'
-import { Toaster } from 'sonner'
 import { ThemeProvider } from '@/components/theme-provider'
 
 export const Route = createRootRoute({
@@ -41,7 +40,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
           {children}
           <Scripts />
-          <Toaster />
         </ThemeProvider>
         <noscript>
           <style>{`

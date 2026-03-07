@@ -10,7 +10,6 @@ import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { Button } from "../components/ui/button";
 import { NativeSelect } from "../components/ui/select";
-import { toast } from "sonner"
 
 import { useForm } from "@tanstack/react-form";
 
@@ -59,7 +58,7 @@ export function ContactUs({ className, interestOptions, productOptions, productI
             onSubmit: contactSchema.safeParse,
         },
         onSubmit: async ({ value }) => {
-            toast.success("Form submitted successfully!");
+            window.alert("Form submitted successfully!");
             form.reset();
         },
     });
