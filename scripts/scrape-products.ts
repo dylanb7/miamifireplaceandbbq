@@ -75,12 +75,7 @@ const scrapePaths: Record<ProductCategory, Record<string, BrandConfig>> = {
                 'subCategories': ['Portable']
             }
         ],
-        'Louisiana Pellet Grills': [
-            {
-                'url': `${baseUrl}/louisiana-pellet-grills.html`,
-                'scrapeStyle': 'ProductGrid'
-            }
-        ],
+
         'Weber Grills': [
             {
                 'url': `${baseUrl}/weber-grills.html`,

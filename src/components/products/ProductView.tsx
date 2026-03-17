@@ -186,6 +186,17 @@ export function ProductView({ product, info, relatedProducts, promotions }: Prod
         );
     }
 
+    const productSpecsIsRecord = product.specs && !Array.isArray(product.specs) && typeof product.specs === 'object';
+    const hasFeatures = (info?.features?.length ?? 0) > 0 || (product.features?.length ?? 0) > 0;
+    const hasAccessories = (product.accessories?.length ?? 0) > 0;
+    const hasSpecs = (info?.specifications && Object.keys(info.specifications).length > 0) || (productSpecsIsRecord && Object.keys(product.specs as Record<string, string>).length > 0) || (Array.isArray(product.specs) && product.specs.length > 0);
+    const hasDetails = (product.misc?.length ?? 0) > 0;
+    const hasVideo = !!info?.videoUrl;
+    const hasDownloads = (info?.downloads?.length ?? 0) > 0 || (product.downloads?.length ?? 0) > 0;
+
+    const hasAnyTabs = hasFeatures || hasAccessories || hasSpecs || hasDetails || hasVideo || hasDownloads;
+    const defaultTab = hasFeatures ? "features" : hasSpecs ? "specs" : hasAccessories ? "accessories" : hasDetails ? "details" : hasVideo ? "video" : hasDownloads ? "downloads" : "";
+
     return (
         <div className="container mx-auto px-4 py-8 space-y-12 fade-in animate-in duration-500">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -198,7 +209,7 @@ export function ProductView({ product, info, relatedProducts, promotions }: Prod
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div className="space-y-4">
-                    <div className="bg-white rounded-2xl overflow-hidden border shadow-sm aspect-4/3 relative group">
+                    <div className="bg-base-100 rounded-box overflow-hidden border shadow-sm aspect-4/3 relative group">
                         <img
                             src={activeImage}
                             alt={product.name}
@@ -218,14 +229,20 @@ export function ProductView({ product, info, relatedProducts, promotions }: Prod
                 {/* Right Column: Details */}
                 <div className="space-y-8">
                     <div>
-                        <div className="flex items-center gap-2 mb-2">
+                        <div className="flex items-center gap-2 mb-2 flex-wrap">
                             <Badge variant="secondary" className="rounded-full px-3">{product.brand}</Badge>
-                            <span className="text-sm text-muted-foreground">{product.model}</span>
+                            {product.subCategories?.map(sub => (
+                                <Badge key={sub} variant="outline" className="rounded-full px-3 text-xs">{sub}</Badge>
+                            ))}
+                            {product.model && <span className="text-sm text-muted-foreground">{product.model}</span>}
                         </div>
-                        <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">{product.name}</h1>
+                        <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-2">{product.name}</h1>
+                        {product.shortDescription && (
+                            <p className="text-lg text-muted-foreground mb-4">{product.shortDescription}</p>
+                        )}
                         {product.price > 0 && (
                             <p className="text-2xl font-semibold text-primary">
-                                ${product.price.toLocaleString()}
+                                <span className="text-base font-normal text-muted-foreground">Starting at </span>${product.price.toLocaleString()}
                             </p>
                         )}
                     </div>
@@ -259,113 +276,127 @@ export function ProductView({ product, info, relatedProducts, promotions }: Prod
             </div>
 
             {/* Bottom Section: Tabs for Deep Dive */}
-            <Tabs defaultValue={((info?.features?.length ?? 0) > 0 || (product.features?.length ?? 0) > 0) ? "features" : "specs"} className="w-full">
-                <TabsList className="w-full justify-start border-b rounded-none bg-transparent p-0 h-auto gap-4 flex-wrap">
-                    {((info?.features?.length ?? 0) > 0 || (product.features?.length ?? 0) > 0) && <TabsTrigger value="features" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent px-4 py-3">Features</TabsTrigger>}
-                    {((product.accessories?.length ?? 0) > 0) && <TabsTrigger value="accessories" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent px-4 py-3">Accessories</TabsTrigger>}
-                    {((info?.specifications && Object.keys(info.specifications).length > 0) || (product.specs?.length ?? 0) > 0) && <TabsTrigger value="specs" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent px-4 py-3">Specifications</TabsTrigger>}
-                    {((product.misc?.length ?? 0) > 0) && <TabsTrigger value="details" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent px-4 py-3">Details</TabsTrigger>}
-                    {info?.videoUrl && <TabsTrigger value="video" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent px-4 py-3">Video</TabsTrigger>}
-                    {info?.downloads && <TabsTrigger value="downloads" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent px-4 py-3">Downloads</TabsTrigger>}
-                </TabsList>
+            {hasAnyTabs && (
+                <Tabs defaultValue={defaultTab} className="w-full">
+                    <TabsList className="w-full justify-start border-b rounded-none bg-transparent p-0 h-auto gap-4 flex-wrap">
+                        {hasFeatures && <TabsTrigger value="features" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent px-4 py-3">Features</TabsTrigger>}
+                        {hasAccessories && <TabsTrigger value="accessories" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent px-4 py-3">Accessories</TabsTrigger>}
+                        {hasSpecs && <TabsTrigger value="specs" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent px-4 py-3">Specifications</TabsTrigger>}
+                        {hasDetails && <TabsTrigger value="details" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent px-4 py-3">Details</TabsTrigger>}
+                        {hasVideo && <TabsTrigger value="video" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent px-4 py-3">Video</TabsTrigger>}
+                        {hasDownloads && <TabsTrigger value="downloads" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent px-4 py-3">Downloads</TabsTrigger>}
+                    </TabsList>
 
-                <div className="py-8">
+                    <div className="py-8">
 
-                    <TabsContent value="features" className="mt-0">
-                        <div className="max-w-4xl">
-                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
-                                {(info?.features || product.features || []).map((feature, idx) => (
-                                    <li key={idx} className="flex items-start gap-2 group">
-                                        <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                                        <span className="text-muted-foreground group-hover:text-foreground transition-colors">{feature}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </TabsContent>
-
-                    <TabsContent value="specs" className="mt-0">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 max-w-4xl">
-                            {(info?.specifications && Object.keys(info.specifications).length > 0) ? Object.entries(info.specifications).map(([key, value]) => (
-                                <div key={key} className="flex justify-between py-3 border-b border-border/50">
-                                    <span className="font-medium text-muted-foreground">{key}</span>
-                                    <span className="font-medium text-foreground text-right">{value}</span>
-                                </div>
-                            )) : (
-                                (product.specs || []).map((spec, idx) => (
-                                    <div key={idx} className="flex justify-between py-3 border-b border-border/50">
-                                        <span className="font-medium text-foreground">{spec}</span>
-                                    </div>
-                                ))
-                            )}
-                        </div>
-                    </TabsContent>
-
-                    <TabsContent value="accessories" className="mt-0">
-                        <div className="max-w-4xl">
-                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
-                                {(product.accessories || []).map((feature, idx) => (
-                                    <li key={idx} className="flex items-start gap-2 group">
-                                        <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                                        <span className="text-muted-foreground group-hover:text-foreground transition-colors">{feature}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </TabsContent>
-
-                    <TabsContent value="details" className="mt-0">
-                        <div className="max-w-4xl space-y-8">
-                            {(product.misc || []).map((section, idx) => (
-                                <div key={idx} className="space-y-4">
-                                    {section.name && <h3 className="text-xl font-semibold text-foreground border-b pb-2">{section.name}</h3>}
-                                    <ul className="space-y-3">
-                                        {section.content.map((item, itemIdx) => (
-                                            <li key={itemIdx} className="flex items-start gap-3 group">
-                                                <div className="min-w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                                                <span className="text-muted-foreground group-hover:text-foreground transition-colors">{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))}
-                        </div>
-                    </TabsContent>
-
-                    <TabsContent value="video" className="mt-0">
-                        {info?.videoUrl && (
-                            <div className="aspect-video max-w-4xl bg-black rounded-lg overflow-hidden shadow-lg">
-                                {/* Ideally parse embed URL or use a player component */}
-                                <iframe
-                                    src={info.videoUrl}
-                                    className="w-full h-full"
-                                    title="Product Video"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
+                        <TabsContent value="features" className="mt-0">
+                            <div className="max-w-4xl">
+                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
+                                    {(info?.features || product.features || []).map((feature, idx) => (
+                                        <li key={idx} className="flex items-start gap-2 group">
+                                            <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                                            <span className="text-muted-foreground group-hover:text-foreground transition-colors">{feature}</span>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
-                        )}
-                    </TabsContent>
+                        </TabsContent>
 
-                    <TabsContent value="downloads" className="mt-0">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                            {info?.downloads?.map((dl, idx) => (
-                                <Button key={idx} variant="outline" className="justify-start h-auto py-4 px-6 gap-3" asChild>
-                                    <a href={dl.url} target="_blank" rel="noopener noreferrer">
-                                        <div className="bg-primary/10 p-2 rounded-full">
-                                            <Download className="h-5 w-5 text-primary" />
+                        <TabsContent value="specs" className="mt-0">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 max-w-4xl">
+                                {(() => {
+                                    // Priority: info.specifications > product.specs (Record) > product.specs (array)
+                                    if (info?.specifications && Object.keys(info.specifications).length > 0) {
+                                        return Object.entries(info.specifications).map(([key, value]) => (
+                                            <div key={key} className="flex justify-between py-3 border-b border-border/50">
+                                                <span className="font-medium text-muted-foreground">{key}</span>
+                                                <span className="font-medium text-foreground text-right">{value}</span>
+                                            </div>
+                                        ));
+                                    }
+                                    if (productSpecsIsRecord) {
+                                        return Object.entries(product.specs as Record<string, string>).map(([key, value]) => (
+                                            <div key={key} className="flex justify-between py-3 border-b border-border/50">
+                                                <span className="font-medium text-muted-foreground">{key}</span>
+                                                <span className="font-medium text-foreground text-right">{value}</span>
+                                            </div>
+                                        ));
+                                    }
+                                    return (product.specs as string[] || []).map((spec, idx) => (
+                                        <div key={idx} className="flex justify-between py-3 border-b border-border/50">
+                                            <span className="font-medium text-foreground">{spec}</span>
                                         </div>
-                                        <div className="text-left">
-                                            <div className="font-semibold">{dl.title}</div>
-                                            <div className="text-xs text-muted-foreground">PDF Download</div>
-                                        </div>
-                                    </a>
-                                </Button>
-                            ))}
-                        </div>
-                    </TabsContent>
-                </div>
-            </Tabs>
+                                    ));
+                                })()}
+                            </div>
+                        </TabsContent>
+
+                        <TabsContent value="accessories" className="mt-0">
+                            <div className="max-w-4xl">
+                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
+                                    {(product.accessories || []).map((feature, idx) => (
+                                        <li key={idx} className="flex items-start gap-2 group">
+                                            <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                                            <span className="text-muted-foreground group-hover:text-foreground transition-colors">{feature}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </TabsContent>
+
+                        <TabsContent value="details" className="mt-0">
+                            <div className="max-w-4xl space-y-8">
+                                {(product.misc || []).map((section, idx) => (
+                                    <div key={idx} className="space-y-4">
+                                        {section.name && <h3 className="text-xl font-semibold text-foreground border-b pb-2">{section.name}</h3>}
+                                        <ul className="space-y-3">
+                                            {section.content.map((item, itemIdx) => (
+                                                <li key={itemIdx} className="flex items-start gap-3 group">
+                                                    <div className="min-w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                                                    <span className="text-muted-foreground group-hover:text-foreground transition-colors">{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
+                        </TabsContent>
+
+                        <TabsContent value="video" className="mt-0">
+                            {info?.videoUrl && (
+                                <div className="aspect-video max-w-4xl bg-black rounded-lg overflow-hidden shadow-lg">
+                                    {/* Ideally parse embed URL or use a player component */}
+                                    <iframe
+                                        src={info.videoUrl}
+                                        className="w-full h-full"
+                                        title="Product Video"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                    />
+                                </div>
+                            )}
+                        </TabsContent>
+
+                        <TabsContent value="downloads" className="mt-0">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                                {(info?.downloads || product.downloads?.map(d => ({ title: d.name, url: '#' })) || []).map((dl, idx) => (
+                                    <Button key={idx} variant="outline" className="justify-start h-auto py-4 px-6 gap-3" asChild>
+                                        <a href={dl.url} target="_blank" rel="noopener noreferrer">
+                                            <div className="bg-primary/10 p-2 rounded-full">
+                                                <Download className="h-5 w-5 text-primary" />
+                                            </div>
+                                            <div className="text-left">
+                                                <div className="font-semibold">{dl.title}</div>
+                                                <div className="text-xs text-muted-foreground">PDF Download</div>
+                                            </div>
+                                        </a>
+                                    </Button>
+                                ))}
+                            </div>
+                        </TabsContent>
+                    </div>
+                </Tabs>
+            )}
 
             {/* Related Products */}
             {relatedProducts.length > 0 && (
@@ -374,6 +405,7 @@ export function ProductView({ product, info, relatedProducts, promotions }: Prod
                         brandName={`More from ${product.brand}`}
                         products={relatedProducts}
                         promotions={promotions}
+                        layout="carousel"
                     />
                 </div>
             )}

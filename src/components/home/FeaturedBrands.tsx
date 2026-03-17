@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Link } from "@tanstack/react-router";
 import { SimpleCarousel } from "@/components/ui/simple-carousel";
+import { cn } from "@/lib/utils";
 
 const slugify = (text: string) => text.toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '-');
 
@@ -18,21 +19,34 @@ export function FeaturedBrands() {
                 </div>
 
                 <SimpleCarousel
-                    scrollContainerClassName="grid grid-rows-2 grid-flow-col gap-4 auto-cols-[140px] md:grid-rows-none md:grid-flow-row md:grid-cols-3 lg:grid-cols-5 md:gap-8 md:items-center md:items-start md:flex md:w-full md:grid opacity-80"
+                    rows={2}
+                    scrollContainerClassName="auto-cols-[140px] md:auto-cols-[200px] opacity-80"
                 >
                     {brands.map((brand) => (
                         <Link
                             key={brand.name}
                             to="/brands/$brandId"
-                            params={{ brandId: slugify(brand.brandName || brand.name) }}
+                            params={{ brandId: slugify(brand.name) }}
                             className="w-full snap-start"
                         >
-                            <Card className="w-full h-24 md:h-32 flex items-center justify-center p-4 md:p-6 grayscale hover:grayscale-0 transition-all duration-300 hover:shadow-md hover:scale-105 bg-white">
-                                <img
-                                    src={brand.logo}
-                                    alt={brand.name}
-                                    className="max-h-12 md:max-h-16 w-auto object-contain"
-                                />
+                            <Card className={cn(
+                                "w-full h-24 md:h-32 flex items-center justify-center p-4 md:p-6 grayscale hover:grayscale-0 transition-all duration-300 hover:shadow-md hover:scale-105",
+                                brand.whiteBackgroundOnly !== false && !brand.invertInDarkMode ? "bg-white" : "bg-card"
+                            )}>
+                                {brand.logo ? (
+                                    <img
+                                        src={brand.logo}
+                                        alt={brand.name}
+                                        className={cn(
+                                            "max-h-12 md:max-h-16 w-auto object-contain transition-all",
+                                            brand.invertInDarkMode && "dark:brightness-0 dark:invert"
+                                        )}
+                                    />
+                                ) : (
+                                    <span className="font-bold text-center text-sm md:text-base">
+                                        {brand.name}
+                                    </span>
+                                )}
                             </Card>
                         </Link>
                     ))}

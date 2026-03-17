@@ -11,7 +11,8 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Linear"
+      "Linear",
+      "Electric"
     ],
     "misc": [
       {
@@ -39,7 +40,8 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Linear"
+      "Linear",
+      "Electric"
     ],
     "misc": [
       {
@@ -67,7 +69,8 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Linear"
+      "Linear",
+      "Electric"
     ],
     "misc": [
       {
@@ -95,7 +98,8 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Linear"
+      "Linear",
+      "Electric"
     ],
     "misc": [
       {
@@ -124,7 +128,8 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Electric"
     ],
     "misc": [
       {
@@ -153,7 +158,8 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Electric"
     ],
     "misc": [
       {
@@ -182,7 +188,10 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Gas",
+      "Wood",
+      "Electric"
     ],
     "misc": [
       {
@@ -211,7 +220,10 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Gas",
+      "Wood",
+      "Electric"
     ],
     "misc": [
       {
@@ -240,7 +252,8 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Electric"
     ],
     "misc": [
       {
@@ -269,7 +282,8 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Electric"
     ],
     "misc": [
       {
@@ -298,7 +312,8 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Electric"
     ],
     "misc": [
       {
@@ -327,7 +342,9 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Wood",
+      "Electric"
     ],
     "misc": [
       {
@@ -357,7 +374,8 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Electric"
     ],
     "misc": [
       {
@@ -386,7 +404,9 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Wood",
+      "Electric"
     ],
     "misc": [
       {
@@ -415,7 +435,10 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Gas",
+      "Wood",
+      "Electric"
     ],
     "misc": [
       {
@@ -445,7 +468,10 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Gas",
+      "Wood",
+      "Electric"
     ],
     "misc": [
       {
@@ -504,7 +530,9 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Wood",
+      "Electric"
     ],
     "misc": [
       {
@@ -591,7 +619,8 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Electric"
     ],
     "misc": [
       {
@@ -620,7 +649,8 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Electric"
     ],
     "misc": [
       {
@@ -649,7 +679,8 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Electric"
     ],
     "misc": [
       {
@@ -678,7 +709,8 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Electric"
     ],
     "misc": [
       {
@@ -707,7 +739,8 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Electric"
     ],
     "misc": [
       {
@@ -736,7 +769,8 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Electric"
     ],
     "misc": [
       {
@@ -765,7 +799,9 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Wood",
+      "Electric"
     ],
     "misc": [
       {
@@ -793,7 +829,9 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Gas",
+      "Electric"
     ],
     "misc": [
       {
@@ -821,7 +859,9 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Gas",
+      "Electric"
     ],
     "misc": [
       {
@@ -849,7 +889,9 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Wood",
+      "Electric"
     ],
     "misc": [
       {
@@ -878,7 +920,9 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Wood",
+      "Log Sets"
     ],
     "misc": [
       {
@@ -906,7 +950,9 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Wood",
+      "Log Sets"
     ],
     "misc": [
       {
@@ -934,7 +980,9 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Wood",
+      "Electric"
     ],
     "misc": [
       {
@@ -992,7 +1040,10 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Wood",
+      "Electric",
+      "Log Sets"
     ],
     "misc": [
       {
@@ -1020,7 +1071,10 @@
     "accessories": [],
     "subCategories": [
       "Fireboxes",
-      "Inserts"
+      "Inserts",
+      "Wood",
+      "Electric",
+      "Log Sets"
     ],
     "misc": [
       {
@@ -1048,7 +1102,9 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Electric Log Sets"
+      "Electric Log Sets",
+      "Wood",
+      "Electric"
     ],
     "misc": [
       {
@@ -1104,7 +1160,9 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Electric Log Sets"
+      "Electric Log Sets",
+      "Wood",
+      "Electric"
     ],
     "misc": [
       {
@@ -1160,7 +1218,9 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Electric Log Sets"
+      "Electric Log Sets",
+      "Wood",
+      "Electric"
     ],
     "misc": [
       {
@@ -1216,7 +1276,9 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Electric Log Sets"
+      "Electric Log Sets",
+      "Wood",
+      "Electric"
     ],
     "misc": [
       {
@@ -1272,7 +1334,9 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Electric Log Sets"
+      "Electric Log Sets",
+      "Wood",
+      "Log Sets"
     ],
     "misc": [
       {
@@ -1299,7 +1363,10 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Electric Log Sets"
+      "Electric Log Sets",
+      "Wood",
+      "Electric",
+      "Log Sets"
     ],
     "misc": [
       {
@@ -1326,7 +1393,10 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Electric Log Sets"
+      "Electric Log Sets",
+      "Wood",
+      "Electric",
+      "Log Sets"
     ],
     "misc": [
       {
@@ -1353,7 +1423,8 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Inserts"
+      "Inserts",
+      "Gas"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/insert-fireplaces/escape.html"
@@ -1370,7 +1441,8 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Inserts"
+      "Inserts",
+      "Gas"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/insert-fireplaces/cosmo.html"
@@ -1387,7 +1459,8 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Inserts"
+      "Inserts",
+      "Gas"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/insert-fireplaces/supreme.html"
@@ -1404,7 +1477,8 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Inserts"
+      "Inserts",
+      "Gas"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/insert-fireplaces/provident.html"
@@ -1421,7 +1495,9 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Inserts"
+      "Inserts",
+      "Gas",
+      "Electric"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/insert-fireplaces/electric-insert.html"
@@ -1486,7 +1562,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Gas"
+      "Gas",
+      "Wood"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/gas-fireplaces/caliber-gas-fireplace.html"
@@ -1554,7 +1631,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Gas"
+      "Gas",
+      "Wood"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/gas-fireplaces/caliber-nxt-gas-fireplace.html"
@@ -1691,7 +1769,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Gas"
+      "Gas",
+      "Log Sets"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/gas-fireplaces/crave-see-through-series-gas-fireplace.html"
@@ -1775,7 +1854,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Gas"
+      "Gas",
+      "Log Sets"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/gas-fireplaces/crave-series-gas-fireplace.html"
@@ -1811,7 +1891,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Gas"
+      "Gas",
+      "Outdoor"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/gas-fireplaces/fortress-see-through-gas-fireplace.html"
@@ -2039,7 +2120,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Gas"
+      "Gas",
+      "Wood"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/gas-fireplaces/novus-gas-fireplace.html"
@@ -2116,7 +2198,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Gas"
+      "Gas",
+      "Wood"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/gas-fireplaces/novus-nxt-gas-fireplace.html"
@@ -2254,7 +2337,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Gas"
+      "Gas",
+      "Linear"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/gas-fireplaces/rave-series-gas-fireplace.html"
@@ -2310,7 +2394,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Gas"
+      "Gas",
+      "Wood"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/gas-fireplaces/reveal-gas-fireplace.html"
@@ -2399,7 +2484,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Gas"
+      "Gas",
+      "Wood"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/gas-fireplaces/see-through-gas-fireplace.html"
@@ -2435,7 +2521,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Gas"
+      "Gas",
+      "Outdoor"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/gas-fireplaces/twilight-ii-gas-fireplace.html"
@@ -2460,7 +2547,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Gas"
+      "Gas",
+      "Outdoor"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/gas-fireplaces/twilight-modern-gas-fireplace.html"
@@ -2512,7 +2600,9 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Wood"
+      "Wood",
+      "Gas",
+      "Log Sets"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/wood-fireplaces/accelerator-wood-fireplace.html"
@@ -2567,7 +2657,9 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Wood"
+      "Wood",
+      "Gas",
+      "Log Sets"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/wood-fireplaces/birmingham-wood-fireplace.html"
@@ -2676,7 +2768,9 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Wood"
+      "Wood",
+      "Gas",
+      "Log Sets"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/wood-fireplaces/element-wood-fireplace.html"
@@ -2731,7 +2825,9 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Wood"
+      "Wood",
+      "Gas",
+      "Log Sets"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/wood-fireplaces/icon-series-wood-fireplace.html"
@@ -2818,7 +2914,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Outdoor"
+      "Outdoor",
+      "Wood"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/outdoor-fireplaces/castlewood-wood-fireplace.html"
@@ -2876,7 +2973,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Outdoor"
+      "Outdoor",
+      "Gas"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/outdoor-fireplaces/courtyard-gas-fireplace.html"
@@ -2915,7 +3013,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Outdoor"
+      "Outdoor",
+      "Gas"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/outdoor-fireplaces/fortress-see-through-gas-fireplace.html"
@@ -2961,7 +3060,9 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Outdoor"
+      "Outdoor",
+      "Gas",
+      "Linear"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/outdoor-fireplaces/lanai-gas-fireplace.html"
@@ -3009,7 +3110,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Outdoor"
+      "Outdoor",
+      "Wood"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/outdoor-fireplaces/montana-wood-fireplace.html"
@@ -3047,7 +3149,9 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Outdoor"
+      "Outdoor",
+      "Gas",
+      "Linear"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/outdoor-fireplaces/plaza-gas-fire-pit.html"
@@ -3084,7 +3188,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Outdoor"
+      "Outdoor",
+      "Gas"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/outdoor-fireplaces/twilight-ii-gas-fireplace.html"
@@ -3124,7 +3229,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Outdoor"
+      "Outdoor",
+      "Gas"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/outdoor-fireplaces/twilight-modern-gas-fireplace.html"
@@ -3168,7 +3274,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Outdoor"
+      "Outdoor",
+      "Gas"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/outdoor-fireplaces/villa-gas-fireplace.html"
@@ -3214,7 +3321,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Outdoor"
+      "Outdoor",
+      "Wood"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/outdoor-fireplaces/villawood-wood-fireplace.html"
@@ -3254,7 +3362,9 @@
     "accessories": [],
     "subCategories": [
       "Gas",
-      "Modern"
+      "Modern",
+      "Wood",
+      "Linear"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/city-series-modern-gas-fireplaces/chicago-corner-40le-gas-fireplace.html"
@@ -3294,7 +3404,9 @@
     "accessories": [],
     "subCategories": [
       "Gas",
-      "Modern"
+      "Modern",
+      "Wood",
+      "Linear"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/city-series-modern-gas-fireplaces/chicago-corner-40re-gas-fireplace.html"
@@ -3333,7 +3445,9 @@
     "accessories": [],
     "subCategories": [
       "Gas",
-      "Modern"
+      "Modern",
+      "Wood",
+      "Linear"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/city-series-modern-gas-fireplaces/new-york-view-40-gas-fireplace.html"
@@ -3370,7 +3484,9 @@
     "accessories": [],
     "subCategories": [
       "Gas",
-      "Modern"
+      "Modern",
+      "Wood",
+      "Linear"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/city-series-modern-gas-fireplaces/new-york-view-60-gas-fireplace.html"
@@ -3408,7 +3524,9 @@
     "accessories": [],
     "subCategories": [
       "Gas",
-      "Modern"
+      "Modern",
+      "Wood",
+      "Linear"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/city-series-modern-gas-fireplaces/new-york-view-72-gas-fireplace.html"
@@ -3448,7 +3566,9 @@
     "accessories": [],
     "subCategories": [
       "Gas",
-      "Modern"
+      "Modern",
+      "Wood",
+      "Linear"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/city-series-modern-gas-fireplaces/san-francisco-bay-40-gas-fireplace.html"
@@ -3486,7 +3606,9 @@
     "accessories": [],
     "subCategories": [
       "Gas",
-      "Modern"
+      "Modern",
+      "Wood",
+      "Linear"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/city-series-modern-gas-fireplaces/san-francisco-bay-60-gas-fireplace.html"
@@ -3524,7 +3646,9 @@
     "accessories": [],
     "subCategories": [
       "Gas",
-      "Modern"
+      "Modern",
+      "Wood",
+      "Linear"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/city-series-modern-gas-fireplaces/san-francisco-bay-72-gas-fireplace.html"
@@ -3740,7 +3864,8 @@
     "accessories": [],
     "subCategories": [
       "Gas",
-      "Contemporary"
+      "Contemporary",
+      "Linear"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/contemporary-gas-fireplaces/u1500e-gas-fireplace.html"
@@ -3776,7 +3901,8 @@
     "accessories": [],
     "subCategories": [
       "Gas",
-      "Contemporary"
+      "Contemporary",
+      "Linear"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/contemporary-gas-fireplaces/u900e-gas-fireplace.html"
@@ -4078,7 +4204,8 @@
     "accessories": [],
     "subCategories": [
       "Gas",
-      "Traditional"
+      "Traditional",
+      "Log Sets"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/traditional-gas-fireplaces/p121-gas-fireplace.html"
@@ -4114,7 +4241,8 @@
     "accessories": [],
     "subCategories": [
       "Gas",
-      "Traditional"
+      "Traditional",
+      "Log Sets"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/traditional-gas-fireplaces/p131-gas-fireplace.html"
@@ -4339,7 +4467,8 @@
     "accessories": [],
     "subCategories": [
       "Gas",
-      "Traditional"
+      "Traditional",
+      "Wood"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/traditional-gas-fireplaces/p90e-gas-fireplace.html"
@@ -4365,7 +4494,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Outdoor"
+      "Outdoor",
+      "Gas"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/outdoor-fireplaces2/hzo42-outdoor-gas-fireplace.html"
@@ -4391,7 +4521,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Outdoor"
+      "Outdoor",
+      "Gas"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/outdoor-fireplaces2/hzo60-outdoor-gas-fireplace.html"
@@ -4416,7 +4547,9 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Outdoor"
+      "Outdoor",
+      "Gas",
+      "Linear"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/outdoor-fireplaces2/pto30-outdoor-gas-burner.html"
@@ -4442,7 +4575,9 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Outdoor"
+      "Outdoor",
+      "Gas",
+      "Linear"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/outdoor-fireplaces2/pto30cft-outdoor-gas-firetable.html"
@@ -4466,7 +4601,8 @@
     ],
     "accessories": [],
     "subCategories": [
-      "Outdoor"
+      "Outdoor",
+      "Gas"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/outdoor-fireplaces2/pto50-outdoor-gas-burner.html"
@@ -4541,7 +4677,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -4580,7 +4718,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -4619,7 +4759,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -4658,7 +4800,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -4695,7 +4839,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -4732,7 +4878,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -4769,7 +4917,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -4806,7 +4956,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -4843,7 +4995,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -4880,7 +5034,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -4917,7 +5073,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -4954,7 +5112,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -4991,7 +5151,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5026,7 +5188,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5061,7 +5225,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5096,7 +5262,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5133,7 +5301,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5170,7 +5340,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5207,7 +5379,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5244,7 +5418,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5281,7 +5457,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5318,7 +5496,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5355,7 +5535,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5392,7 +5574,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5429,7 +5613,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5466,7 +5652,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5503,7 +5691,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5540,7 +5730,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5577,7 +5769,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5614,7 +5808,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5651,7 +5847,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5688,7 +5886,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5723,7 +5923,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5758,7 +5960,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5793,7 +5997,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5828,7 +6034,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5863,7 +6071,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5898,7 +6108,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5933,7 +6145,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -5968,7 +6182,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6003,7 +6219,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6038,7 +6256,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6073,7 +6293,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6108,7 +6330,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6143,7 +6367,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6178,7 +6404,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6213,7 +6441,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6248,7 +6478,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6281,7 +6513,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6470,7 +6704,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6505,7 +6741,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6540,7 +6778,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6573,7 +6813,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6608,7 +6850,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6641,7 +6885,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6674,7 +6920,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6707,7 +6955,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6740,7 +6990,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6773,7 +7025,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -6806,7 +7060,9 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -7963,7 +8219,10 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas",
+      "Wood"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -7998,7 +8257,10 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas",
+      "Wood"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -8033,7 +8295,10 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas",
+      "Wood"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -8068,7 +8333,10 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas",
+      "Wood"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -8103,7 +8371,10 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas",
+      "Wood"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -8138,7 +8409,10 @@
     "features": [],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas",
+      "Wood"
+    ],
     "misc": [
       {
         "name": "Advantages; Benefits",
@@ -8174,7 +8448,8 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Indoor"
+      "Indoor",
+      "Gas"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/indoor-fireplaces/tc30.html"
@@ -8225,7 +8500,9 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Indoor"
+      "Indoor",
+      "Gas",
+      "Wood"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/indoor-fireplaces/tc36.html"
@@ -8259,7 +8536,8 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Indoor"
+      "Indoor",
+      "Gas"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/indoor-fireplaces/tc54.html"
@@ -8327,7 +8605,8 @@
     "specs": [],
     "accessories": [],
     "subCategories": [
-      "Indoor"
+      "Indoor",
+      "Outdoor"
     ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/indoor-fireplaces/ws54st-indoor-outdoor.html"
@@ -8353,7 +8632,10 @@
       "P.4. 1-15 Propane79%"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Inserts",
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/30fid-contemporary.html"
   },
@@ -8378,7 +8660,10 @@
       "P.4. 1-15 Propane80.1%"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Inserts",
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/30fid-traditional.html"
   },
@@ -8403,7 +8688,10 @@
       "P.4. 1-15 Propane78.5%"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Inserts",
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/34fid-contemporary.html"
   },
@@ -8428,7 +8716,10 @@
       "P.4. 1-15 Propane82%"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Inserts",
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/34fid-traditional.html"
   },
@@ -8455,7 +8746,9 @@
       "P.4. 1-1571.96%"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/d3615.html"
   },
@@ -8482,7 +8775,9 @@
       "P.4. 1-1571.96%"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/d3615st.html"
   },
@@ -8509,7 +8804,9 @@
       "P.4. 1-1576.85%"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/d4815.html"
   },
@@ -8536,7 +8833,9 @@
       "P.4. 1-1576.85%"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/d4815st.html"
   },
@@ -8564,7 +8863,9 @@
       "P.4. 1-15 Propane60.49%"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/d6315.html"
   },
@@ -8592,7 +8893,9 @@
       "P.4. 1-15 Propane62.94%"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/d6315st.html"
   },
@@ -8620,7 +8923,9 @@
       "P.4. 1-15 Propane74.54%"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/d7215.html"
   },
@@ -8648,7 +8953,9 @@
       "P.4. 1-15 Propane73.37%"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/d7215st.html"
   },
@@ -8732,7 +9039,9 @@
       "P.4. 1-15 Propane71%"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/drl3613-2.html"
   },
@@ -8760,7 +9069,9 @@
       "P.4. 1-15 Propane66.23%"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/drl3613.html"
   },
@@ -8786,7 +9097,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/drl4813-2.html"
   },
@@ -8812,7 +9125,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/drl4813.html"
   },
@@ -8839,7 +9154,9 @@
       "Efficiency NG64% P.4. 1-15"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Log Sets"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/drsq38-2.html"
   },
@@ -8866,7 +9183,9 @@
       "Efficiency NG63.40%"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Log Sets"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/drsq38.html"
   },
@@ -8916,7 +9235,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/h34vo.html"
   },
@@ -9098,7 +9419,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/h38svo.html"
   },
@@ -9122,7 +9445,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/h38vo.html"
   },
@@ -9198,7 +9523,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/h42vo.html"
   },
@@ -9248,7 +9575,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/hl38svo.html"
   },
@@ -9272,7 +9601,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/hl38vo.html"
   },
@@ -9432,7 +9763,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/l38fsd.html"
   },
@@ -9456,7 +9789,9 @@
       "Outer Vent Size8"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/l42fsd.html"
   },
@@ -9482,7 +9817,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/l52fsd.html"
   },
@@ -9506,7 +9843,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/mahana-42-pl42vo.html"
   },
@@ -9530,7 +9869,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/mahana-60-pl60vo.html"
   },
@@ -9634,7 +9975,9 @@
       "CustomizableYes"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc3-bay.html"
   },
@@ -9658,7 +10001,9 @@
       "CustomizableYes"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc3-cl-cr.html"
   },
@@ -9684,7 +10029,9 @@
       "Exhaust Vent Size8\""
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc3.html"
   },
@@ -9710,7 +10057,9 @@
       "Exhaust Vent Size8\""
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc3st.html"
   },
@@ -9734,7 +10083,9 @@
       "CustomizableYes"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc4-bay.html"
   },
@@ -9758,7 +10109,9 @@
       "CustomizableYes"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc4-cl-cr.html"
   },
@@ -9784,7 +10137,9 @@
       "Exhaust Vent Size10\""
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc4.html"
   },
@@ -9810,7 +10165,9 @@
       "Exhaust Vent Size10\""
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc4st.html"
   },
@@ -9834,7 +10191,9 @@
       "CustomizableYes"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc5-bay.html"
   },
@@ -9858,7 +10217,9 @@
       "CustomizableYes"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc5-cl-cr.html"
   },
@@ -9884,7 +10245,9 @@
       "Exhaust Vent Size10\""
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc5.html"
   },
@@ -9910,7 +10273,9 @@
       "Exhaust Vent Size10\""
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc5st.html"
   },
@@ -9934,7 +10299,9 @@
       "CustomizableYes"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc6-bay.html"
   },
@@ -9958,7 +10325,9 @@
       "CustomizableYes"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc6-cl-cr.html"
   },
@@ -9984,7 +10353,9 @@
       "Exhaust Vent Size10\""
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc6.html"
   },
@@ -10010,7 +10381,9 @@
       "Exhaust Vent Size10\""
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc6st.html"
   },
@@ -10034,7 +10407,9 @@
       "CustomizableYes"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc7-bay.html"
   },
@@ -10058,7 +10433,9 @@
       "CustomizableYes"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc7-cl-cr.html"
   },
@@ -10084,7 +10461,9 @@
       "Exhaust Vent Size10\""
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc7.html"
   },
@@ -10110,7 +10489,9 @@
       "Exhaust Vent Size10\""
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc7st.html"
   },
@@ -10134,7 +10515,9 @@
       "CustomizableYes"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc8-bay.html"
   },
@@ -10158,7 +10541,9 @@
       "CustomizableYes"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc8-cl-cr.html"
   },
@@ -10184,7 +10569,9 @@
       "Exhaust Vent Size12\""
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc8.html"
   },
@@ -10210,7 +10597,9 @@
       "Exhaust Vent Size12\""
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/pc8st.html"
   },
@@ -10314,7 +10703,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/r320.html"
   },
@@ -10340,7 +10731,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/r320st.html"
   },
@@ -10364,7 +10757,10 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Outdoor",
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/r324stio.html"
   },
@@ -10390,7 +10786,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/r420.html"
   },
@@ -10416,7 +10814,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/r420st.html"
   },
@@ -10442,7 +10842,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/r520.html"
   },
@@ -10468,7 +10870,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/r520st.html"
   },
@@ -10494,7 +10898,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/r620st.html"
   },
@@ -10520,7 +10926,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/r720.html"
   },
@@ -10546,7 +10954,9 @@
       "CustomizableNo"
     ],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Linear"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/montigo-fireplaces/r820.html"
   },
@@ -10594,7 +11004,11 @@
     ],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas",
+      "Outdoor",
+      "Log Sets"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/american-fire-designs/contractors-model-with-moulding.html"
   },
@@ -10615,7 +11029,11 @@
     ],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas",
+      "Outdoor",
+      "Log Sets"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/american-fire-designs/contractors-model.html"
   },
@@ -10636,7 +11054,11 @@
     ],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas",
+      "Outdoor",
+      "Log Sets"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/american-fire-designs/cordova.html"
   },
@@ -10657,7 +11079,11 @@
     ],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas",
+      "Outdoor",
+      "Log Sets"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/american-fire-designs/manhattan.html"
   },
@@ -10678,7 +11104,11 @@
     ],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas",
+      "Outdoor",
+      "Log Sets"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/american-fire-designs/mariposa.html"
   },
@@ -10699,7 +11129,11 @@
     ],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas",
+      "Outdoor",
+      "Log Sets"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/american-fire-designs/petite-cordova.html"
   },
@@ -10720,7 +11154,11 @@
     ],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas",
+      "Outdoor",
+      "Log Sets"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/american-fire-designs/phoenix.html"
   },
@@ -10741,7 +11179,11 @@
     ],
     "specs": [],
     "accessories": [],
-    "subCategories": [],
+    "subCategories": [
+      "Gas",
+      "Outdoor",
+      "Log Sets"
+    ],
     "misc": [],
     "sourceUrl": "https://mail.eveningsdelight.com/american-fire-designs/reduced-cordova.html"
   }

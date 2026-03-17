@@ -24,7 +24,7 @@ export function Hero() {
                             Elevate Your <span className="text-primary italic">Outdoor Living</span>
                         </h1>
                         <p className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto drop-shadow-md font-light leading-relaxed">
-                            The ultimate destination for premium hot tubs, outdoor kitchens, and custom fireplaces.
+                            The ultimate destination for premium outdoor kitchens, custom fireplaces, and luxury grills.
                         </p>
                     </div>
 
@@ -41,7 +41,7 @@ export function Hero() {
                     {/* Quick Shop Grid */}
                     <div className="pt-8 border-t border-white/10 w-full">
                         <p className="text-sm uppercase tracking-widest text-white/60 mb-6 font-semibold">Explore Collections</p>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             {[
                                 { name: "Grills", link: "/products/$type", params: { type: "grills" }, icon: ChefHat },
                                 { name: "Fireplaces", link: "/products/$type", params: { type: "fireplaces" }, icon: Flame },

@@ -109,7 +109,7 @@ function DropdownMenuSeparator({
   return (
     <li
       data-slot="dropdown-menu-separator"
-      className={cn("divider my-1", className)}
+      className={cn("h-px bg-base-300 my-1 mx-2 rounded-full", className)}
       {...props}
     />
   )

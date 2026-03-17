@@ -157,7 +157,7 @@ export const FloatingToc: React.FC<FloatingTocProps> = ({ items, className }) =>
     return (
         <aside
             className={cn(
-                "fixed bottom-6 w-full max-w-[100vw] left-1/2 -translate-x-1/2 z-[100] flex justify-center transition-all duration-500 ease-in-out px-4",
+                "fixed bottom-6 w-full max-w-[100vw] left-1/2 -translate-x-1/2 z-40 flex justify-center transition-all duration-500 ease-in-out px-4",
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0 pointer-events-none",
                 className
             )}

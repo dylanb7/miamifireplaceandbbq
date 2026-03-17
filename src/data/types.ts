@@ -2,17 +2,21 @@ export interface Product {
     id: string;
     name: string;
     description: string;
+    shortDescription?: string;
     price: number;
     category: ProductType;
     brand?: string;
     model?: string;
     image: string;
+    images?: { url: string; alt?: string; isPrimary?: boolean }[];
     features?: string[];
-    specs?: string[];
+    specs?: string[] | Record<string, string>;
     accessories?: string[];
     subCategories?: string[];
     misc?: { name: string; content: string[] }[];
     gallery?: string[];
+    downloads?: { type: string; name: string }[];
+    sourceUrl?: string;
 }
 
 export interface ProductDetails {

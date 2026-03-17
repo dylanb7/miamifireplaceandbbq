@@ -1,5 +1,6 @@
 import type { Product, Promotion } from "../../data/types";
 import { ProductGrid } from "./ProductGrid";
+import { ProductCarousel } from "./ProductCarousel";
 import { PromotionBanner } from "../PromotionBanner";
 
 interface BrandSectionProps {
@@ -7,9 +8,11 @@ interface BrandSectionProps {
     products: Product[];
     promotions: Promotion[];
     hideHeader?: boolean;
+    layout?: "grid" | "carousel";
+    rows?: 1 | 2;
 }
 
-export const BrandSection: React.FC<BrandSectionProps> = ({ brandName, products, promotions, hideHeader }) => {
+export const BrandSection: React.FC<BrandSectionProps> = ({ brandName, products, promotions, hideHeader, layout = "grid", rows }) => {
     // Filter Promotions for header
     const brandPromotion = promotions.find(p => p.eligibleBrands?.includes(brandName));
 
@@ -29,7 +32,11 @@ export const BrandSection: React.FC<BrandSectionProps> = ({ brandName, products,
             {/* Mobile Banner below header if present */}
             {brandPromotion && <div className="md:hidden px-1"><PromotionBanner promotion={brandPromotion} className="w-full" /></div>}
 
-            <ProductGrid products={products} promotions={promotions} className="px-4 md:px-0" />
+            {layout === "carousel" ? (
+                <ProductCarousel products={products} promotions={promotions} className="px-4 md:px-0" rows={rows} />
+            ) : (
+                <ProductGrid products={products} promotions={promotions} className="px-4 md:px-0" />
+            )}
         </section>
     );
 };

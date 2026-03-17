@@ -57,12 +57,12 @@ export const ProductImageCard: React.FC<ProductImageCardProps> = ({ product, pro
                             <div className="flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out pointer-events-auto">
                                 {product.price > 0 && (
                                     <p className="font-medium text-white/90 pt-1">
-                                        ${product.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                        Starting at ${product.price.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
                                     </p>
                                 )}
 
                                 <p className="text-xs text-white/80 line-clamp-2 py-1">
-                                    {product.description}
+                                    {product.shortDescription || product.description}
                                 </p>
                                 <div className="text-xs font-semibold underline decoration-white/50 underline-offset-4 pb-1">
                                     View Details

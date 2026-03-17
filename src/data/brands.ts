@@ -1,18 +1,202 @@
 export interface BrandData {
     name: string;
     brandName?: string;
-    logo: string;
+    logo?: string;
+    tagline?: string;
+    description?: string;
+    websiteUrl?: string;
+    invertInDarkMode?: boolean;
+    whiteBackgroundOnly?: boolean;
 }
 
 export const brands: BrandData[] = [
-    { name: "Big Green Egg", logo: "/brand-logos/biggreenegg-logo-primary-square-pantone343c.avif" },
-    { name: "Bull", brandName: "Bull BBQ", logo: "/brand-logos/BULL_EMBLEM_logo1RED.avif" },
-    { name: "Traeger", logo: "/brand-logos/traeger-logo.avif" },
-    { name: "Napoleon", logo: "/brand-logos/napoleon.png" },
-    { name: "Blaze", logo: "/brand-logos/Blaze_Logo_071522.avif" },
-    { name: "Fire Magic", logo: "/brand-logos/FM_Logo_Full-Color72.webp" },
-    { name: "Profire", logo: "/brand-logos/PROFIRE-gas-grill-logo-grillparts.com.avif" },
-    { name: "AOG", brandName: "American Outdoor Grill", logo: "/brand-logos/aog_full_logo_color_no_box.avif" },
-    { name: "Blackstone", logo: "/brand-logos/blackstone.avif" },
-    { name: "Charlie", logo: "/brand-logos/Charlie.avif" },
+    {
+        name: "Big Green Eggs",
+        brandName: "Big Green Egg",
+        logo: "/brand-logos/biggreenegg-logo-primary-square-pantone343c.avif",
+        tagline: "The Ultimate Cooking Experience®",
+        description: "Since 1974, Big Green Egg has been the original and definitive kamado-style ceramic charcoal cooker. Designed for unparalleled heat retention and precision, it brings people together over memorable meals by flawlessly baking, roasting, smoking, and searing.",
+        websiteUrl: "https://biggreenegg.com/",
+        whiteBackgroundOnly: true
+    },
+    {
+        name: "Bull Grills",
+        brandName: "Bull BBQ",
+        logo: "/brand-logos/BULL_EMBLEM_logo1RED.avif",
+        tagline: "Built to perform. Crafted to last.",
+        description: "Pioneering the concept of the outdoor kitchen island, Bull Outdoor Products builds premium, commercial-grade grills and accessories designed to equip barbecue enthusiasts to cook like professionals in their own backyards.",
+        websiteUrl: "https://bullbbq.com/",
+        whiteBackgroundOnly: true
+    },
+    {
+        name: "Traeger Pellet Grills",
+        brandName: "Traeger",
+        logo: "/brand-logos/traeger-logo.avif",
+        tagline: "The Original Wood Pellet Grill",
+        description: "Inventors of the original wood-fired grill over 30 years ago, Traeger Grills bring unrivaled wood-fired flavor to the table. Offering 'set it and forget it' convenience and precise temperature control to unlock your food's true potential.",
+        websiteUrl: "https://www.traeger.com/",
+        whiteBackgroundOnly: true
+    },
+    {
+        name: "Napoleon",
+        logo: "/brand-logos/napoleon.png",
+        tagline: "Built Different.",
+        description: "An industry leader with over 20 years of experience, Napoleon is renowned for its high quality, advanced jet engine ignition technologies, and the iconic Sizzle Zone. Built different means built better.",
+        websiteUrl: "https://www.napoleon.com/en/us/grills",
+        invertInDarkMode: true
+    },
+    {
+        name: "Blaze",
+        logo: "/brand-logos/Blaze_Logo_071522.avif",
+        tagline: "Effortless by design, engineered for life.",
+        description: "Blaze Grills was born from a shared passion for outdoor living, designed to offer high-quality, durable outdoor cooking products without the luxury price tag. Sleek aesthetics backed by best-in-class warranties.",
+        websiteUrl: "https://www.blazegrills.com/",
+        whiteBackgroundOnly: true
+    },
+    {
+        name: "Fire Magic Grills",
+        brandName: "Fire Magic",
+        logo: "/brand-logos/FM_Logo_Full-Color72.webp",
+        tagline: "A Heritage of Unmatched Durability, Performance, and Versatility.",
+        description: "For more than 85 years, American-built Fire Magic grills have crafted luxury, built-in grilling essentials. Precision-engineered from elegant stainless steel to perform at the highest temperatures for a lifetime.",
+        websiteUrl: "https://www.firemagicgrills.com/",
+        whiteBackgroundOnly: true
+    },
+    {
+        name: "Profire Grills",
+        brandName: "Profire",
+        logo: "/brand-logos/PROFIRE-gas-grill-logo-grillparts.com.avif",
+        tagline: "Perfection By Design.",
+        description: "Engineered and manufactured in the United States from commercial-grade stainless steel, Profire Grills are synonymous with superior performance, reliability, and the durability to withstand even harsh coastal environments.",
+        websiteUrl: "https://www.profiregrills.com/",
+        whiteBackgroundOnly: true
+    },
+    {
+        name: "American Outdoor Grills",
+        brandName: "AOG",
+        logo: "/brand-logos/aog_full_logo_color_no_box.avif",
+        tagline: "ALL NEW. BOLDLY REFINED.",
+        description: "Designed and engineered in the USA by the RH Peterson Company, American Outdoor Grills bring elegance to your outdoor kitchen, transforming backyard barbecues into a seamless fine dining experience.",
+        websiteUrl: "https://www.americanoutdoorgrill.com/",
+        whiteBackgroundOnly: true
+    },
+    {
+        name: "Blackstone",
+        logo: "/brand-logos/blackstone.avif",
+        tagline: "Taste the Griddle Life",
+        description: "Since introducing their iconic 36\" Griddle in 2008, Blackstone has revolutionized outdoor cooking. Built from solid rolled steel, they are designed versatile enough to let you Cook Anything, Anytime, Anywhere®.",
+        websiteUrl: "https://blackstoneproducts.com/",
+        whiteBackgroundOnly: true
+    },
+    {
+        name: "Charlie",
+        logo: "/brand-logos/Charlie.avif",
+        tagline: "The pinnacle of British outdoor cooking",
+        description: "A professional-grade, all-in-one Charcoal BBQ, Smoker, and Pizza Oven. Proudly made in Britain from solid stainless steel, Charlie Oven is designed to make achieving restaurant-quality food effortless and sustainable.",
+        websiteUrl: "https://charlieoven.com/",
+        whiteBackgroundOnly: true
+    },
+    {
+        name: "MHP Grills",
+        logo: "/brand-logos/mhp-grills-logo.webp",
+        tagline: "The original gas grill. Made in the USA. Built to last.",
+        description: "Modern Home Products (MHP) introduced the first backyard gas grill in 1960. Known for their legendary durability, these cast aluminum grills are engineered to withstand the test of time and provide a lifetime of premium outdoor cooking.",
+        websiteUrl: "https://mhpgrills.com/",
+        whiteBackgroundOnly: true
+    },
+    {
+        name: "Weber Grills",
+        brandName: "Weber",
+        logo: "/brand-logos/weber-logo.svg",
+        tagline: "Discover what's possible.",
+        description: "Weber is synonymous with backyard barbecues worldwide. From the invention of the original kettle grill to their advanced gas and smart grills, Weber continues to reinvent the outdoor cooking experience with quality and innovation.",
+        websiteUrl: "https://www.weber.com/",
+        whiteBackgroundOnly: true
+    },
+    {
+        name: "Real Fyre",
+        logo: "/brand-logos/real-fyre-logo.png",
+        tagline: "What a Fire is meant to be.",
+        description: "For over 70 years, Real Fyre has crafted the most beautiful, realistic gas fire logs available. Meticulously hand-painted to capture the authentic look of natural wood, they provide the ambiance of a wood fire with the convenience of gas.",
+        websiteUrl: "https://www.realfyre.com/",
+        invertInDarkMode: true
+    },
+    {
+        name: "Dimplex",
+        logo: "/brand-logos/dimplex-logo.png",
+        tagline: "Leading the way in electric fireplaces.",
+        description: "Dimplex is the global leader in electric heating, shaping the industry with lifelike flame effects, energy-conscious designs, and innovative heating solutions that integrate naturally into modern homes and living spaces.",
+        websiteUrl: "https://www.dimplex.com/",
+        invertInDarkMode: true
+    },
+    {
+        name: "Heat & Glo",
+        logo: "/brand-logos/heatnglo-logo.svg",
+        tagline: "Innovation Made Cozy.",
+        description: "Heat & Glo is known as the innovative leader in the hearth industry, designing a wide range of premium gas, wood, and electric fireplaces that combine cutting-edge technology, exceptional heating performance, and striking aesthetics.",
+        websiteUrl: "https://www.heatnglo.com/",
+        invertInDarkMode: true
+    },
+    {
+        name: "Heatilator",
+        logo: "/brand-logos/heatilator-logo.png",
+        tagline: "The first name in fireplaces.",
+        description: "Since introducing the first factory-built air-circulating fireplace in 1927, Heatilator has built a solid reputation for offering reliable heat and steadfast value. It remains one of the most recognized and trusted fireplace brands.",
+        websiteUrl: "https://www.heatilator.com/",
+        invertInDarkMode: true
+    },
+    {
+        name: "Montigo",
+        logo: "/brand-logos/montigo-logo.png",
+        tagline: "Inspired by architects, guided by builders, manufactured to perfection.",
+        description: "Montigo is North America's premier producer of custom-engineered, hand-crafted gas fireplaces. Known for pushing the boundaries of design and pioneering cool-touch glass technology, their fireplaces are striking architectural focal points.",
+        websiteUrl: "https://www.montigo.com/",
+        invertInDarkMode: true
+    },
+    {
+        name: "Ortal",
+        logo: "/brand-logos/ortal-logo.svg",
+        tagline: "Rediscover Fire with Ortal.",
+        description: "Ortal challenges industry limits to deliver world-class, innovative luxury frameless gas fireplaces. With meticulous attention to contemporary aesthetics and exclusive fire technologies, Ortal fireplaces bring visionary design ideas to life.",
+        websiteUrl: "https://www.ortalheat.com/",
+        invertInDarkMode: true
+    },
+    {
+        name: "Regency",
+        logo: "/brand-logos/regency-logo.svg",
+        tagline: "Built to last a lifetime.",
+        description: "Regency Fireplace Products is a world leader in the design and manufacture of high-quality wood and gas fireplaces. Crafted in North America, Regency products are celebrated for their attention to beautiful flames, high efficiency, and safety.",
+        websiteUrl: "https://www.regency-fire.com/",
+        invertInDarkMode: true
+    },
+    {
+        name: "Town & Country",
+        logo: "/brand-logos/Town-Country-Logo-Horizontal.png",
+        tagline: "Luxury Fireplaces.",
+        description: "Town & Country Fireplaces revolutionized the industry by introducing the world's first clean-face fireplaces. Blending modern architectural design with advanced technology, they deliver exquisite flames and unparalleled customization options.",
+        websiteUrl: "https://www.townandcountryfireplaces.com/",
+        invertInDarkMode: true
+    },
+    {
+        name: "American Fyre Designs",
+        brandName: "AFD",
+        logo: "/brand-logos/AFD_Logo_Full-Color_for-Dark-Backgrounds.png",
+        tagline: "Where Warmth Meets Elegance.",
+        description: "Crafted from innovative Glass Fiber Reinforced Concrete (GFRC), American Fyre Designs products provide the perfect focal point for any outdoor living area. Manufactured in the USA by RH Peterson, they offer a wide collection of luxury fire tables, fire falls, and exterior fireplaces.",
+        websiteUrl: "https://americanfyredesigns.com/",
+        whiteBackgroundOnly: false
+    }
 ];
+
+// Helper to reliably map any product brand string onto rich brand data
+export function getBrandData(brandIdentifier: string | undefined): BrandData | undefined {
+    if (!brandIdentifier) return undefined;
+
+    // Fuzzy match against either the short `name` or the display `brandName`
+    const normalizedTarget = brandIdentifier.toLowerCase().trim();
+
+    return brands.find(b =>
+        b.name.toLowerCase() === normalizedTarget ||
+        (b.brandName && b.brandName.toLowerCase() === normalizedTarget)
+    );
+}

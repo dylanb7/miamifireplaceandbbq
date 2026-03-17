@@ -1,0 +1,1356 @@
+[
+  {
+    "id": "hng-escape-see-through",
+    "name": "Escape See-Through Gas Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "See-Through",
+      "Gas"
+    ],
+    "description": "The Escape See-Through gas fireplace delivers stunning two-sided viewing with anti-reflective glass and direct vent technology for a breathtaking focal point between rooms.",
+    "shortDescription": "Two-sided gas fireplace with anti-reflective glass",
+    "price": 12047,
+    "image": "/images/products/fireplaces/hng-escape-see-through.jpg",
+    "images": [],
+    "features": [
+      "Anti-Reflective Glass",
+      "Two-Sided Viewing",
+      "Direct Vent Technology"
+    ],
+    "specs": {
+      "Model": "Escape See-Through Gas Fireplace - DV",
+      "Framing Width": "60-1/4\"",
+      "Framing Depth": "30\"",
+      "Framing Height": "46-1/2\"",
+      "BTU/hr Input": "57,500",
+      "Viewing Area": "39-7/16 x 35-1/8\""
+    },
+    "accessories": [],
+    "downloads": [
+      {
+        "type": "brochure",
+        "name": "Escape See-Through Brochure"
+      },
+      {
+        "type": "manual",
+        "name": "Installation Manual"
+      }
+    ],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/see-through/escape-gas-fireplace"
+  },
+  {
+    "id": "hng-primo-ii-see-through",
+    "name": "Primo II Double-Sided Gas Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "See-Through",
+      "Gas",
+      "Linear"
+    ],
+    "description": "The Primo II see-through fireplace features SafeSurface Glass, LED multi-colored firebed lighting, and low heat output \u2014 designed for uncompromised design flexibility in both residential and commercial spaces.",
+    "shortDescription": "Premium double-sided linear gas fireplace with SafeSurface Glass",
+    "price": 11685,
+    "image": "/images/products/fireplaces/hng-primo-ii-see-through.jpg",
+    "images": [],
+    "features": [
+      "SafeSurface Glass",
+      "Direct Vent Technology",
+      "LED Multi-Colored Firebed Lighting",
+      "Low Heat Output",
+      "Uncompromised Design"
+    ],
+    "specs": {
+      "Models": "48ST, 60ST, 72ST",
+      "Framing Width": "66 1/2\", 78 1/2\", 90 1/2\"",
+      "Framing Depth": "17\"",
+      "Framing Height": "45\"",
+      "BTU/hr Input": "31,500-58,500",
+      "Viewing Area": "48\" x 18\" to 72\" x 18\""
+    },
+    "accessories": [],
+    "downloads": [
+      {
+        "type": "brochure",
+        "name": "Primo II Brochure"
+      },
+      {
+        "type": "manual",
+        "name": "Installation Manual"
+      }
+    ],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/see-through/primo-ii"
+  },
+  {
+    "id": "hng-fortress-see-through",
+    "name": "Fortress See-Through Gas Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "See-Through",
+      "Gas",
+      "Outdoor"
+    ],
+    "description": "The Fortress see-through outdoor gas fireplace combines dramatic two-sided viewing with IntelliFire Touch\u00ae smart controls and battery backup for reliable performance in outdoor living spaces.",
+    "shortDescription": "Premium outdoor see-through gas fireplace with smart controls",
+    "price": 10818,
+    "image": "/images/products/fireplaces/hng-fortress-see-through.jpg",
+    "images": [],
+    "features": [
+      "Battery Backup",
+      "IntelliFire Touch\u00ae",
+      "Direct Vent Technology"
+    ],
+    "specs": {
+      "Model": "Fortress 36 Outdoor Fireplace",
+      "Framing Width": "49-1/2\"",
+      "Framing Depth": "23\"",
+      "Framing Height": "44-7/8\"",
+      "BTU/hr Input": "56,000 NG",
+      "Viewing Area": "36 x 30\""
+    },
+    "accessories": [],
+    "downloads": [
+      {
+        "type": "brochure",
+        "name": "Fortress Brochure"
+      },
+      {
+        "type": "manual",
+        "name": "Installation Manual"
+      }
+    ],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/see-through/fortress-gas-fireplace"
+  },
+  {
+    "id": "hng-primo-ii-indoor",
+    "name": "Primo II Linear Gas Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Linear",
+      "Gas"
+    ],
+    "description": "The Primo II linear gas fireplace delivers uncompromised modern design with SafeSurface Glass that stays cool to the touch, LED multi-colored firebed lighting, and low heat output \u2014 available in 48\", 60\", and 72\" widths.",
+    "shortDescription": "Premium linear gas fireplace with SafeSurface Glass in 48\"\u201372\" widths",
+    "price": 9886,
+    "image": "/images/products/fireplaces/hng-primo-ii-indoor.jpg",
+    "images": [],
+    "features": [
+      "SafeSurface Glass",
+      "Direct Vent Technology",
+      "LED Multi-Colored Firebed Lighting",
+      "Low Heat Output",
+      "Uncompromised Design"
+    ],
+    "specs": {
+      "Models": "48, 60, 72",
+      "Framing Width": "66 1/2\", 78 1/2\", 90 1/2\"",
+      "Framing Depth": "18\"",
+      "Framing Height": "45\"",
+      "BTU/hr Input": "31,500-58,500",
+      "Viewing Area": "48\" x 18\" to 72\" x 18\""
+    },
+    "accessories": [],
+    "downloads": [
+      {
+        "type": "brochure",
+        "name": "Primo II Brochure"
+      },
+      {
+        "type": "manual",
+        "name": "Installation Manual"
+      }
+    ],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/indoor/primo-ii"
+  },
+  {
+    "id": "hng-phoenix-trueview",
+    "name": "Phoenix TrueView Indoor Open Gas Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Traditional",
+      "Gas"
+    ],
+    "description": "Evoke an open-hearth experience so real, friends may ask to add another log to the fire. The Phoenix TrueView series open-front gas fireplace features a glass-free view, authentic masonry appearance and the whisper of a trendsetting fire.",
+    "shortDescription": "Open-front gas fireplace with glass-free view and authentic masonry appearance",
+    "price": 8672,
+    "image": "/images/products/fireplaces/hng-phoenix-trueview.jpg",
+    "images": [],
+    "features": [
+      "Glass-free view \u2014 nothing between you and the fire",
+      "Bluetooth Speakers",
+      "Mild Heat Settings",
+      "Authentic Masonry Appearance",
+      "WhisperTone Technology"
+    ],
+    "specs": {
+      "Model": "Phoenix 42 True View Gas Fireplace",
+      "Framing Width": "51-3/8\"",
+      "Framing Depth": "28\"",
+      "Framing Height": "74-5/8\"",
+      "BTU/hr Input": "65,000",
+      "Viewing Area": "1,197 sq. in."
+    },
+    "accessories": [],
+    "downloads": [
+      {
+        "type": "brochure",
+        "name": "Design Guide"
+      },
+      {
+        "type": "brochure",
+        "name": "Phoenix 42"
+      },
+      {
+        "type": "manual",
+        "name": "Phoenix 42 Installation Manual"
+      },
+      {
+        "type": "manual",
+        "name": "Phoenix 42 Owner's Manual"
+      },
+      {
+        "type": "cad",
+        "name": "CAD Drawings"
+      },
+      {
+        "type": "bim",
+        "name": "Revit BIM"
+      }
+    ],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/indoor/phoenix-trueview-open-gas-fireplace"
+  },
+  {
+    "id": "hng-twilight-modern",
+    "name": "Twilight Modern See-Through Gas Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "See-Through",
+      "Gas",
+      "Indoor/Outdoor"
+    ],
+    "description": "The Twilight Modern see-through gas fireplace bridges indoor and outdoor spaces with a sleek, contemporary design. Features IntelliFire Touch\u00ae smart controls and direct vent technology.",
+    "shortDescription": "Modern indoor/outdoor see-through gas fireplace",
+    "price": 8468,
+    "image": "/images/products/fireplaces/hng-twilight-modern.jpg",
+    "images": [],
+    "features": [
+      "IntelliFire Touch\u00ae",
+      "Direct Vent Technology",
+      "Indoor/Outdoor Installation"
+    ],
+    "specs": {
+      "Model": "Twilight Modern See-Through Gas Fireplace",
+      "Framing Width": "44\"",
+      "Framing Depth": "24\"",
+      "Framing Height": "47-5/8\"",
+      "BTU/hr Input": "38,000",
+      "Viewing Area": "36 x 21-1/2\""
+    },
+    "accessories": [],
+    "downloads": [
+      {
+        "type": "brochure",
+        "name": "Twilight Modern Brochure"
+      },
+      {
+        "type": "manual",
+        "name": "Installation Manual"
+      }
+    ],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/see-through/twilight-modern-gas-fireplace"
+  },
+  {
+    "id": "hng-twilight",
+    "name": "Twilight See-Through Gas Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "See-Through",
+      "Gas",
+      "Indoor/Outdoor"
+    ],
+    "description": "The original Twilight see-through gas fireplace connects indoor and outdoor living with IntelliFire Touch\u00ae smart controls and direct vent technology.",
+    "shortDescription": "Classic indoor/outdoor see-through gas fireplace",
+    "price": 7978,
+    "image": "/images/products/fireplaces/hng-twilight.jpg",
+    "images": [],
+    "features": [
+      "IntelliFire Touch\u00ae",
+      "Direct Vent Technology",
+      "Indoor/Outdoor Installation"
+    ],
+    "specs": {
+      "Model": "Twilight See-Through Gas Fireplace",
+      "Framing Width": "44\"",
+      "Framing Depth": "24\"",
+      "Framing Height": "47-5/8\"",
+      "BTU/hr Input": "38,000",
+      "Viewing Area": "36 x 21-1/2\""
+    },
+    "accessories": [],
+    "downloads": [
+      {
+        "type": "brochure",
+        "name": "Twilight Brochure"
+      },
+      {
+        "type": "manual",
+        "name": "Installation Manual"
+      }
+    ],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/see-through/twilight-gas-fireplace"
+  },
+  {
+    "id": "hng-mezzo-see-through",
+    "name": "Mezzo Double-Sided Linear Gas Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "See-Through",
+      "Gas",
+      "Linear"
+    ],
+    "description": "The Mezzo double-sided linear gas fireplace features a clean, modern design with IntelliFire Touch\u00ae controls, LED firebed lighting, and direct vent technology in four sizes from 36\" to 72\".",
+    "shortDescription": "Contemporary double-sided linear fireplace in 36\"\u201372\" sizes",
+    "price": 7766,
+    "image": "/images/products/fireplaces/hng-mezzo-see-through.jpg",
+    "images": [],
+    "features": [
+      "Direct Vent Technology",
+      "IntelliFire Touch\u00ae",
+      "Flames & Lights",
+      "LED Firebed Lighting"
+    ],
+    "specs": {
+      "Models": "36, 48, 60, 72 See-Through",
+      "Framing Width": "51\", 63\", 75\", 87\"",
+      "Framing Depth": "17-1/8\"",
+      "Framing Height": "42\"",
+      "BTU/hr Input": "30,000\u201358,000",
+      "Viewing Area": "36\" x 12.5\" to 72\" x 12.5\""
+    },
+    "accessories": [],
+    "downloads": [
+      {
+        "type": "brochure",
+        "name": "Mezzo Brochure"
+      },
+      {
+        "type": "manual",
+        "name": "Installation Manual"
+      }
+    ],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/see-through/mezzo-gas-fireplace"
+  },
+  {
+    "id": "hng-true",
+    "name": "True Indoor Gas Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Traditional",
+      "Gas"
+    ],
+    "description": "The True gas fireplace brings traditional masonry style with serious heat output and life-like logs. Available in 36\", 42\", and 50\" sizes for the perfect fit in any room.",
+    "shortDescription": "Traditional masonry-style gas fireplace with life-like logs",
+    "price": 7708,
+    "image": "/images/products/fireplaces/hng-true.jpg",
+    "images": [],
+    "features": [
+      "Traditional Masonry Style",
+      "Serious Heat",
+      "Life-like Logs"
+    ],
+    "specs": {
+      "Models": "36, 42, 50",
+      "Framing Width": "46\", 52\", 60\"",
+      "Framing Depth": "24\"",
+      "Framing Height": "48-1/2\", 54-1/2\", 62-1/2\"",
+      "BTU/hr Input": "32,000\u201365,000",
+      "Viewing Area": "36\" x 30\" to 50\" x 44\""
+    },
+    "accessories": [],
+    "downloads": [
+      {
+        "type": "brochure",
+        "name": "True Brochure"
+      },
+      {
+        "type": "manual",
+        "name": "Installation Manual"
+      }
+    ],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/indoor/true-gas-fireplace"
+  },
+  {
+    "id": "hng-pioneer-iii",
+    "name": "Pioneer III Indoor Wood Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Traditional",
+      "Wood"
+    ],
+    "description": "The Pioneer III is a high-efficiency EPA wood-burning fireplace that heats up to 2,600 sq ft with up to 8 hours of burn time on a single load of wood.",
+    "shortDescription": "High-efficiency EPA wood-burning fireplace",
+    "price": 6968,
+    "image": "/images/products/fireplaces/hng-pioneer-iii.jpg",
+    "images": [],
+    "features": [
+      "EPA-Certified",
+      "Smart Burn Technology",
+      "Up to 8-Hour Burn Time",
+      "Heats up to 2,600 sq ft"
+    ],
+    "specs": {},
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/wood/indoor/pioneer-iii"
+  },
+  {
+    "id": "hng-cerona",
+    "name": "Cerona Indoor Gas Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Traditional",
+      "Gas"
+    ],
+    "description": "The Cerona gas fireplace features an elegant arched design with FireBrick\u00ae Technology and realistic logs for a classic fireplace experience. Available in 36\" and 42\" sizes.",
+    "shortDescription": "Arched gas fireplace with FireBrick\u00ae technology",
+    "price": 6638,
+    "image": "/images/products/fireplaces/hng-cerona.jpg",
+    "images": [],
+    "features": [
+      "Arched Design",
+      "FireBrick\u00ae Technology",
+      "Realistic Logs"
+    ],
+    "specs": {
+      "Models": "36, 42",
+      "Framing Width": "42-1/2\", 48-1/2\"",
+      "Framing Depth": "24\"",
+      "Framing Height": "46-3/8\", 50-3/8\"",
+      "BTU/hr Input": "19,000\u201340,000",
+      "Viewing Area": "36\" x 24.5\" to 42\" x 28.5\""
+    },
+    "accessories": [],
+    "downloads": [
+      {
+        "type": "brochure",
+        "name": "Cerona Brochure"
+      },
+      {
+        "type": "manual",
+        "name": "Installation Manual"
+      }
+    ],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/indoor/cerona-gas-fireplace"
+  },
+  {
+    "id": "hng-northstar",
+    "name": "Northstar Indoor Wood Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Traditional",
+      "Wood"
+    ],
+    "description": "The Northstar is a premium wood-burning fireplace with EPA certification and Smart Burn Technology for efficient, long-lasting fires.",
+    "shortDescription": "Premium EPA-certified wood-burning fireplace",
+    "price": 6549,
+    "image": "/images/products/fireplaces/hng-northstar.jpg",
+    "images": [],
+    "features": [
+      "EPA-Certified",
+      "Smart Burn Technology"
+    ],
+    "specs": {},
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/wood/indoor/northstar-wood-fireplace"
+  },
+  {
+    "id": "hng-pioneer-ii",
+    "name": "Pioneer II Indoor Wood Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Traditional",
+      "Wood"
+    ],
+    "description": "The Pioneer II delivers efficient wood-burning performance with EPA certification, heating up to 2,600 sq ft.",
+    "shortDescription": "Efficient EPA wood-burning fireplace for whole-home heating",
+    "price": 6549,
+    "image": "/images/products/fireplaces/hng-pioneer-ii.jpg",
+    "images": [],
+    "features": [
+      "EPA-Certified",
+      "Smart Burn Technology"
+    ],
+    "specs": {},
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/wood/indoor/pioneer-ii"
+  },
+  {
+    "id": "hng-pier",
+    "name": "Pier Three-Sided Gas Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Three-Sided",
+      "Gas"
+    ],
+    "description": "The Pier three-sided gas fireplace offers dramatic viewing from three sides, making it a stunning architectural focal point.",
+    "shortDescription": "Three-sided viewing gas fireplace",
+    "price": 5886,
+    "image": "/images/products/fireplaces/hng-pier.jpg",
+    "images": [],
+    "features": [
+      "Three-Sided Viewing",
+      "Direct Vent Technology"
+    ],
+    "specs": {},
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/see-through/pier-gas-fireplace"
+  },
+  {
+    "id": "hng-mezzo-indoor",
+    "name": "Mezzo Linear Indoor Gas Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Linear",
+      "Gas"
+    ],
+    "description": "The Mezzo linear gas fireplace features an ultra-clean design with IntelliFire Touch\u00ae controls, LED firebed lighting, and direct vent technology. Available in 36\", 48\", 60\", and 72\" widths.",
+    "shortDescription": "Modern linear gas fireplace in four sizes",
+    "price": 5727,
+    "image": "/images/products/fireplaces/hng-mezzo-indoor.jpg",
+    "images": [],
+    "features": [
+      "Direct Vent Technology",
+      "IntelliFire Touch\u00ae",
+      "Flames & Lights",
+      "LED Firebed Lighting"
+    ],
+    "specs": {
+      "Models": "36, 48, 60, 72",
+      "Framing Width": "42-1/2\", 54-1/2\", 66-1/2\", 78-1/2\"",
+      "Framing Depth": "17-1/8\"",
+      "Framing Height": "42\"",
+      "BTU/hr Input": "30,000\u201358,000",
+      "Viewing Area": "36\" x 12.5\" to 72\" x 12.5\""
+    },
+    "accessories": [],
+    "downloads": [
+      {
+        "type": "brochure",
+        "name": "Mezzo Brochure"
+      },
+      {
+        "type": "manual",
+        "name": "Installation Manual"
+      }
+    ],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/indoor/mezzo-gas-fireplace"
+  },
+  {
+    "id": "hng-inception",
+    "name": "Inception Traditional Electric Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Traditional",
+      "Electric"
+    ],
+    "description": "Enjoy total personalization of your electric fireplace. Choose from multiple fire backdrops with DigitalSpark\u2122 technology, enhanced by a range of built-in sound effects. Plus, enjoy the flexibility of installing the Inception almost anywhere.",
+    "shortDescription": "Personalizable electric fireplace with DigitalSpark\u2122 and sound effects",
+    "price": 5588,
+    "image": "/images/products/fireplaces/hng-inception.jpg",
+    "images": [],
+    "features": [
+      "DigitalSpark\u2122 Technology",
+      "Built-in Sound Effects",
+      "Flexible Installation",
+      "Wescott Mantel Kit Compatible"
+    ],
+    "specs": {
+      "Model": "Inception 36",
+      "Framing Width": "42\"",
+      "Framing Depth": "8-3/4\"",
+      "Framing Height": "34-7/8\"",
+      "BTU/hr Input": "120VAC: 5,000 / 240VAC: 10,000"
+    },
+    "accessories": [],
+    "downloads": [
+      {
+        "type": "brochure",
+        "name": "Electric Fireplace Guide"
+      },
+      {
+        "type": "manual",
+        "name": "Inception 36 Owner's Manual"
+      },
+      {
+        "type": "manual",
+        "name": "Service Manual"
+      },
+      {
+        "type": "cad",
+        "name": "CAD Drawings"
+      },
+      {
+        "type": "bim",
+        "name": "Revit BIM"
+      }
+    ],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/electric/built-in/inception"
+  },
+  {
+    "id": "hng-st-36",
+    "name": "ST-36 See-Through Gas Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "See-Through",
+      "Gas"
+    ],
+    "description": "The ST-36 see-through gas fireplace creates an eye-catching room divider with dual viewing and direct vent technology.",
+    "shortDescription": "Classic see-through gas fireplace room divider",
+    "price": 5577,
+    "image": "/images/products/fireplaces/hng-st-36.jpg",
+    "images": [],
+    "features": [
+      "Two-Sided Viewing",
+      "Direct Vent Technology"
+    ],
+    "specs": {},
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/see-through/st-36-gas-fireplace"
+  },
+  {
+    "id": "hng-escape-insert",
+    "name": "Escape Gas Fireplace Insert",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Insert",
+      "Gas"
+    ],
+    "description": "Transform your existing fireplace with the Escape gas insert, delivering beauty and efficiency with minimal installation hassle.",
+    "shortDescription": "Gas fireplace insert for existing fireplaces",
+    "price": 5520,
+    "image": "/images/products/fireplaces/hng-escape-insert.jpg",
+    "images": [],
+    "features": [
+      "Gas Insert for Existing Fireplaces",
+      "Direct Vent Technology"
+    ],
+    "specs": {},
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/inserts/escape-gas-fireplace-insert"
+  },
+  {
+    "id": "hng-lanai-see-through",
+    "name": "Lanai See-Through Outdoor Gas Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "See-Through",
+      "Gas",
+      "Outdoor"
+    ],
+    "description": "The Lanai See-Through outdoor gas fireplace creates a dramatic two-sided focal point for outdoor living spaces.",
+    "shortDescription": "Outdoor see-through gas fireplace",
+    "price": 5139,
+    "image": "/images/products/fireplaces/hng-lanai-see-through.jpg",
+    "images": [],
+    "features": [
+      "Outdoor Rated",
+      "Two-Sided Viewing"
+    ],
+    "specs": {},
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/outdoor/lanai-see-through-gas-fireplace"
+  },
+  {
+    "id": "hng-corner",
+    "name": "Corner See-Through Gas Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "See-Through",
+      "Gas",
+      "Corner"
+    ],
+    "description": "The Corner see-through gas fireplace maximizes the beauty of a fire from two adjacent rooms with a unique corner installation.",
+    "shortDescription": "Corner-mounted see-through gas fireplace",
+    "price": 5115,
+    "image": "/images/products/fireplaces/hng-corner.jpg",
+    "images": [],
+    "features": [
+      "Corner Installation",
+      "Two-Sided Viewing",
+      "Direct Vent Technology"
+    ],
+    "specs": {},
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/see-through/corner-gas-fireplace"
+  },
+  {
+    "id": "hng-supremex-insert",
+    "name": "SupremeX Gas Fireplace Insert",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Insert",
+      "Gas"
+    ],
+    "description": "The all-new SupremeX gas fireplace insert upgrades your existing fireplace with modern performance and style.",
+    "shortDescription": "New premium gas fireplace insert",
+    "price": 4910,
+    "image": "/images/products/fireplaces/hng-supremex-insert.jpg",
+    "images": [],
+    "features": [
+      "Gas Insert"
+    ],
+    "specs": {},
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/inserts/supreme-x-gas-fireplace-insert"
+  },
+  {
+    "id": "hng-castlewood",
+    "name": "Castlewood Outdoor Open Wood Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Traditional",
+      "Wood",
+      "Outdoor"
+    ],
+    "description": "Make a statement in your outdoor oasis as you enjoy the experience of a large, open hearth outdoor fireplace. The Castlewood fireplace combines a stunning 38-inch-tall firebox \u2013 with no glass \u2013 and safety-ensured brick construction.",
+    "shortDescription": "Impressive outdoor wood fireplace with 38\" firebox",
+    "price": 4708,
+    "image": "/images/products/fireplaces/hng-castlewood.jpg",
+    "images": [],
+    "features": [
+      "Impressive 38-inch-tall Firebox",
+      "No Glass",
+      "Safety-ensured Brick Construction",
+      "Traditional or Herringbone Brick Interior"
+    ],
+    "specs": {
+      "Model": "Castlewood 42\" Outdoor Wood Firebox",
+      "Framing Width": "53-7/8\"",
+      "Framing Depth": "30-1/8\"",
+      "Framing Height": "67-1/4\"",
+      "Viewing Area": "42 x 38 in"
+    },
+    "accessories": [],
+    "downloads": [
+      {
+        "type": "brochure",
+        "name": "Outdoor Lifestyles Brochure"
+      },
+      {
+        "type": "manual",
+        "name": "Castlewood Installation Manual"
+      },
+      {
+        "type": "cad",
+        "name": "CAD Drawings"
+      }
+    ],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/wood/outdoor/castlewood"
+  },
+  {
+    "id": "hng-6k-8k-modern",
+    "name": "6K and 8K Modern Gas Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Traditional",
+      "Gas"
+    ],
+    "description": "The 6K and 8K Modern gas fireplaces offer a clean, modern take on the traditional fireplace with efficient heating and sleek design.",
+    "shortDescription": "Modern gas fireplace with clean design",
+    "price": 4666,
+    "image": "/images/products/fireplaces/hng-6k-8k-modern.jpg",
+    "images": [],
+    "features": [
+      "Modern Design",
+      "Efficient Heating"
+    ],
+    "specs": {},
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/indoor/6k-and-8k-modern"
+  },
+  {
+    "id": "hng-lanai",
+    "name": "Lanai Outdoor Gas Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Traditional",
+      "Gas",
+      "Outdoor"
+    ],
+    "description": "The Lanai outdoor gas fireplace brings warmth and ambiance to your outdoor living space with durable construction and reliable performance.",
+    "shortDescription": "Classic outdoor gas fireplace",
+    "price": 4549,
+    "image": "/images/products/fireplaces/hng-lanai.jpg",
+    "images": [],
+    "features": [
+      "Outdoor Rated"
+    ],
+    "specs": {},
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/outdoor/lanai-gas-fireplace"
+  },
+  {
+    "id": "hng-allusion-edge",
+    "name": "Allusion Edge Built-In Electric Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Linear",
+      "Electric"
+    ],
+    "description": "The Allusion Edge built-in electric fireplace delivers modern linear style with edge-to-edge design and vivid flame effects.",
+    "shortDescription": "Edge-to-edge linear electric fireplace",
+    "price": 3959,
+    "image": "/images/products/fireplaces/hng-allusion-edge.jpg",
+    "images": [],
+    "features": [
+      "Edge-to-Edge Design",
+      "Built-In Installation"
+    ],
+    "specs": {},
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/electric/built-in/allusion-edge"
+  },
+  {
+    "id": "hng-cosmo",
+    "name": "Cosmo Indoor Gas Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Traditional",
+      "Gas"
+    ],
+    "description": "The Cosmo gas fireplace offers versatile design with compact dimensions, making it ideal for a variety of installation scenarios.",
+    "shortDescription": "Versatile compact gas fireplace",
+    "price": 3238,
+    "image": "/images/products/fireplaces/hng-cosmo.jpg",
+    "images": [],
+    "features": [
+      "Compact Design",
+      "Versatile Installation"
+    ],
+    "specs": {},
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/gas/indoor/cosmo-gas-fireplace"
+  },
+  {
+    "id": "hng-triton",
+    "name": "Triton Built-In Electric Fireplace",
+    "brand": "Heat & Glo",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Linear",
+      "Electric"
+    ],
+    "description": "The Triton built-in electric fireplace brings modern linear design with customizable flame effects and efficient supplemental heat.",
+    "shortDescription": "Linear built-in electric fireplace",
+    "price": 3119,
+    "image": "/images/products/fireplaces/hng-triton.jpg",
+    "images": [],
+    "features": [
+      "Built-In Installation",
+      "Customizable Flames"
+    ],
+    "specs": {},
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.heatnglo.com/fireplaces/electric/built-in/triton"
+  },
+  {
+    "id": "htl-crave-see-through",
+    "name": "Crave See-Through Series Gas Fireplace",
+    "brand": "Heatilator",
+    "category": "Fireplaces",
+    "subCategories": [
+      "See-Through",
+      "Gas",
+      "Linear"
+    ],
+    "description": "These Direct Vent gas fireplaces feature multiple upgrade options that let you accent your style and personalize your look. Modern luxury, backed by the #1 preferred brand by builders.",
+    "shortDescription": "Modern luxury see-through gas fireplace with smart controls",
+    "price": 6806,
+    "image": "/images/products/fireplaces/htl-crave-see-through.jpg",
+    "images": [],
+    "features": [
+      "Battery Backup",
+      "IntelliFire Touch\u00ae",
+      "Two-Sided Viewing",
+      "Direct Vent Technology"
+    ],
+    "specs": {
+      "Models": "Crave 36, 48, 60, 72 See-Through",
+      "Framing Depth": "17\"",
+      "BTU/hr Input": "30,000\u201358,000",
+      "Viewing Area": "Varies by model"
+    },
+    "accessories": [],
+    "downloads": [
+      {
+        "type": "manual",
+        "name": "Crave & Crave See-Through Rev C Installation Manual"
+      },
+      {
+        "type": "brochure",
+        "name": "Crave Gas Fireplace Brochure"
+      }
+    ],
+    "sourceUrl": "https://www.heatilator.com/fireplaces/gas/crave-see-through-series-gas-fireplace"
+  },
+  {
+    "id": "htl-pioneer-ii",
+    "name": "Pioneer II EPA Wood Fireplace",
+    "brand": "Heatilator",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Traditional",
+      "Wood"
+    ],
+    "description": "This wood-burning fireplace is EPA-approved, offering a cleaner burn that's better for you and the environment. Bold flames last up to eight hours from just one load of wood.",
+    "shortDescription": "EPA-approved wood fireplace heating up to 2,600 sq ft",
+    "price": 6549,
+    "image": "/images/products/fireplaces/htl-pioneer-ii.jpg",
+    "images": [],
+    "features": [
+      "EPA-Certified",
+      "Smart Burn Technology",
+      "Quadra-Fire Technology",
+      "Heat Zone"
+    ],
+    "specs": {
+      "Model": "Pioneer II",
+      "Heating Capacity": "1,000\u20132,600 sq ft",
+      "Viewing Area": "296 sq in",
+      "Fuel Type": "Wood"
+    },
+    "accessories": [],
+    "downloads": [
+      {
+        "type": "manual",
+        "name": "Pioneer II Installation Manual"
+      },
+      {
+        "type": "brochure",
+        "name": "EPA Wood Fireplace Brochure"
+      }
+    ],
+    "sourceUrl": "https://www.heatilator.com/fireplaces/wood/pioneer-ii"
+  },
+  {
+    "id": "htl-duzy-5",
+    "name": "Duzy 5 Gas Log Set",
+    "brand": "Heatilator",
+    "category": "Gas Logs",
+    "subCategories": [
+      "Vented"
+    ],
+    "description": "The convenience of gas meets the experience of an open-hearth fireplace. Eight hand-painted, ceramic fiber logs are designed to be ultra-realistic \u2013 beautiful with or without a burning fire.",
+    "shortDescription": "8-piece hand-painted vented gas log set",
+    "price": 2028,
+    "image": "/images/products/fireplaces/htl-duzy-5.jpg",
+    "images": [],
+    "features": [
+      "Radiant Heat",
+      "Vented Gas Log Set",
+      "8-piece Hand-painted Logs"
+    ],
+    "specs": {
+      "Log Sizes": "24\" or 30\"",
+      "Fuel Type": "Gas (Natural or Propane)",
+      "Log Material": "Ceramic Fiber"
+    },
+    "accessories": [],
+    "downloads": [
+      {
+        "type": "manual",
+        "name": "Duzy 5 Vented Log Set Installation Manual"
+      }
+    ],
+    "sourceUrl": "https://www.heatilator.com/fireplaces/gas/gas-log-set-collections/indoor/duzy-5"
+  },
+  {
+    "id": "dimplex-ignite-bold-50",
+    "name": "Ignite Bold 50\" Linear Electric Fireplace",
+    "brand": "Dimplex",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Linear",
+      "Electric"
+    ],
+    "description": "Ignite Bold is a linear electric fireplace designed for indoor and outdoor installations, delivering lifelike flames and supplemental heat. Available in sizes from 50\u2013100 inches with patented multi-layered color flame effects.",
+    "shortDescription": "50\" outdoor-certified linear electric fireplace with patented flame tech",
+    "price": 0,
+    "image": "/images/products/fireplaces/dimplex-ignite-bold-50.jpg",
+    "images": [],
+    "features": [
+      "Patented Dimplex flame technology with multi-layered color effects",
+      "Outdoor certified design",
+      "Edge-to-edge glass with removable side panels for front, corner, or bay installation",
+      "Integrated smart technology and built-in timer"
+    ],
+    "specs": {
+      "SKU": "XLF5017-XD",
+      "Voltage": "120/240 V",
+      "BTU": "5,118/8,530",
+      "Adjustable Flame Speed": "Yes",
+      "Adjustable Brightness": "Yes",
+      "Timer": "Yes",
+      "Size": "50\"",
+      "Product Width": "50.55 in",
+      "Product Height": "23.9 in",
+      "Warranty": "5 yr limited",
+      "Power Source": "Electric",
+      "Heat Vent Location": "Front",
+      "Display Type": "LED",
+      "Remote Control": "Yes",
+      "Front Glass Type": "Tempered",
+      "Element Type": "Ceramic"
+    },
+    "accessories": [
+      "Tumbled Glass Ember Bed",
+      "River Rocks Ember Bed",
+      "Clear Acrylic Crystals Medium",
+      "Clear Acrylic Crystals Large"
+    ],
+    "downloads": [
+      {
+        "type": "spec-sheet",
+        "name": "Ignite Bold Series Technical Specifications"
+      },
+      {
+        "type": "manual",
+        "name": "Ignite Bold Series Owners Manual"
+      },
+      {
+        "type": "manual",
+        "name": "Ignite Bold Series Service Manual"
+      },
+      {
+        "type": "brochure",
+        "name": "Ignite Bold Series Sell Sheet"
+      }
+    ],
+    "sourceUrl": "https://www.dimplex.com/en-us/flame/ignite-bold-50-linear-electric-fireplace"
+  },
+  {
+    "id": "dimplex-ignite-bold-60",
+    "name": "Ignite Bold 60\" Linear Electric Fireplace",
+    "brand": "Dimplex",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Linear",
+      "Electric"
+    ],
+    "description": "Ignite Bold 60\" delivers lifelike flames with patented multi-layered color effects in a bold linear design. Outdoor certified with edge-to-edge glass and smart technology integration.",
+    "shortDescription": "60\" outdoor-certified linear electric fireplace",
+    "price": 0,
+    "image": "/images/products/fireplaces/dimplex-ignite-bold-60.jpg",
+    "images": [],
+    "features": [
+      "Patented Dimplex flame technology with multi-layered color effects",
+      "Outdoor certified design",
+      "Edge-to-edge glass with removable side panels",
+      "Integrated smart technology"
+    ],
+    "specs": {},
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.dimplex.com/en-us/flame/ignite-bold-60-linear-electric-fireplace"
+  },
+  {
+    "id": "dimplex-ignite-bold-74",
+    "name": "Ignite Bold 74\" Linear Electric Fireplace",
+    "brand": "Dimplex",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Linear",
+      "Electric"
+    ],
+    "description": "Ignite Bold 74\" delivers lifelike flames with patented multi-layered color effects in a bold linear design. Outdoor certified with edge-to-edge glass and smart technology integration.",
+    "shortDescription": "74\" outdoor-certified linear electric fireplace",
+    "price": 0,
+    "image": "/images/products/fireplaces/dimplex-ignite-bold-74.jpg",
+    "images": [],
+    "features": [
+      "Patented Dimplex flame technology with multi-layered color effects",
+      "Outdoor certified design",
+      "Edge-to-edge glass with removable side panels",
+      "Integrated smart technology"
+    ],
+    "specs": {},
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.dimplex.com/en-us/flame/ignite-bold-74-linear-electric-fireplace"
+  },
+  {
+    "id": "dimplex-ignite-bold-88",
+    "name": "Ignite Bold 88\" Linear Electric Fireplace",
+    "brand": "Dimplex",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Linear",
+      "Electric"
+    ],
+    "description": "Ignite Bold 88\" delivers lifelike flames with patented multi-layered color effects in a bold linear design. Outdoor certified with edge-to-edge glass and smart technology integration.",
+    "shortDescription": "88\" outdoor-certified linear electric fireplace",
+    "price": 0,
+    "image": "/images/products/fireplaces/dimplex-ignite-bold-88.jpg",
+    "images": [],
+    "features": [
+      "Patented Dimplex flame technology with multi-layered color effects",
+      "Outdoor certified design",
+      "Edge-to-edge glass with removable side panels",
+      "Integrated smart technology"
+    ],
+    "specs": {},
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.dimplex.com/en-us/flame/ignite-bold-88-linear-electric-fireplace"
+  },
+  {
+    "id": "dimplex-ignite-bold-100",
+    "name": "Ignite Bold 100\" Linear Electric Fireplace",
+    "brand": "Dimplex",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Linear",
+      "Electric"
+    ],
+    "description": "Ignite Bold 100\" delivers lifelike flames with patented multi-layered color effects in a bold linear design. Outdoor certified with edge-to-edge glass and smart technology integration.",
+    "shortDescription": "100\" outdoor-certified linear electric fireplace",
+    "price": 0,
+    "image": "/images/products/fireplaces/dimplex-ignite-bold-100.jpg",
+    "images": [],
+    "features": [
+      "Patented Dimplex flame technology with multi-layered color effects",
+      "Outdoor certified design",
+      "Edge-to-edge glass with removable side panels",
+      "Integrated smart technology"
+    ],
+    "specs": {},
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.dimplex.com/en-us/flame/ignite-bold-100-linear-electric-fireplace"
+  },
+  {
+    "id": "dimplex-ignite-ultra-50",
+    "name": "Ignite Ultra 50\" Linear Electric Fireplace",
+    "brand": "Dimplex",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Linear",
+      "Electric"
+    ],
+    "description": "Ignite Ultra delivers the modern linear look with an authentic, natural flame experience completely distinct in the market. FlexFlame\u2122 technology lets you personalize flame color, brightness, and style.",
+    "shortDescription": "50\" linear electric fireplace with FlexFlame\u2122 technology",
+    "price": 0,
+    "image": "/images/products/fireplaces/dimplex-ignite-ultra-50.jpg",
+    "images": [],
+    "features": [
+      "FlexFlame\u2122 Technology",
+      "Multi-Fire\u00ae Flame Effect",
+      "Flame Connect App Control",
+      "Personalize flame color, brightness & style"
+    ],
+    "specs": {
+      "Available Sizes": "50\", 60\", 74\", 88\", 100\""
+    },
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.dimplex.com/en-us/flame/electric-fireplaces/ignite-fireplaces/ultra"
+  },
+  {
+    "id": "dimplex-ignite-evolve-50",
+    "name": "Ignite Evolve 50\" Linear Electric Fireplace",
+    "brand": "Dimplex",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Linear",
+      "Electric"
+    ],
+    "description": "Ignite Evolve blends modern edgeless design with lifelike flames and customizable media for a truly immersive experience. Features Ambient Light Sensor and 7-preset multi-layered color effects.",
+    "shortDescription": "50\" edgeless linear electric fireplace with ambient light sensor",
+    "price": 0,
+    "image": "/images/products/fireplaces/dimplex-ignite-evolve-50.jpg",
+    "images": [],
+    "features": [
+      "Ambient Light Sensor",
+      "7-Preset Multi-Layered Color Effects",
+      "Multi-Fire\u00ae Flame Effect",
+      "Flame Connect App Control",
+      "Outdoor Rated (1-yr warranty)"
+    ],
+    "specs": {
+      "Available Sizes": "50\", 60\", 74\", 100\""
+    },
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.dimplex.com/en-us/ignite-evolve"
+  },
+  {
+    "id": "dimplex-ignite-xl-50",
+    "name": "Ignite XL 50\" Linear Electric Fireplace",
+    "brand": "Dimplex",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Linear",
+      "Electric"
+    ],
+    "description": "Ignite XL sets the standard for modern luxury, showcasing a striking edge-to-edge glass design and an unparalleled flame effect. Panoramic frameless design fully recesses into a 2\u00d76 wall.",
+    "shortDescription": "50\" panoramic frameless linear electric fireplace",
+    "price": 0,
+    "image": "/images/products/fireplaces/dimplex-ignite-xl-50.jpg",
+    "images": [],
+    "features": [
+      "Panoramic Frameless Design",
+      "Fully Recessed into 2\u00d76 Wall",
+      "Multi-Fire\u00ae Flame Effect",
+      "Outdoor Rated (1-yr warranty)"
+    ],
+    "specs": {
+      "Available Sizes": "50\", 60\", 74\", 100\""
+    },
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.dimplex.com/en-us/flame/electric-fireplaces/ignite-fireplaces/xl"
+  },
+  {
+    "id": "dimplex-ignite-aspire-30",
+    "name": "Ignite Aspire 30\" Linear Electric Fireplace",
+    "brand": "Dimplex",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Linear",
+      "Electric"
+    ],
+    "description": "Ignite Aspire redefines modern fireplace design with edge-to-edge glass and rhythmic flame effects. Available in compact sizes from 30\" to 48\".",
+    "shortDescription": "Compact linear electric fireplace with rhythmic flame effects",
+    "price": 0,
+    "image": "/images/products/fireplaces/dimplex-ignite-aspire-30.jpg",
+    "images": [],
+    "features": [
+      "Edge-to-Edge Glass",
+      "Rhythmic Flame Effects"
+    ],
+    "specs": {
+      "Available Sizes": "30\", 36\", 42\", 48\""
+    },
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.dimplex.com/en-us/flame/electric-fireplaces/ignite-fireplaces/aspire"
+  },
+  {
+    "id": "dimplex-optimyst-rgb-cassette-20",
+    "name": "Optimyst RGB Cassette 20\" Water Vapor Fireplace",
+    "brand": "Dimplex",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Water Vapor",
+      "Electric"
+    ],
+    "description": "Optimyst Water Vapor Fireplaces deliver the world's most lifelike 3D flame effect using patented vapor technology and LED illumination. The RGB Cassette series offers compact sizes with stunning realism.",
+    "shortDescription": "20\" water vapor fireplace with ultra-realistic 3D flames",
+    "price": 0,
+    "image": "/images/products/fireplaces/dimplex-optimyst-rgb-cassette-20.png",
+    "images": [],
+    "features": [
+      "Patented Water Vapor Technology",
+      "LED Illumination",
+      "Ultra-Realistic 3D Flame Effect"
+    ],
+    "specs": {
+      "Available Sizes": "20\", 40\", 60\""
+    },
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.dimplex.com/en-us/flame/electric-fireplaces/optimyst-water-vapor-fireplaces"
+  },
+  {
+    "id": "dimplex-optimyst-linear-46",
+    "name": "Optimyst Linear 46\" Water Vapor Fireplace",
+    "brand": "Dimplex",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Water Vapor",
+      "Electric",
+      "Linear"
+    ],
+    "description": "The Optimyst Linear delivers a stunning linear water vapor fireplace with the world's most realistic 3D flame effect. Available in 46\", 66\", and 86\" sizes.",
+    "shortDescription": "46\" linear water vapor fireplace",
+    "price": 0,
+    "image": "/images/products/fireplaces/dimplex-optimyst-linear-46.jpg",
+    "images": [],
+    "features": [
+      "Patented Water Vapor Technology",
+      "Linear Design",
+      "Ultra-Realistic 3D Flame Effect"
+    ],
+    "specs": {
+      "Available Sizes": "46\", 66\", 86\""
+    },
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.dimplex.com/en-us/flame/electric-fireplaces/optimyst-water-vapor-fireplaces"
+  },
+  {
+    "id": "dimplex-revillusion-herringbone-30",
+    "name": "Revillusion 30\" Electric Firebox - Herringbone",
+    "brand": "Dimplex",
+    "category": "Fireplaces",
+    "subCategories": [
+      "Firebox",
+      "Electric"
+    ],
+    "description": "Revillusion Electric Fireplaces blend timeless design with patented flame technology to deliver an authentic, full-depth firebox experience. Herringbone finish.",
+    "shortDescription": "30\" electric firebox with herringbone finish and patented flame tech",
+    "price": 0,
+    "image": "/images/products/fireplaces/dimplex-revillusion-herringbone-30.jpg",
+    "images": [],
+    "features": [
+      "Patented Flame Technology",
+      "Full-Depth Firebox Experience",
+      "Herringbone Finish"
+    ],
+    "specs": {
+      "Available Sizes": "24\", 30\", 36\", 36\" Portrait, 42\"",
+      "Available Finishes": "Herringbone, Weathered Concrete, Neutral Brick, Black"
+    },
+    "accessories": [],
+    "downloads": [],
+    "sourceUrl": "https://www.dimplex.com/en-us/flame/electric-fireplaces/revillusion-fireplaces"
+  }
+]

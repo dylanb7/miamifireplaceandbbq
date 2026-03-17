@@ -14,11 +14,11 @@ export function BrandFilter({ availableBrands, selectedBrand, getBrandLink, clas
     if (availableBrands.length === 0) return null;
 
     // Filter our known brands to only those available in the current category
-    const activeBrands = brands.filter(b => availableBrands.includes(b.brandName || b.name));
+    const activeBrands = brands.filter(b => availableBrands.includes(b.name));
 
     // Some brands might be in the products data but not in our featured brands list with logos.
     // We should include them as text-only buttons.
-    const knownBrandNames = brands.map(b => b.brandName || b.name);
+    const knownBrandNames = brands.map(b => b.name);
     const unknownBrands = availableBrands.filter(b => !knownBrandNames.includes(b) && b !== "Other");
 
     if (activeBrands.length === 0 && unknownBrands.length === 0) return null;
@@ -40,16 +40,17 @@ export function BrandFilter({ availableBrands, selectedBrand, getBrandLink, clas
             <div className="flex overflow-x-auto pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 hide-scrollbar gap-3">
                 {/* Known brands with logos */}
                 {activeBrands.map((brand) => {
-                    const isSelected = selectedBrand === (brand.brandName || brand.name);
+                    const isSelected = selectedBrand === brand.name;
                     return (
                         <Link
                             key={brand.name}
-                            {...getBrandLink(isSelected ? undefined : (brand.brandName || brand.name))}
+                            {...getBrandLink(isSelected ? undefined : brand.name)}
                             className={cn(
-                                "group flex-shrink-0 flex items-center justify-center p-1 rounded-xl border-2 transition-all bg-card w-[120px] h-[72px] overflow-hidden",
+                                "group flex-shrink-0 flex items-center justify-center p-1 rounded-xl border-2 transition-all w-[120px] h-[72px] overflow-hidden",
                                 isSelected
                                     ? "border-primary shadow-sm ring-1 ring-primary/20"
-                                    : "border-transparent hover:border-primary/30 hover:bg-accent"
+                                    : "border-transparent hover:border-primary/30",
+                                brand.whiteBackgroundOnly !== false && !brand.invertInDarkMode ? "bg-white" : "bg-card hover:bg-accent"
                             )}
                         >
                             <div className="w-full h-full flex items-center justify-center p-1">
@@ -58,7 +59,8 @@ export function BrandFilter({ availableBrands, selectedBrand, getBrandLink, clas
                                     alt={brand.name}
                                     className={cn(
                                         "max-w-full max-h-full object-contain transition-all",
-                                        isSelected ? "grayscale-0 opacity-100" : "grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100"
+                                        isSelected ? "grayscale-0 opacity-100" : "grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100",
+                                        brand.invertInDarkMode && "dark:brightness-0 dark:invert"
                                     )}
                                 />
                             </div>

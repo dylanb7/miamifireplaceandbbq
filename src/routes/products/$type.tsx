@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Outlet, useMatchRoute } from '@tanstack/react-router'
 import { ProductsBrowser } from '@/components/products/ProductsBrowser'
 import { getProductsByCategory } from '@/data/product-service'
 import { promotions } from '@/data/promotions'
@@ -42,6 +42,12 @@ export const Route = createFileRoute('/products/$type')({
 
 function ProductTypePage() {
     const { products, promotions, typeSlug } = Route.useLoaderData()
+    const matchRoute = useMatchRoute()
+    const isExact = matchRoute({ to: '/products/$type', fuzzy: false })
+
+    if (!isExact) {
+        return <Outlet />
+    }
 
     return (
         <PageLayout>

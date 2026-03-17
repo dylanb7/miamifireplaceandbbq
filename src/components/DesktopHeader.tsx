@@ -59,15 +59,15 @@ export const DesktopHeader: React.FC<{ visible: boolean }> = ({ visible }) => {
                 <div className="container mx-auto flex justify-between items-center max-w-full">
                     <div className="flex items-center gap-6">
                         <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors flex items-center gap-1.5">
-                            <MapPin size={14} /> 12345 S Dixie Hwy, Miami, FL 33156
+                            <MapPin size={14} /> 9621 S Dixie Hwy, Miami, FL 33156
                         </a>
                     </div>
                     <div className="flex items-center gap-6">
                         <a href="mailto:sales@miamifireplace.com" className="hover:text-primary-foreground transition-colors flex items-center gap-1.5 hidden lg:flex">
                             sales@miamifireplace.com
                         </a>
-                        <a href="tel:3055550123" className="hover:text-primary-foreground transition-colors flex items-center gap-1.5 text-primary font-semibold">
-                            <Phone size={14} /> (305) 555-0123
+                        <a href="tel:3056663312" className="hover:text-primary-foreground transition-colors flex items-center gap-1.5 text-primary font-semibold">
+                            <Phone size={14} /> (305) 666-3312
                         </a>
                     </div>
                 </div>

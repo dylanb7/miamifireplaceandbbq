@@ -4,6 +4,13 @@ import { BrandSection } from "./BrandSection";
 import { useParams } from '@tanstack/react-router';
 import { PromotionBanner } from "../PromotionBanner";
 import { BrandFilter } from "./BrandFilter";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const PRODUCT_TYPES: (ProductType | "All")[] = ["All", "Outdoor Kitchens", "Grills", "Fireplaces", "Gas Logs"];
 
@@ -33,6 +40,7 @@ import { FloatingToc } from './FloatingToc';
 export const ProductsBrowser: React.FC<ProductsBrowserProps> = ({ className, products, promotions, initialType, initialBrand }) => {
     // ... (rest of the state setup)
     const [selectedType, setSelectedType] = useState<ProductType | "All">(initialType ? deslugify(initialType) : "All");
+    const [selectedSubCategories, setSelectedSubCategories] = useState<string[]>([]);
 
     useEffect(() => {
         if (initialType) {
@@ -40,12 +48,14 @@ export const ProductsBrowser: React.FC<ProductsBrowserProps> = ({ className, pro
         }
     }, [initialType]);
 
-    const brandSlugMatch = (name: string, targetSlug: string) => name?.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '') === targetSlug;
-
     const params: any = useParams({ strict: false });
-
-
     const effectiveBrand = initialBrand || params.brand;
+
+    useEffect(() => {
+        setSelectedSubCategories([]);
+    }, [selectedType, effectiveBrand]);
+
+    const brandSlugMatch = (name: string, targetSlug: string) => name?.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '') === targetSlug;
 
 
 
@@ -54,11 +64,48 @@ export const ProductsBrowser: React.FC<ProductsBrowserProps> = ({ className, pro
         return products.filter(p => p.category === selectedType);
     }, [selectedType, products]);
 
-
     const displayedProducts = useMemo(() => {
-        if (!effectiveBrand || effectiveBrand === 'all') return typeFilteredProducts;
-        return typeFilteredProducts.filter(p => p.brand && brandSlugMatch(p.brand, effectiveBrand));
+        let base = typeFilteredProducts;
+        if (effectiveBrand && effectiveBrand !== 'all') {
+            base = base.filter(p => p.brand && brandSlugMatch(p.brand, effectiveBrand));
+        }
+        if (selectedSubCategories.length > 0) {
+            base = base.filter(p => 
+                selectedSubCategories.every(cat => p.subCategories && p.subCategories.includes(cat))
+            );
+        }
+        return base;
+    }, [typeFilteredProducts, effectiveBrand, selectedSubCategories]);
+
+    const availableSubCategories = useMemo(() => {
+        const categories = new Set<string>();
+        const baseForSubCats = effectiveBrand && effectiveBrand !== 'all' 
+            ? typeFilteredProducts.filter(p => p.brand && brandSlugMatch(p.brand, effectiveBrand)) 
+            : typeFilteredProducts;
+
+        baseForSubCats.forEach(p => {
+            if (p.subCategories) {
+                p.subCategories.forEach(c => categories.add(c));
+            }
+        });
+        return Array.from(categories).sort();
     }, [typeFilteredProducts, effectiveBrand]);
+
+    const groupedSubCategories = useMemo(() => {
+        const FUEL_TYPES = ['Gas', 'Electric', 'Charcoal', 'Wood', 'Pellet', 'Water Vapor'];
+        const STYLES = ['Built-in', 'Cart', 'Portable', 'Inserts', 'Outdoor', 'Linear', 'Log Sets', 'See-Through', 'Traditional', 'Insert', 'Corner', 'Firebox', 'Three-Sided', 'Indoor/Outdoor', 'Vented'];
+
+        const groups: { label: string, options: string[] }[] = [];
+        const fuels = availableSubCategories.filter(c => FUEL_TYPES.includes(c));
+        const styles = availableSubCategories.filter(c => STYLES.includes(c));
+        const others = availableSubCategories.filter(c => !FUEL_TYPES.includes(c) && !STYLES.includes(c));
+
+        if (fuels.length > 1) groups.push({ label: "Fuel Type", options: fuels });
+        if (styles.length > 1) groups.push({ label: "Style", options: styles });
+        if (others.length > 1) groups.push({ label: "Other", options: others });
+        
+        return groups;
+    }, [availableSubCategories]);
 
     // Group logic
     const isAllMode = selectedType === "All";
@@ -93,12 +140,11 @@ export const ProductsBrowser: React.FC<ProductsBrowserProps> = ({ className, pro
                 return Object.entries(brandGroups).map(([brand, prods]) => ({
                     title: brand,
                     products: prods,
-                    isTypeGroup: false,
-                    forceGrid: true
+                    isTypeGroup: false
                 }));
             }
 
-            const denseGroups: { title: string, products: Product[], isTypeGroup: boolean, forceGrid?: boolean }[] = [];
+            const denseGroups: { title: string, products: Product[], isTypeGroup: boolean }[] = [];
             const sparseProducts: Product[] = [];
 
             Object.entries(brandGroups).forEach(([brand, prods]) => {
@@ -124,8 +170,7 @@ export const ProductsBrowser: React.FC<ProductsBrowserProps> = ({ className, pro
                 denseGroups.push({
                     title: title,
                     products: sparseProducts,
-                    isTypeGroup: false,
-                    forceGrid: true // Sparse/catch-all groups look better as grids
+                    isTypeGroup: false
                 });
             }
 
@@ -194,7 +239,7 @@ export const ProductsBrowser: React.FC<ProductsBrowserProps> = ({ className, pro
                                 return (
                                     <BrandFilter
                                         availableBrands={availableBrands}
-                                        selectedBrand={effectiveBrand && effectiveBrand !== 'all' ? displayedProducts[0]?.brand : undefined}
+                                        selectedBrand={effectiveBrand && effectiveBrand !== 'all' ? (typeFilteredProducts.find(p => p.brand && brandSlugMatch(p.brand, effectiveBrand))?.brand) : undefined}
                                         getBrandLink={(brandName) => {
                                             if (brandName) {
                                                 return {
@@ -214,6 +259,57 @@ export const ProductsBrowser: React.FC<ProductsBrowserProps> = ({ className, pro
                                     />
                                 );
                             })()}
+
+                            {/* Subcategory Filter Row */}
+                            {groupedSubCategories.length > 0 && (
+                                <div className="w-full relative mb-4 flex items-center gap-3">
+                                    <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider shrink-0">Filter by:</h3>
+                                    <div className="flex flex-wrap gap-2 items-center">
+                                        {groupedSubCategories.map((group) => {
+                                            const selectedInGroup = group.options.find(opt => selectedSubCategories.includes(opt));
+                                            
+                                            return (
+                                                <DropdownMenu key={group.label}>
+                                                    <DropdownMenuTrigger className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors border flex items-center gap-2 outline-none ${selectedInGroup ? 'bg-primary text-primary-foreground border-primary' : 'bg-background hover:bg-accent border-border text-foreground'}`}>
+                                                        {selectedInGroup ? selectedInGroup : group.label}
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                                                    </DropdownMenuTrigger>
+                                                    <DropdownMenuContent align="start" className="w-48">
+                                                        <DropdownMenuItem 
+                                                            onClick={() => setSelectedSubCategories(prev => prev.filter(c => !group.options.includes(c)))}
+                                                            className={!selectedInGroup ? "font-semibold" : ""}
+                                                        >
+                                                            All {group.label}{group.label === "Other" ? " Types" : "s"}
+                                                        </DropdownMenuItem>
+                                                        <DropdownMenuSeparator />
+                                                        {group.options.map(cat => (
+                                                            <DropdownMenuItem 
+                                                                key={cat} 
+                                                                onClick={() => setSelectedSubCategories(prev => {
+                                                                    const newSelections = prev.filter(c => !group.options.includes(c));
+                                                                    return [...newSelections, cat];
+                                                                })}
+                                                                className={selectedInGroup === cat ? "bg-accent font-semibold" : ""}
+                                                            >
+                                                                {cat}
+                                                            </DropdownMenuItem>
+                                                        ))}
+                                                    </DropdownMenuContent>
+                                                </DropdownMenu>
+                                            );
+                                        })}
+                                        
+                                        {selectedSubCategories.length > 0 && (
+                                            <button 
+                                                onClick={() => setSelectedSubCategories([])}
+                                                className="text-sm font-medium text-muted-foreground hover:text-foreground underline underline-offset-4 ml-2"
+                                            >
+                                                Clear All
+                                            </button>
+                                        )}
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
 

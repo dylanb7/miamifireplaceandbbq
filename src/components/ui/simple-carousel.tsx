@@ -8,9 +8,10 @@ interface SimpleCarouselProps {
     className?: string; // Container class
     scrollContainerClassName?: string; // Scroll container specific class
     scrollAmount?: number;
+    rows?: 1 | 2;
 }
 
-export const SimpleCarousel: React.FC<SimpleCarouselProps> = ({ children, className, scrollContainerClassName, scrollAmount = 300 }) => {
+export const SimpleCarousel: React.FC<SimpleCarouselProps> = ({ children, className, scrollContainerClassName, scrollAmount = 300, rows = 1 }) => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(false);
@@ -65,7 +66,9 @@ export const SimpleCarousel: React.FC<SimpleCarouselProps> = ({ children, classN
                 ref={scrollContainerRef}
                 onScroll={checkScroll}
                 className={cn(
-                    "flex w-full overflow-x-auto gap-4 py-4 px-4 md:px-0 scroll-pl-12 snap-x snap-mandatory scrollbar-hide",
+                    "w-full overflow-x-auto gap-4 py-4 px-4 md:px-0 scroll-pl-12 snap-x snap-mandatory scrollbar-hide",
+                    rows === 1 ? "flex" : "grid grid-flow-col auto-cols-max",
+                    rows === 2 ? "grid-rows-2" : "",
                     scrollContainerClassName
                 )}
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
