@@ -57,7 +57,7 @@ export function ContactUs({ className, interestOptions, productOptions, productI
         validators: {
             onSubmit: contactSchema.safeParse,
         },
-        onSubmit: async ({ value }) => {
+        onSubmit: async ({ value: _value }) => {
             window.alert("Form submitted successfully!");
             form.reset();
         },
@@ -204,12 +204,13 @@ export function ContactUs({ className, interestOptions, productOptions, productI
                                     />
                                 )}
 
-                                <form.Subscribe
+                                 <form.Subscribe
                                     selector={(state) => state.values.interest}
                                     children={(interest) => {
                                         const currentProductOptions = interest && productOptions ? productOptions[interest] : undefined;
 
-                                        if (!currentProductOptions) return null;
+                                        // Only show brand selection if there are multiple brands to choose from
+                                        if (!currentProductOptions || currentProductOptions.length <= 1) return null;
 
                                         return (
                                             <form.Field
@@ -221,8 +222,9 @@ export function ContactUs({ className, interestOptions, productOptions, productI
                                                                 className="w-full"
                                                                 value={field.state.value}
                                                                 onValueChange={field.handleChange}
+                                                                placeholder="Select Brand"
                                                                 options={[
-                                                                    { value: "all", label: "All" },
+                                                                    { value: "all", label: "All Brands" },
                                                                     ...currentProductOptions.map((option) => ({
                                                                         value: option.value,
                                                                         label: option.label,

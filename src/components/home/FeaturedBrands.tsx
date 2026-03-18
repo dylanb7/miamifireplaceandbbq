@@ -12,9 +12,9 @@ export function FeaturedBrands() {
         <section className="py-20 bg-background border-t">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold tracking-tight mb-4">Our Premium Partners</h2>
+                    <h2 className="text-3xl font-bold tracking-tight mb-4">Brands We Carry</h2>
                     <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                        We work with the industry's leading brands to bring you the best in outdoor living.
+                        We work with the industry's leading brands to bring you the best in class products.
                     </p>
                 </div>
 

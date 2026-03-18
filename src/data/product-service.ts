@@ -1,20 +1,58 @@
 import { Product } from './types';
 
-// Dynamic import map
-const categoryMap: Record<string, () => Promise<Product[]>> = {
-    'grill': () => import('./products/grills.json').then(m => m.default as unknown as Product[]),
-    'grills': () => import('./products/grills.json').then(m => m.default as unknown as Product[]),
-    'fireplace': () => import('./products/fireplaces.json').then(m => m.default as unknown as Product[]),
-    'fireplaces': () => import('./products/fireplaces.json').then(m => m.default as unknown as Product[]),
-    'gas-log': () => import('./products/gas-logs.json').then(m => m.default as unknown as Product[]),
-    'gas-logs': () => import('./products/gas-logs.json').then(m => m.default as unknown as Product[]),
-    'outdoor-kitchen': () => import('./products/outdoor-kitchens.json').then(m => m.default as unknown as Product[]),
-    'outdoor-kitchens': () => import('./products/outdoor-kitchens.json').then(m => m.default as unknown as Product[]),
+/**
+ * DATA SOURCE SWITCHER
+ * 
+ * Change this value to swap the fireplace data displayed on the site:
+ *   'legacy'  → Original fireplaces.json (Dimplex old catalog)
+ *   'scraped' → fireplaces-new.json (Tier 1 scraped: Heat & Glo, Heatilator, Dimplex)
+ *   'luxe'    → fireplaces-luxe.json (702 products from Hearth LuX: Ortal, Regency, Astria, etc.)
+ */
+export type DataSource = 'legacy' | 'scraped' | 'luxe';
+export const ACTIVE_DATA_SOURCE: DataSource = 'scraped';
+
+// ─── Loader Maps ────────────────────────────────────
+
+const fireplaceLoaders: Record<DataSource, () => Promise<Product[]>> = {
+    legacy: () => Promise.resolve([]),
+    scraped: () => import('./products/fireplaces-new.json').then(m => m.default as unknown as Product[]),
+    luxe: () => Promise.resolve([]),
 };
 
+const grillLoaders: Record<DataSource, () => Promise<Product[]>> = {
+    legacy: () => import('./products/grills.json').then(m => m.default as unknown as Product[]),
+    scraped: () => import('./products/grills.json').then(m => m.default as unknown as Product[]),
+    luxe: () => Promise.resolve([]),
+};
+
+const gasLogLoaders: Record<DataSource, () => Promise<Product[]>> = {
+    legacy: () => import('./products/gas-logs.json').then(m => m.default as unknown as Product[]),
+    scraped: () => import('./products/gas-logs.json').then(m => m.default as unknown as Product[]),
+    luxe: () => Promise.resolve([]),
+};
+
+const outdoorKitchenLoaders: Record<DataSource, () => Promise<Product[]>> = {
+    legacy: () => Promise.resolve([]),
+    scraped: () => import('./products/outdoor-kitchens-new.json').then(m => m.default as unknown as Product[]),
+    luxe: () => Promise.resolve([]),
+};
+
+// ─── Category Router ────────────────────────────────
+
+const categoryMap: Record<string, () => Promise<Product[]>> = {
+    'grill': () => grillLoaders[ACTIVE_DATA_SOURCE](),
+    'grills': () => grillLoaders[ACTIVE_DATA_SOURCE](),
+    'fireplace': () => fireplaceLoaders[ACTIVE_DATA_SOURCE](),
+    'fireplaces': () => fireplaceLoaders[ACTIVE_DATA_SOURCE](),
+    'gas-log': () => gasLogLoaders[ACTIVE_DATA_SOURCE](),
+    'gas-logs': () => gasLogLoaders[ACTIVE_DATA_SOURCE](),
+    'outdoor-kitchen': () => outdoorKitchenLoaders[ACTIVE_DATA_SOURCE](),
+    'outdoor-kitchens': () => outdoorKitchenLoaders[ACTIVE_DATA_SOURCE](),
+};
+
+// ─── Public API (unchanged) ─────────────────────────
+
 export const getProductsByCategory = async (categorySlug: string): Promise<Product[]> => {
-    // Normalize slug (e.g. 'grills' -> 'grills')
-    // We accept singular or plural
     const loader = categoryMap[categorySlug.toLowerCase()];
     if (!loader) {
         console.warn(`No products found for category: ${categorySlug}`);
@@ -36,13 +74,6 @@ export const getAllProducts = async (): Promise<Product[]> => {
 };
 
 export const getProductById = async (id: string): Promise<Product | undefined> => {
-    // Ideally we'd know the category, but if not we search all.
-    // For performance, if the ID contains the category hint, use it.
-    // But currently IDs are not standard. Titles are used as IDs often? 
-    // In our scraped data, we don't have an ID field, we have titles. 
-    // Let's assume we search all for now or the caller passes a category.
-
     const all = await getAllProducts();
-    // Use title as ID match for now if no specific ID field
     return all.find(p => p.id === id || p.name === id);
 };

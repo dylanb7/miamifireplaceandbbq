@@ -17,7 +17,7 @@ export const MobileHeader: React.FC<{ visible: boolean }> = ({ visible }) => {
             {/* Top Contact Bar */}
             <div className="bg-neutral text-neutral-content py-2 px-4 text-xs font-medium tracking-wide flex justify-center border-b border-primary-foreground/10">
                 <a href="tel:3056663312" className="hover:text-primary-foreground transition-colors flex items-center gap-1 text-primary font-semibold">
-                    <Phone size={12} /> Call Us Today: (305) 666-3312
+                    <Phone size={12} /> Call Us: (305) 666-3312
                 </a>
             </div>
 

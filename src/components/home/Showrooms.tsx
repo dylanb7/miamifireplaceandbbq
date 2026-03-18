@@ -21,11 +21,11 @@ export function Showrooms() {
                             </h3>
                             <div className="space-y-4 text-muted-foreground">
                                 <p className="text-lg text-foreground font-medium">Miami Fireplace & BBQ</p>
-                                <p>12345 S Dixie Hwy</p>
+                                <p>9621 S Dixie Hwy</p>
                                 <p>Miami, FL 33156</p>
                                 <div className="pt-2">
                                     <Button className="w-full sm:w-auto" asChild>
-                                        <a href="https://www.google.com/maps/dir/?api=1&destination=12345+S+Dixie+Hwy,+Miami,+FL+33156" target="_blank" rel="noopener noreferrer">
+                                        <a href="https://www.google.com/maps/dir/?api=1&destination=9621+S+Dixie+Hwy,+Miami,+FL+33156" target="_blank" rel="noopener noreferrer">
                                             Get Directions
                                         </a>
                                     </Button>
@@ -41,7 +41,7 @@ export function Showrooms() {
                                     <Phone className="text-primary h-4 w-4" /> Contact
                                 </h3>
                                 <div className="space-y-2 text-muted-foreground">
-                                    <p><a href="tel:3055550123" className="hover:text-primary transition-colors">(305) 555-0123</a></p>
+                                    <p><a href="tel:+13056663312" className="hover:text-primary transition-colors">(305) 666-3312</a></p>
                                     <p><a href="mailto:sales@miamifireplace.com" className="hover:text-primary transition-colors">sales@miamifireplace.com</a></p>
                                 </div>
                             </div>
@@ -51,13 +51,10 @@ export function Showrooms() {
                                 </h3>
                                 <div className="space-y-2 text-muted-foreground text-sm">
                                     <div className="flex justify-between">
-                                        <span>Mon - Fri</span>
+                                        <span>Mon - Sat</span>
                                         <span className="font-medium text-foreground">9:00 AM - 6:00 PM</span>
                                     </div>
-                                    <div className="flex justify-between">
-                                        <span>Saturday</span>
-                                        <span className="font-medium text-foreground">10:00 AM - 5:00 PM</span>
-                                    </div>
+
                                     <div className="flex justify-between">
                                         <span>Sunday</span>
                                         <span className="font-medium text-foreground">Closed</span>
@@ -68,16 +65,54 @@ export function Showrooms() {
                     </div>
 
                     {/* Map Placeholder / Image */}
-                    <div className="h-full min-h-[400px] bg-muted rounded-2xl overflow-hidden relative group">
-                        {/* Replace with actual map embed or showroom image */}
-                        <div className="absolute inset-0 bg-neutral-200 flex items-center justify-center">
-                            <img
-                                src="https://placehold.co/800x600?text=Showroom+Map+Placeholder"
-                                alt="Map Location"
-                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                            />
+                    <div className="bg-background rounded-2xl p-8 shadow-sm border space-y-8">
+                        <div>
+                            <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+                                <MapPin className="text-primary h-5 w-5" /> Davie Location
+                            </h3>
+                            <div className="space-y-4 text-muted-foreground">
+                                <p className="text-lg text-foreground font-medium">Miami Fireplace & BBQ</p>
+                                <p>7080 W State Rd 84</p>
+                                <p>Davie, FL 33317</p>
+                                <div className="pt-2">
+                                    <Button className="w-full sm:w-auto" asChild>
+                                        <a href="https://www.google.com/maps/dir/?api=1&destination=7080+W+State+Rd+84+Davie,+FL+33317" target="_blank" rel="noopener noreferrer">
+                                            Get Directions
+                                        </a>
+                                    </Button>
+                                </div>
+                            </div>
                         </div>
-                        <div className="absolute inset-0 pointer-events-none border border-black/5 rounded-2xl" />
+
+                        <div className="h-px bg-border" />
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                            <div>
+                                <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                                    <Phone className="text-primary h-4 w-4" /> Contact
+                                </h3>
+                                <div className="space-y-2 text-muted-foreground">
+                                    <p><a href="tel:+13056663312" className="hover:text-primary transition-colors">(305) 666-3312</a></p>
+                                    <p><a href="mailto:sales@miamifireplace.com" className="hover:text-primary transition-colors">sales@miamifireplace.com</a></p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                                    <Clock className="text-primary h-4 w-4" /> Hours
+                                </h3>
+                                <div className="space-y-2 text-muted-foreground text-sm">
+                                    <div className="flex justify-between">
+                                        <span>Mon - Sat</span>
+                                        <span className="font-medium text-foreground">9:00 AM - 6:00 PM</span>
+                                    </div>
+
+                                    <div className="flex justify-between">
+                                        <span>Sunday</span>
+                                        <span className="font-medium text-foreground">Closed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

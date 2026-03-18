@@ -1,0 +1,510 @@
+[
+  {
+    "id": "cd-coastal-series",
+    "name": "Coastal Series",
+    "description": "Challenger Designs Coastal outdoor kitchens are built with rust-resistant, powder-coated aluminum and are ready for your ceramic, gas, or electric grill right out of the box.",
+    "shortDescription": "Modular, weather-tight aluminum cabinetry for a custom layout.",
+    "brand": "Challenger Designs",
+    "category": "Outdoor Kitchens",
+    "price": 0,
+    "image": "/images/products/outdoor-kitchens/coastal_files_CHALLENGER-DESIGNS-Kitchen-Coastal.jpg",
+    "images": [
+      {
+        "url": "/images/products/outdoor-kitchens/coastal_files_CHALLENGER-DESIGNS-Kitchen-Coastal.jpg",
+        "alt": "Coastal Series Main"
+      },
+      {
+        "url": "/images/products/outdoor-kitchens/coastal_files_cd-kitchen-coastal-64-kddw.jpg",
+        "alt": "Coastal 64 KDDW"
+      },
+      {
+        "url": "/images/products/outdoor-kitchens/coastal_files_cd-kitchen-coastal-67.25-gws.jpg",
+        "alt": "Coastal 67.25 GWS"
+      },
+      {
+        "url": "/images/products/outdoor-kitchens/coastal_files_cd-kitchen-coastal-73.5-grw.jpg",
+        "alt": "Coastal 73.5 GRW"
+      },
+      {
+        "url": "/images/products/outdoor-kitchens/coastal_files_cd-kitchen-coastal-76.25-bddg.jpg",
+        "alt": "Coastal 76.25 BDDG"
+      },
+      {
+        "url": "/images/products/outdoor-kitchens/coastal_files_cd-kitchen-coastal-79.25-le.jpg",
+        "alt": "Coastal 79.25 LE"
+      },
+      {
+        "url": "/images/products/outdoor-kitchens/coastal_files_cd-kitchen-coastal-80.875-wgdds.jpg",
+        "alt": "Coastal 80.875 WGDDS"
+      }
+    ],
+    "features": [
+      "Rust-resistant, powder-coated aluminum",
+      "Ready for ceramic, gas, or electric grills",
+      "Weather-tight cabinetry",
+      "Modular components for custom layouts",
+      "Made in the USA"
+    ],
+    "misc": [
+      {
+        "name": "Available Models & Components",
+        "content": [
+          "Coastal 64 KDDW",
+          "Coastal 67.25 GWS",
+          "Coastal 67.25 GWDD",
+          "Coastal 67.25 DDGW",
+          "Coastal 73.5 GRW",
+          "Coastal 76.25 BDDG",
+          "Coastal 76.25 GDDB",
+          "Coastal 76.5 GRW",
+          "Coastal 79.25 LE",
+          "Coastal 80.875 WGDDS",
+          "Coastal 80.875 WGDDDD",
+          "Coastal 83 KDG",
+          "Coastal 83 GDK",
+          "Coastal 88.25 GDDG",
+          "Coastal 90.125 WGRS",
+          "Coastal 93.125 WGRS",
+          "Coastal 90.125 WGRDD",
+          "Coastal 93.125 WGRDD",
+          "Custom Outdoor Kitchen"
+        ]
+      },
+      {
+        "name": "Options",
+        "content": [
+          "On-demand Water System (available for selected units)",
+          "Casters (on most units)",
+          "Shaker Door Style",
+          "Color Matched Toe Kick Kit"
+        ]
+      }
+    ],
+    "downloads": [
+      {
+        "type": "PDF",
+        "name": "CD Outdoor Products Brochure",
+        "url": "https://challengerdesignsllc.com/wp-content/uploads/2023/06/CD_Outdoor_Products_Brochure_Spreads_f.pdf"
+      },
+      {
+        "type": "PDF",
+        "name": "2025 Coastal Catalog",
+        "url": "https://challengerdesignsllc.com/wp-content/uploads/2026/02/2025-Coastal-EXPANDED__Catalog.pdf"
+      }
+    ],
+    "models": [
+      {
+        "id": "cd-coastal-64-kddw",
+        "name": "Coastal 64 KDDW",
+        "description": "64\" stand-alone outdoor kitchen with ceramic grill base.",
+        "features": [
+          "Ceramic grill base",
+          "Door drawer with adjustable shelf",
+          "Waste bin slide out"
+        ],
+        "image": "/images/products/outdoor-kitchens/coastal_files_cd-kitchen-coastal-64-kddw.jpg"
+      },
+      {
+        "id": "cd-coastal-67-gws",
+        "name": "Coastal 67.25 GWS",
+        "description": "67.25\" kitchen with sink and gas grill base.",
+        "features": [
+          "Fits most 32\" grills",
+          "15\" SS drop-in sink",
+          "Waste bin with drawer"
+        ],
+        "image": "/images/products/outdoor-kitchens/coastal_files_cd-kitchen-coastal-67.25-gws.jpg"
+      },
+      {
+        "id": "cd-coastal-73-grw",
+        "name": "Coastal 73.5 GRW",
+        "description": "73.5\" kitchen with refrigerator opening.",
+        "features": [
+          "21.5\" refrigerator opening",
+          "Gas grill base"
+        ],
+        "image": "/images/products/outdoor-kitchens/coastal_files_cd-kitchen-coastal-73.5-grw.jpg"
+      },
+      {
+        "id": "cd-coastal-79-le",
+        "name": "Coastal 79.25 LE",
+        "description": "Accommodates up to 48\" grills.",
+        "features": [
+          "48\" gas grill base",
+          "Drawer door base",
+          "Pull out waste bin"
+        ],
+        "image": "/images/products/outdoor-kitchens/coastal_files_cd-kitchen-coastal-79.25-le.jpg"
+      },
+      {
+        "id": "cd-coastal-80-wgdds",
+        "name": "Coastal 80.875 WGDDS",
+        "description": "80.875\" full kitchen with sink.",
+        "features": [
+          "Standard sink",
+          "Waste bin with drawer"
+        ],
+        "image": "/images/products/outdoor-kitchens/coastal_files_cd-kitchen-coastal-80.875-wgdds.jpg"
+      }
+    ],
+    "colorways": [
+      {
+        "name": "Cabinet Color Options",
+        "options": [
+          {
+            "name": "Anthracite",
+            "color": "#374151"
+          },
+          {
+            "name": "Cappuccino",
+            "color": "#a89276"
+          },
+          {
+            "name": "Textured Gray Glimmer",
+            "color": "#9ca3af"
+          },
+          {
+            "name": "Speckled Walnut",
+            "color": "#78350f"
+          },
+          {
+            "name": "Textured White",
+            "color": "#f9fafb"
+          },
+          {
+            "name": "Textured Black",
+            "color": "#1a1a1a"
+          },
+          {
+            "name": "Sandy Shore",
+            "color": "#e5e7eb"
+          },
+          {
+            "name": "Graphite",
+            "color": "#4b5563"
+          }
+        ]
+      },
+      {
+        "name": "Countertop Options",
+        "options": [
+          {
+            "name": "Brushed Stainless Steel",
+            "color": "#e5e7eb"
+          },
+          {
+            "name": "Copper Vein",
+            "image": "/images/products/outdoor-kitchens/cascade_files_CD25_Colors_Copper-Vein.jpg"
+          },
+          {
+            "name": "Silver Vein",
+            "image": "/images/products/outdoor-kitchens/cascade_files_CD25_Colors_Silver-Vein.jpg"
+          },
+          {
+            "name": "Speckled Walnut",
+            "image": "/images/products/outdoor-kitchens/cascade_files_CD25_Colors_Speckled-Walnut.jpg"
+          },
+          {
+            "name": "Textured Black",
+            "image": "/images/products/outdoor-kitchens/cascade_files_CD25_Colors_Black.jpg"
+          },
+          {
+            "name": "White Vein",
+            "image": "/images/products/outdoor-kitchens/cascade_files_CD25_Colors_White-Vein.jpg"
+          }
+        ]
+      }
+    ],
+    "gallery": [
+      "/images/products/outdoor-kitchens/coastal_files_CHALLENGER-DESIGNS-Kitchen-Coastal.jpg",
+      "/images/products/outdoor-kitchens/coastal_files_cd-kitchen-coastal-64-kddw.jpg",
+      "/images/products/outdoor-kitchens/coastal_files_cd-kitchen-coastal-67.25-gws.jpg",
+      "/images/products/outdoor-kitchens/coastal_files_cd-kitchen-coastal-73.5-grw.jpg",
+      "/images/products/outdoor-kitchens/coastal_files_cd-kitchen-coastal-80.875-wgdds.jpg"
+    ]
+  },
+  {
+    "id": "cd-canyon-series",
+    "name": "Canyon Series",
+    "description": "Introducing weather-resistant, affordable, upscale inserts to build into your own application, such as a stucco or brick island.",
+    "shortDescription": "Robust, integrated framing and storage utility inserts.",
+    "brand": "Challenger Designs",
+    "category": "Outdoor Kitchens",
+    "price": 0,
+    "image": "/images/products/outdoor-kitchens/canyon_files_CD-gallery-canyon-header-image.jpg",
+    "images": [
+      {
+        "url": "/images/products/outdoor-kitchens/canyon_files_CD-gallery-canyon-header-image.jpg",
+        "alt": "Canyon Series"
+      },
+      {
+        "url": "/images/products/outdoor-kitchens/canyon_files_rendering-canyon-BIN_PULLOUT.jpg",
+        "alt": "Canyon Base Unit"
+      }
+    ],
+    "features": [
+      "Fully enclosed weather-resistant insert",
+      "Waste bin pullout mechanism",
+      "Gasketed doors",
+      "Finished interior",
+      "Delivered fully assembled"
+    ],
+    "misc": [
+      {
+        "name": "Available Framing & Options",
+        "content": [
+          "Canyon Waste Bin Pullout",
+          "Canyon Waste Bin Pullout + Drawer",
+          "Canyon LP Pullout",
+          "Canyon Single Combo",
+          "Canyon Double Combo",
+          "Canyon 4 Drawer",
+          "Canyon Single Door",
+          "Canyon Paper Towel Holder"
+        ]
+      }
+    ],
+    "downloads": [
+      {
+        "type": "PDF",
+        "name": "CD Outdoor Products Brochure",
+        "url": "https://challengerdesignsllc.com/wp-content/uploads/2023/06/CD_Outdoor_Products_Brochure_Spreads_f.pdf"
+      },
+      {
+        "type": "PDF",
+        "name": "2025 Canyon Catalog",
+        "url": "https://challengerdesignsllc.com/wp-content/uploads/2025/05/2025-Canyon__Catalog.pdf"
+      }
+    ],
+    "models": [
+      {
+        "id": "canyon-waste-bin",
+        "name": "Canyon Waste Bin Pullout",
+        "description": "Fully enclosed weather-resistant insert.",
+        "features": [
+          "Gasketed doors",
+          "Finished interior"
+        ],
+        "image": "/images/products/outdoor-kitchens/canyon_files_rendering-canyon-BIN_PULLOUT.jpg"
+      },
+      {
+        "id": "canyon-lp-pullout",
+        "name": "Canyon LP Pullout",
+        "description": "LP propane tank pullout storage.",
+        "features": [
+          "Easy tank access",
+          "Fully enclosed"
+        ],
+        "image": "/images/products/outdoor-kitchens/canyon_files_rendering-canyon-LP_PULLOUT.jpg"
+      },
+      {
+        "id": "canyon-single-combo",
+        "name": "Canyon Single Combo",
+        "description": "Single door + drawer combo.",
+        "features": [
+          "Adjustable shelf",
+          "Full extension slides"
+        ],
+        "image": "/images/products/outdoor-kitchens/canyon_files_rendering-canyon-SINGLE_COMBO.jpg"
+      },
+      {
+        "id": "canyon-double-combo",
+        "name": "Canyon Double Combo",
+        "description": "Double door + drawer combo.",
+        "features": [
+          "30\", 36\", or 40\" widths",
+          "Adjustable shelves"
+        ],
+        "image": "/images/products/outdoor-kitchens/canyon_files_rendering-canyon-DOUBLE_COMBO.jpg"
+      },
+      {
+        "id": "canyon-4-drawer",
+        "name": "Canyon 4 Drawer",
+        "description": "Four-drawer configuration.",
+        "features": [
+          "Textured black drawer boxes"
+        ],
+        "image": "/images/products/outdoor-kitchens/canyon_files_rendering-canyon-4_DRAWER.jpg"
+      },
+      {
+        "id": "canyon-under-grill",
+        "name": "Canyon Under Grill Cabinet",
+        "description": "Fits beneath built-in grills.",
+        "features": [
+          "30\", 32\", 36\", or 40\" widths"
+        ],
+        "image": "/images/products/outdoor-kitchens/canyon_files_rendering-canyon-UNDER_GRILL_CABINET.jpg"
+      }
+    ],
+    "gallery": [
+      "/images/products/outdoor-kitchens/canyon_files_CD-gallery-canyon-header-image.jpg",
+      "/images/products/outdoor-kitchens/canyon_files_rendering-canyon-BIN_PULLOUT.jpg",
+      "/images/products/outdoor-kitchens/canyon_files_rendering-canyon-LP_PULLOUT.jpg",
+      "/images/products/outdoor-kitchens/canyon_files_rendering-canyon-SINGLE_COMBO.jpg",
+      "/images/products/outdoor-kitchens/canyon_files_rendering-canyon-DOUBLE_COMBO.jpg",
+      "/images/products/outdoor-kitchens/canyon_files_rendering-canyon-4_DRAWER.jpg",
+      "/images/products/outdoor-kitchens/canyon_files_rendering-canyon-UNDER_GRILL_CABINET.jpg"
+    ]
+  },
+  {
+    "id": "cd-cascade-series",
+    "name": "Cascade Series",
+    "description": "Introducing a sleek, modern outdoor kitchen collection from Challenger Designs, with a style refined from contemporary furniture. With stunning new base color options, sizing options, and our legendary quality and price point, this is an outdoor kitchen you’ll want to build a whole entertaining space around.",
+    "shortDescription": "Sleek, standalone cart options and essential cabinetry.",
+    "brand": "Challenger Designs",
+    "category": "Outdoor Kitchens",
+    "price": 0,
+    "image": "/images/products/outdoor-kitchens/Cascade-Group.jpg",
+    "images": [
+      {
+        "url": "/images/products/outdoor-kitchens/cd-cascade-grill-82-official.jpg",
+        "alt": "Cascade Grill Island 82.5"
+      },
+      {
+        "url": "/images/products/outdoor-kitchens/cd-cascade-grill-65-official.jpg",
+        "alt": "Cascade Grill Island 65"
+      },
+      {
+        "url": "/images/products/outdoor-kitchens/cd-cascade-bar-official.jpg",
+        "alt": "Cascade Bar Island"
+      },
+      {
+        "url": "/images/products/outdoor-kitchens/cd-cascade-two-door-official.jpg",
+        "alt": "Cascade Storage Cabinet"
+      }
+    ],
+    "features": [
+      "Rigid aluminum construction — will not rot, warp, or rust",
+      "Powder-coated weather-resistant finish",
+      "Fingerprint resistant",
+      "Low maintenance",
+      "Made in the USA"
+    ],
+    "misc": [
+      {
+        "name": "Available Models",
+        "content": [
+          "Cascade Bar Island",
+          "Cascade Grill Island 65",
+          "Cascade Grill Island 82.5",
+          "Cascade Storage Cabinet"
+        ]
+      }
+    ],
+    "downloads": [
+      {
+        "type": "PDF",
+        "name": "2025 New Items Flyer",
+        "url": "https://challengerdesignsllc.com/wp-content/uploads/2025/05/2025-new-items-flyer.pdf"
+      },
+      {
+        "type": "PDF",
+        "name": "2025 Cascade Catalog",
+        "url": "https://challengerdesignsllc.com/wp-content/uploads/2025/05/2025-Cascade__Catalog.pdf"
+      }
+    ],
+    "models": [
+      {
+        "id": "cd-cascade-bar",
+        "name": "Cascade Bar Island",
+        "description": "60.5\" bar island with seating capacity.",
+        "features": [
+          "Aluminum construction",
+          "Seats up to 3 people",
+          "Modern Cascade design"
+        ],
+        "image": "/images/products/outdoor-kitchens/cd-cascade-bar-official.jpg"
+      },
+      {
+        "id": "cd-cascade-65",
+        "name": "Cascade Grill Island 65",
+        "description": "65\" modern grill island with contemporary design.",
+        "features": [
+          "Contemporary furniture-inspired design",
+          "Exclusive base color options",
+          "Choice of countertop finishes"
+        ],
+        "image": "/images/products/outdoor-kitchens/cd-cascade-grill-65-official.jpg"
+      },
+      {
+        "id": "cd-cascade-82",
+        "name": "Cascade Grill Island 82.5",
+        "description": "82.5\" expansive grill island for ultimate entertaining.",
+        "features": [
+          "Wide variety of base colors",
+          "Legendary quality and durability",
+          "Furniture-grade aesthetics"
+        ],
+        "image": "/images/products/outdoor-kitchens/cd-cascade-grill-82-official.jpg"
+      },
+      {
+        "id": "cd-cascade-two-door",
+        "name": "Cascade Storage Cabinet",
+        "description": "Two-door storage unit with modern aesthetics.",
+        "features": [
+          "Weather-tight storage",
+          "Pairs with grill islands",
+          "Contemporary design"
+        ],
+        "image": "/images/products/outdoor-kitchens/cd-cascade-two-door-official.jpg"
+      }
+    ],
+    "colorways": [
+      {
+        "name": "Base Color Options",
+        "options": [
+          {
+            "name": "Malachite",
+            "color": "#134e4a"
+          },
+          {
+            "name": "Sapphire",
+            "color": "#1e3a8a"
+          },
+          {
+            "name": "Fossil",
+            "color": "#78716c"
+          },
+          {
+            "name": "Bronze",
+            "color": "#7c2d12"
+          }
+        ]
+      },
+      {
+        "name": "Countertop Options",
+        "options": [
+          {
+            "name": "Textured Black",
+            "image": "/images/products/outdoor-kitchens/cascade_files_CD25_Colors_Black.jpg"
+          },
+          {
+            "name": "Silver Vein",
+            "image": "/images/products/outdoor-kitchens/cascade_files_CD25_Colors_Silver-Vein.jpg"
+          },
+          {
+            "name": "Copper Vein",
+            "image": "/images/products/outdoor-kitchens/cascade_files_CD25_Colors_Copper-Vein.jpg"
+          },
+          {
+            "name": "Speckled Walnut",
+            "image": "/images/products/outdoor-kitchens/cascade_files_CD25_Colors_Speckled-Walnut.jpg"
+          },
+          {
+            "name": "White Vein",
+            "image": "/images/products/outdoor-kitchens/cascade_files_CD25_Colors_White-Vein.jpg"
+          }
+        ]
+      }
+    ],
+    "gallery": [
+      "/images/products/outdoor-kitchens/cd-cascade-grill-82-official.jpg",
+      "/images/products/outdoor-kitchens/cd-cascade-grill-65-official.jpg",
+      "/images/products/outdoor-kitchens/cd-cascade-bar-official.jpg",
+      "/images/products/outdoor-kitchens/cd-cascade-two-door-official.jpg",
+      "/images/products/outdoor-kitchens/cascade_files_cascade-detail-1.jpg",
+      "/images/products/outdoor-kitchens/cascade_files_cascade-detail-2.jpg",
+      "/images/products/outdoor-kitchens/cascade_files_cascade-detail-3.jpg"
+    ]
+  }
+]

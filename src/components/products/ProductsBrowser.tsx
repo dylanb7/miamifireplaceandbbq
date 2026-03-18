@@ -15,6 +15,7 @@ import {
 const PRODUCT_TYPES: (ProductType | "All")[] = ["All", "Outdoor Kitchens", "Grills", "Fireplaces", "Gas Logs"];
 
 import { slugify } from '../../lib/utils';
+import { brands } from '@/data/brands';
 
 const deslugify = (slug: string): ProductType | "All" => {
     if (!slug || slug === 'all') return "All";
@@ -55,7 +56,22 @@ export const ProductsBrowser: React.FC<ProductsBrowserProps> = ({ className, pro
         setSelectedSubCategories([]);
     }, [selectedType, effectiveBrand]);
 
-    const brandSlugMatch = (name: string, targetSlug: string) => name?.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '') === targetSlug;
+    const brandSlugMatch = (name: string, targetSlug: string) => {
+        if (!name) return false;
+        const slug = (s: string) => s.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+        
+        // Try matching against product brand name
+        if (slug(name) === targetSlug) return true;
+        
+        // Also try matching against canonical brand data
+        const brands_data = brands.find(b => b.brandName === name || b.name === name);
+        if (brands_data) {
+            if (slug(brands_data.name) === targetSlug) return true;
+            if (brands_data.brandName && slug(brands_data.brandName) === targetSlug) return true;
+        }
+        
+        return false;
+    };
 
 
 

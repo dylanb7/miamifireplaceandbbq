@@ -1,7 +1,8 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 import { BrandSection } from '@/components/products/BrandSection'
 import { getAllProducts } from '@/data/product-service'
-import { getBrandData } from '@/data/brands'
+import { getBrandData, brands } from '@/data/brands'
+
 import { promotions } from '@/data/promotions'
 import PageLayout from '@/components/PageLayout'
 import { generateSeo } from '@/lib/seo'
@@ -13,22 +14,40 @@ export const Route = createFileRoute('/brands/$brandId')({
     loader: async ({ params }) => {
         const products = await getAllProducts();
 
-        const allBrands = Array.from(new Set(products.map(p => p.brand)));
-        const brandName = allBrands.find(b => b && slugify(b) === params.brandId);
+        // 1. Find the canonical brand data first
+        const brandMetadata = brands.find(b => 
+            slugify(b.name) === params.brandId || 
+            (b.brandName && slugify(b.brandName) === params.brandId)
+        );
 
-        if (!brandName) {
-            throw notFound();
+        if (!brandMetadata) {
+            // Fallback: try to find any brand in products that matches
+            const allProductBrands = Array.from(new Set(products.map(p => p.brand).filter(Boolean))) as string[];
+            const productBrandName = allProductBrands.find(b => slugify(b) === params.brandId);
+            
+            if (!productBrandName) {
+                throw notFound();
+            }
+
+            return {
+                brandName: productBrandName,
+                brandMetadata: getBrandData(productBrandName),
+                brandProducts: products.filter(p => p.brand === productBrandName),
+                promotions
+            };
         }
 
-        const brandMetadata = getBrandData(brandName);
+        // 2. Identify all related brand strings (long name and short name)
+        const relatedNames = [brandMetadata.name, brandMetadata.brandName].filter(Boolean) as string[];
 
         return {
-            brandName,
+            brandName: brandMetadata.name,
             brandMetadata,
-            brandProducts: products.filter(p => p.brand === brandName),
+            brandProducts: products.filter(p => p.brand && relatedNames.includes(p.brand)),
             promotions
         }
     },
+
     head: ({ loaderData }) => {
         if (!loaderData) return { meta: [] };
         const { brandName, brandProducts } = loaderData;

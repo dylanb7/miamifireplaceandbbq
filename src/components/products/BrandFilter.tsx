@@ -14,14 +14,18 @@ export function BrandFilter({ availableBrands, selectedBrand, getBrandLink, clas
     if (availableBrands.length === 0) return null;
 
     // Filter our known brands to only those available in the current category
-    const activeBrands = brands.filter(b => availableBrands.includes(b.name));
+    const activeBrands = brands.filter(b => 
+        availableBrands.includes(b.name) || 
+        (b.brandName && availableBrands.includes(b.brandName))
+    );
 
     // Some brands might be in the products data but not in our featured brands list with logos.
     // We should include them as text-only buttons.
-    const knownBrandNames = brands.map(b => b.name);
+    const knownBrandNames = brands.flatMap(b => [b.name, b.brandName].filter(Boolean) as string[]);
     const unknownBrands = availableBrands.filter(b => !knownBrandNames.includes(b) && b !== "Other");
 
     if (activeBrands.length === 0 && unknownBrands.length === 0) return null;
+
 
     return (
         <div className={cn("w-full overflow-hidden relative", className)}>

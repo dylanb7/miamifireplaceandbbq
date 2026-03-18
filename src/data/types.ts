@@ -15,8 +15,21 @@ export interface Product {
     subCategories?: string[];
     misc?: { name: string; content: string[] }[];
     gallery?: string[];
-    downloads?: { type: string; name: string }[];
+    downloads?: { type: string; name: string; url?: string }[];
     sourceUrl?: string;
+    colorways?: {
+        name: string;
+        options: { name: string; image?: string; color?: string }[];
+    }[];
+    models?: {
+        id: string;
+        name: string;
+        description?: string;
+        features?: string[];
+        specs?: Record<string, string>;
+        image?: string;
+        images?: { url: string; alt?: string }[];
+    }[];
 }
 
 export interface ProductDetails {

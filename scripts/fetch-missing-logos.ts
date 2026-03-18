@@ -49,7 +49,7 @@ async function fetchLogos() {
             }
             await page.close();
         } catch (error) {
-            console.error(`Error processing ${brand.name}:`, error.message);
+            //console.error(`Error processing ${brand.name}:`, error.message);
         }
     }
 

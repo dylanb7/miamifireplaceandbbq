@@ -37,22 +37,15 @@ export const brands: BrandData[] = [
         websiteUrl: "https://www.traeger.com/",
         whiteBackgroundOnly: true
     },
-    {
-        name: "Napoleon",
-        logo: "/brand-logos/napoleon.png",
-        tagline: "Built Different.",
-        description: "An industry leader with over 20 years of experience, Napoleon is renowned for its high quality, advanced jet engine ignition technologies, and the iconic Sizzle Zone. Built different means built better.",
-        websiteUrl: "https://www.napoleon.com/en/us/grills",
-        invertInDarkMode: true
-    },
-    {
+
+    /*{
         name: "Blaze",
         logo: "/brand-logos/Blaze_Logo_071522.avif",
         tagline: "Effortless by design, engineered for life.",
         description: "Blaze Grills was born from a shared passion for outdoor living, designed to offer high-quality, durable outdoor cooking products without the luxury price tag. Sleek aesthetics backed by best-in-class warranties.",
         websiteUrl: "https://www.blazegrills.com/",
         whiteBackgroundOnly: true
-    },
+    },*/
     {
         name: "Fire Magic Grills",
         brandName: "Fire Magic",
@@ -80,22 +73,22 @@ export const brands: BrandData[] = [
         websiteUrl: "https://www.americanoutdoorgrill.com/",
         whiteBackgroundOnly: true
     },
-    {
+    /*{
         name: "Blackstone",
         logo: "/brand-logos/blackstone.avif",
         tagline: "Taste the Griddle Life",
         description: "Since introducing their iconic 36\" Griddle in 2008, Blackstone has revolutionized outdoor cooking. Built from solid rolled steel, they are designed versatile enough to let you Cook Anything, Anytime, Anywhere®.",
         websiteUrl: "https://blackstoneproducts.com/",
         whiteBackgroundOnly: true
-    },
-    {
+    },*/
+    /*{
         name: "Charlie",
         logo: "/brand-logos/Charlie.avif",
         tagline: "The pinnacle of British outdoor cooking",
         description: "A professional-grade, all-in-one Charcoal BBQ, Smoker, and Pizza Oven. Proudly made in Britain from solid stainless steel, Charlie Oven is designed to make achieving restaurant-quality food effortless and sustainable.",
         websiteUrl: "https://charlieoven.com/",
         whiteBackgroundOnly: true
-    },
+    },*/
     {
         name: "MHP Grills",
         logo: "/brand-logos/mhp-grills-logo.webp",
@@ -177,7 +170,7 @@ export const brands: BrandData[] = [
         websiteUrl: "https://www.townandcountryfireplaces.com/",
         invertInDarkMode: true
     },
-    {
+    /*{
         name: "American Fyre Designs",
         brandName: "AFD",
         logo: "/brand-logos/AFD_Logo_Full-Color_for-Dark-Backgrounds.png",
@@ -185,7 +178,16 @@ export const brands: BrandData[] = [
         description: "Crafted from innovative Glass Fiber Reinforced Concrete (GFRC), American Fyre Designs products provide the perfect focal point for any outdoor living area. Manufactured in the USA by RH Peterson, they offer a wide collection of luxury fire tables, fire falls, and exterior fireplaces.",
         websiteUrl: "https://americanfyredesigns.com/",
         whiteBackgroundOnly: false
-    }
+    },*/
+    {
+        name: "Challenger Designs",
+        logo: "/brand-logos/Challenger-Designs-logo-narrow.png",
+        tagline: "Refined Style. Unmatched Durability.",
+        description: "Challenger Designs specializes in premium outdoor kitchen cabinetry and accessories. Known for their durable aluminum construction, innovative features, and modular designs, they create kitchens that are as beautiful as they are functional.",
+        websiteUrl: "https://challengerdesignsllc.com/",
+        whiteBackgroundOnly: true
+    },
+
 ];
 
 // Helper to reliably map any product brand string onto rich brand data

@@ -16,8 +16,8 @@ export function Footer({ showContactForm = true }: FooterProps) {
                     <div className={`${showContactForm ? 'lg:col-span-2' : 'lg:col-span-2'} grid md:grid-cols-2 gap-8`}>
                         <div className="md:col-span-2 mb-4">
                             <Logo variant="sheet" />
-                            <h2 className="text-2xl font-bold mt-4 mb-2">Ready to relax? Visit us today.</h2>
-                            <p className="text-muted-foreground max-w-prose">
+
+                            <p className="text-muted-foreground mt-4 max-w-prose">
                                 Experience our premium collection of outdoor kitchens and grills in person.
                                 Our experts are here to help you design your perfect backyard oasis.
                             </p>

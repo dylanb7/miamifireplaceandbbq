@@ -14,3 +14,10 @@ todos.json
 
 # Local Netlify folder
 .netlify
+
+# Website cleanup
+scripts/
+src/data/products/archives/
+test-*.js
+.cta.json
+audit-results.txt
