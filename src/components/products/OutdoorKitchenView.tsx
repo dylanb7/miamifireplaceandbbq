@@ -30,31 +30,34 @@ export function OutdoorKitchen({ product }: { product: Product }) {
     return (
         <div className="flex flex-col w-full min-h-screen pt-[104px]">
 
-            <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh] bg-black">
+            <div className="relative w-full min-h-[65vh] md:min-h-0 md:h-[60vh] lg:h-[70vh] bg-black flex flex-col">
                 <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover opacity-80"
+                    className="absolute inset-0 w-full h-full object-cover opacity-80"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end pt-16 pb-16 px-6 md:px-12 lg:px-24">
-                    <Badge className="w-fit mb-4 bg-white/20 hover:bg-white/30 text-white backdrop-blur-md border-0">{product.brand}</Badge>
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 shadow-sm">{product.name}</h1>
-                    <p className="text-lg md:text-xl text-white/90 max-w-3xl drop-shadow-md">
-                        {product.description}
-                    </p>
-                    <div className="mt-8 flex gap-4">
-                        <Button size="lg" className="bg-white text-black hover:bg-white/90 font-semibold shadow-xl" asChild>
-                            <Link to="/contact" search={{ productId: product.id }}>
-                                Inquire Now
-                            </Link>
-                        </Button>
+                <div className="relative flex-1 bg-gradient-to-t from-black/90 via-black/40 to-transparent md:from-black/80 md:via-black/20 flex flex-col pt-6 pb-12 px-6 md:px-12 lg:px-24">
+                    {/* Top Row: Back button */}
+                    <div className="mb-auto pb-12 md:pb-8">
+                        <Link to="/products/$type" params={{ type: slugify(product.category) }} className="inline-flex items-center gap-2 text-white hover:text-white/80 bg-black/20 hover:bg-black/40 backdrop-blur-md px-4 py-2 rounded-full transition-all">
+                            <ArrowLeft size={16} /> <span className="hidden sm:inline">Back to</span> Outdoor Kitchens
+                        </Link>
                     </div>
-                </div>
-                {/* Back button overlay */}
-                <div className="absolute top-6 left-6 md:left-12 z-10">
-                    <Link to="/products/$type" params={{ type: slugify(product.category) }} className="flex items-center gap-2 text-white hover:text-white/80 bg-black/20 hover:bg-black/40 backdrop-blur-md px-4 py-2 rounded-full transition-all">
-                        <ArrowLeft size={16} /> Outdoor Kitchens
-                    </Link>
+
+                    <div className="flex flex-col items-start mt-auto w-full">
+                        <Badge className="w-fit mb-3 bg-white/20 hover:bg-white/30 text-white backdrop-blur-md border border-white/10 shadow-sm">{product.brand}</Badge>
+                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-3 drop-shadow-lg">{product.name}</h1>
+                        <p className="text-base sm:text-lg md:text-xl text-white/95 max-w-3xl drop-shadow-md leading-relaxed">
+                            {product.description}
+                        </p>
+                        <div className="mt-6 flex w-full md:w-auto gap-4">
+                            <Button size="lg" className="bg-white hover:bg-white/90 text-black font-semibold shadow-xl w-full sm:w-auto" asChild>
+                                <Link to="/contact" search={{ productId: product.id }}>
+                                    Inquire Now
+                                </Link>
+                            </Button>
+                        </div>
+                    </div>
                 </div>
             </div>
 

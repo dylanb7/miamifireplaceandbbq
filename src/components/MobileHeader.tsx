@@ -135,15 +135,15 @@ export const MobileHeader: React.FC<{ visible: boolean }> = ({ visible }) => {
                                 <div className="p-6 border-t border-border bg-muted/20">
                                     <div className="flex flex-col gap-4">
                                         <div className="flex justify-center gap-6">
-                                            <a href="tel:+13056663312" className="p-3 bg-secondary rounded-full hover:bg-primary hover:text-primary-foreground transition-colors group">
+                                            <a href="tel:+13056663312" className="p-3 bg-primary/10 text-primary border border-primary/20 shadow-sm rounded-full hover:bg-primary hover:text-primary-foreground hover:shadow-md transition-all duration-300 group">
                                                 <Phone size={24} className="group-hover:scale-110 transition-transform" />
                                                 <span className="sr-only">Call Us</span>
                                             </a>
-                                            <a href="#" className="p-3 bg-secondary rounded-full hover:bg-primary hover:text-primary-foreground transition-colors group">
+                                            <a href="#" className="p-3 bg-primary/10 text-primary border border-primary/20 shadow-sm rounded-full hover:bg-primary hover:text-primary-foreground hover:shadow-md transition-all duration-300 group">
                                                 <Facebook size={24} className="group-hover:scale-110 transition-transform" />
                                                 <span className="sr-only">Facebook</span>
                                             </a>
-                                            <a href="https://www.instagram.com/miami_fireplaces_and_bbq" className="p-3 bg-secondary rounded-full hover:bg-primary hover:text-primary-foreground transition-colors group">
+                                            <a href="https://www.instagram.com/miami_fireplaces_and_bbq" className="p-3 bg-primary/10 text-primary border border-primary/20 shadow-sm rounded-full hover:bg-primary hover:text-primary-foreground hover:shadow-md transition-all duration-300 group">
                                                 <Instagram size={24} className="group-hover:scale-110 transition-transform" />
                                                 <span className="sr-only">Instagram</span>
                                             </a>

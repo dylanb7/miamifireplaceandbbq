@@ -1,6 +1,6 @@
 import { brands } from "@/data/brands";
 import { cn } from "@/lib/utils";
-
+import { SimpleCarousel } from "@/components/ui/simple-carousel";
 import { Link } from "@tanstack/react-router";
 
 interface BrandFilterProps {
@@ -28,20 +28,24 @@ export function BrandFilter({ availableBrands, selectedBrand, getBrandLink, clas
 
 
     return (
-        <div className={cn("w-full overflow-hidden relative", className)}>
-            <div className="flex w-full items-center mb-3">
+        <div className={cn("w-full relative", className)}>
+            <div className="flex w-full items-center justify-between border-b pb-2 mb-4">
                 <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Filter by Brand</h3>
                 {selectedBrand && (
                     <Link
                         {...getBrandLink(undefined)}
-                        className="ml-auto text-sm text-primary hover:underline"
+                        className="text-sm font-medium text-muted-foreground hover:text-foreground hover:underline"
                     >
                         Clear Filter
                     </Link>
                 )}
             </div>
 
-            <div className="flex overflow-x-auto pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 hide-scrollbar gap-3">
+            <SimpleCarousel 
+                minimalArrows
+                className="-mx-4 md:mx-0 w-[calc(100%+2rem)] md:w-full" 
+                scrollContainerClassName="px-4 md:px-0 gap-3 pb-2"
+            >
                 {/* Known brands with logos */}
                 {activeBrands.map((brand) => {
                     const isSelected = selectedBrand === brand.name;
@@ -50,7 +54,7 @@ export function BrandFilter({ availableBrands, selectedBrand, getBrandLink, clas
                             key={brand.name}
                             {...getBrandLink(isSelected ? undefined : brand.name)}
                             className={cn(
-                                "group flex-shrink-0 flex items-center justify-center p-1 rounded-xl border-2 transition-all w-[120px] h-[72px] overflow-hidden",
+                                "group shrink-0 flex items-center justify-center p-1 rounded-xl border-2 transition-all w-[120px] h-[72px] overflow-hidden snap-start",
                                 isSelected
                                     ? "border-primary shadow-sm ring-1 ring-primary/20"
                                     : "border-transparent hover:border-primary/30",
@@ -80,7 +84,7 @@ export function BrandFilter({ availableBrands, selectedBrand, getBrandLink, clas
                             key={brandName}
                             {...getBrandLink(isSelected ? undefined : brandName)}
                             className={cn(
-                                "flex-shrink-0 flex items-center justify-center px-4 py-2 rounded-xl border-2 transition-all font-medium whitespace-nowrap h-[72px]",
+                                "shrink-0 flex items-center justify-center px-4 py-2 rounded-xl border-2 transition-all font-medium whitespace-nowrap h-[72px] snap-start",
                                 isSelected
                                     ? "border-primary bg-primary/10 text-primary"
                                     : "border-border hover:border-primary/50 bg-card text-foreground"
@@ -90,7 +94,7 @@ export function BrandFilter({ availableBrands, selectedBrand, getBrandLink, clas
                         </Link>
                     )
                 })}
-            </div>
+            </SimpleCarousel>
         </div>
     );
 }

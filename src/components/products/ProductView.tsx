@@ -133,61 +133,61 @@ export function ProductView({ product, info, relatedProducts, promotions }: Prod
 
             {/* Bottom Section: Tabs for Deep Dive */}
             {hasAnyTabs && (
-                <Tabs defaultValue={defaultTab} className="w-full">
-                    <div className="flex justify-center md:justify-start mb-8 overflow-x-auto pb-2 no-scrollbar">
-                        <TabsList className="inline-flex h-auto p-1.5 bg-muted/50 rounded-2xl gap-1.5 border border-border/40 backdrop-blur-sm">
+                <Tabs key={product.id} defaultValue={defaultTab} className="w-full">
+                    <div className="flex justify-center md:justify-start w-full mb-8 pb-2">
+                        <TabsList className="inline-flex flex-wrap items-center justify-center md:justify-start h-auto p-1.5 bg-muted/50 rounded-2xl gap-1.5 border border-border/40 backdrop-blur-sm">
                             {hasFeatures && (
                                 <TabsTrigger
                                     value="features"
-                                    className="rounded-xl px-6 py-2.5 text-sm font-semibold transition-all data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:shadow-md hover:bg-background/40 flex items-center gap-2"
+                                    className="flex-1 md:flex-none justify-center rounded-xl px-4 md:px-6 py-2.5 text-sm font-semibold transition-all data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:shadow-md hover:bg-background/40 flex items-center gap-2"
                                 >
                                     <ListChecks className="w-4 h-4" />
-                                    Features
+                                    <span className="truncate">Features</span>
                                 </TabsTrigger>
                             )}
                             {hasAccessories && (
                                 <TabsTrigger
                                     value="accessories"
-                                    className="rounded-xl px-6 py-2.5 text-sm font-semibold transition-all data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:shadow-md hover:bg-background/40 flex items-center gap-2"
+                                    className="flex-1 md:flex-none justify-center rounded-xl px-4 md:px-6 py-2.5 text-sm font-semibold transition-all data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:shadow-md hover:bg-background/40 flex items-center gap-2"
                                 >
                                     <Package className="w-4 h-4" />
-                                    Accessories
+                                    <span className="truncate">Accessories</span>
                                 </TabsTrigger>
                             )}
                             {hasSpecs && (
                                 <TabsTrigger
                                     value="specs"
-                                    className="rounded-xl px-6 py-2.5 text-sm font-semibold transition-all data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:shadow-md hover:bg-background/40 flex items-center gap-2"
+                                    className="flex-1 md:flex-none justify-center rounded-xl px-4 md:px-6 py-2.5 text-sm font-semibold transition-all data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:shadow-md hover:bg-background/40 flex items-center gap-2"
                                 >
                                     <Settings2 className="w-4 h-4" />
-                                    Specifications
+                                    <span className="truncate">Specifications</span>
                                 </TabsTrigger>
                             )}
                             {hasDetails && (
                                 <TabsTrigger
                                     value="details"
-                                    className="rounded-xl px-6 py-2.5 text-sm font-semibold transition-all data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:shadow-md hover:bg-background/40 flex items-center gap-2"
+                                    className="flex-1 md:flex-none justify-center rounded-xl px-4 md:px-6 py-2.5 text-sm font-semibold transition-all data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:shadow-md hover:bg-background/40 flex items-center gap-2"
                                 >
                                     <Info className="w-4 h-4" />
-                                    Details
+                                    <span className="truncate">Details</span>
                                 </TabsTrigger>
                             )}
                             {hasVideo && (
                                 <TabsTrigger
                                     value="video"
-                                    className="rounded-xl px-6 py-2.5 text-sm font-semibold transition-all data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:shadow-md hover:bg-background/40 flex items-center gap-2"
+                                    className="flex-1 md:flex-none justify-center rounded-xl px-4 md:px-6 py-2.5 text-sm font-semibold transition-all data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:shadow-md hover:bg-background/40 flex items-center gap-2"
                                 >
                                     <PlayCircle className="w-4 h-4" />
-                                    Video
+                                    <span className="truncate">Video</span>
                                 </TabsTrigger>
                             )}
                             {hasDownloads && (
                                 <TabsTrigger
                                     value="downloads"
-                                    className="rounded-xl px-6 py-2.5 text-sm font-semibold transition-all data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:shadow-md hover:bg-background/40 flex items-center gap-2"
+                                    className="flex-1 md:flex-none justify-center rounded-xl px-4 md:px-6 py-2.5 text-sm font-semibold transition-all data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:shadow-md hover:bg-background/40 flex items-center gap-2"
                                 >
                                     <DownloadIcon className="w-4 h-4" />
-                                    Downloads
+                                    <span className="truncate">Downloads</span>
                                 </TabsTrigger>
                             )}
                         </TabsList>

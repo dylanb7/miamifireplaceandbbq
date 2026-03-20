@@ -3,11 +3,12 @@ import { cn } from "@/lib/utils"
 
 interface DropdownMenuProps {
   children: React.ReactNode
+  align?: "start" | "end"
 }
 
-function DropdownMenu({ children }: DropdownMenuProps) {
+function DropdownMenu({ children, align = "end" }: DropdownMenuProps) {
   return (
-    <div data-slot="dropdown-menu" className="dropdown dropdown-end">
+    <div data-slot="dropdown-menu" className={cn("dropdown", align === "end" && "dropdown-end")}>
       {children}
     </div>
   )

@@ -20,7 +20,7 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({ products, prom
     return (
         <SimpleCarousel className={cn(className)} rows={rows}>
             {products.map(product => (
-                <div key={product.id} className="snap-start shrink-0 first:pl-0 md:first:pl-0 w-[85vw] md:w-[280px]">
+                <div key={product.id} className="snap-center md:snap-start shrink-0 first:pl-0 md:first:pl-0 w-[75vw] md:w-[280px]">
                     <ProductImageCard
                         product={product}
                         promotion={getPromotionForProduct(product)}

@@ -9,9 +9,10 @@ interface SimpleCarouselProps {
     scrollContainerClassName?: string; // Scroll container specific class
     scrollAmount?: number;
     rows?: 1 | 2;
+    minimalArrows?: boolean;
 }
 
-export const SimpleCarousel: React.FC<SimpleCarouselProps> = ({ children, className, scrollContainerClassName, scrollAmount = 300, rows = 1 }) => {
+export const SimpleCarousel: React.FC<SimpleCarouselProps> = ({ children, className, scrollContainerClassName, scrollAmount = 300, rows = 1, minimalArrows = true }) => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(false);
@@ -44,20 +45,24 @@ export const SimpleCarousel: React.FC<SimpleCarouselProps> = ({ children, classN
         <div className={cn("relative group/carousel", className)}>
             {/* Left Arrow */}
             <div className={cn(
-                "absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background via-background/80 to-transparent z-30 flex items-center justify-start pl-2 transition-opacity duration-300 pointer-events-none",
+                "absolute left-0 top-0 bottom-0 z-30 flex items-center justify-start transition-opacity duration-300 pointer-events-none",
+                minimalArrows ? "w-12 pl-2 md:pl-1 border-none" : "w-12 bg-gradient-to-r from-background via-background/80 to-transparent pl-2",
                 canScrollLeft ? "opacity-100" : "opacity-0"
             )}>
                 <Button
-                    variant="secondary"
+                    variant={minimalArrows ? "outline" : "secondary"}
                     size="icon"
-                    className="h-8 w-8 rounded-full shadow-md pointer-events-auto"
+                    className={cn(
+                        "rounded-full pointer-events-auto",
+                        minimalArrows ? "h-8 w-8 bg-background/80 backdrop-blur-md border border-border text-foreground shadow-md hover:scale-110 hover:bg-background transition-all" : "h-8 w-8 shadow-md"
+                    )}
                     onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
                         scroll('left');
                     }}
                 >
-                    <ChevronLeft className="h-4 w-4" />
+                    <ChevronLeft className={minimalArrows ? "h-5 w-5 text-foreground" : "h-4 w-4"} />
                 </Button>
             </div>
 
@@ -66,7 +71,7 @@ export const SimpleCarousel: React.FC<SimpleCarouselProps> = ({ children, classN
                 ref={scrollContainerRef}
                 onScroll={checkScroll}
                 className={cn(
-                    "w-full overflow-x-auto gap-4 py-4 px-4 md:px-0 scroll-pl-12 snap-x snap-mandatory scrollbar-hide",
+                    "w-full overflow-x-auto gap-4 py-4 px-4 md:px-0 max-md:scroll-px-4 md:scroll-pl-12 snap-x snap-mandatory scrollbar-hide",
                     rows === 1 ? "flex" : "grid grid-flow-col auto-cols-max",
                     rows === 2 ? "grid-rows-2" : "",
                     scrollContainerClassName
@@ -81,20 +86,24 @@ export const SimpleCarousel: React.FC<SimpleCarouselProps> = ({ children, classN
 
             {/* Right Arrow */}
             <div className={cn(
-                "absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background via-background/80 to-transparent z-30 flex items-center justify-end pr-2 transition-opacity duration-300 pointer-events-none",
+                "absolute right-0 top-0 bottom-0 z-30 flex items-center justify-end transition-opacity duration-300 pointer-events-none",
+                minimalArrows ? "w-12 pr-2 md:pr-1 border-none" : "w-12 bg-gradient-to-l from-background via-background/80 to-transparent pr-2",
                 canScrollRight ? "opacity-100" : "opacity-0"
             )}>
                 <Button
-                    variant="secondary"
+                    variant={minimalArrows ? "outline" : "secondary"}
                     size="icon"
-                    className="h-8 w-8 rounded-full shadow-md pointer-events-auto"
+                    className={cn(
+                        "rounded-full pointer-events-auto",
+                        minimalArrows ? "h-8 w-8 bg-background/80 backdrop-blur-md border border-border text-foreground shadow-md hover:scale-110 hover:bg-background transition-all" : "h-8 w-8 shadow-md"
+                    )}
                     onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
                         scroll('right');
                     }}
                 >
-                    <ChevronRight className="h-4 w-4" />
+                    <ChevronRight className={minimalArrows ? "h-5 w-5 text-foreground" : "h-4 w-4"} />
                 </Button>
             </div>
         </div>

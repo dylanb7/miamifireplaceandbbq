@@ -278,19 +278,33 @@ export const ProductsBrowser: React.FC<ProductsBrowserProps> = ({ className, pro
 
                             {/* Subcategory Filter Row */}
                             {groupedSubCategories.length > 0 && (
-                                <div className="w-full relative mb-4 flex items-center gap-3">
-                                    <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider shrink-0">Filter by:</h3>
+                                <div className="w-full relative mb-4">
+                                    <div className="flex items-center justify-between border-b pb-2 mb-4">
+                                        <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Filter by:</h3>
+                                        {selectedSubCategories.length > 0 && (
+                                            <button 
+                                                onClick={() => setSelectedSubCategories([])}
+                                                className="text-sm font-medium text-muted-foreground hover:text-foreground hover:underline"
+                                            >
+                                                Clear All
+                                            </button>
+                                        )}
+                                    </div>
                                     <div className="flex flex-wrap gap-2 items-center">
-                                        {groupedSubCategories.map((group) => {
+                                        {groupedSubCategories.map((group, index) => {
                                             const selectedInGroup = group.options.find(opt => selectedSubCategories.includes(opt));
                                             
+                                            // Ensure dropdowns near the left edge align rightward ("start") to prevent going off-screen,
+                                            // and align leftward ("end") if it's the last item and might overflow right edge.
+                                            const alignStr = index === groupedSubCategories.length - 1 && index > 1 ? "end" : "start";
+
                                             return (
-                                                <DropdownMenu key={group.label}>
+                                                <DropdownMenu key={group.label} align={alignStr}>
                                                     <DropdownMenuTrigger className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors border flex items-center gap-2 outline-none ${selectedInGroup ? 'bg-primary text-primary-foreground border-primary' : 'bg-background hover:bg-accent border-border text-foreground'}`}>
                                                         {selectedInGroup ? selectedInGroup : group.label}
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                                                     </DropdownMenuTrigger>
-                                                    <DropdownMenuContent align="start" className="w-48">
+                                                    <DropdownMenuContent align={alignStr} className="w-48">
                                                         <DropdownMenuItem 
                                                             onClick={() => setSelectedSubCategories(prev => prev.filter(c => !group.options.includes(c)))}
                                                             className={!selectedInGroup ? "font-semibold" : ""}
@@ -314,15 +328,6 @@ export const ProductsBrowser: React.FC<ProductsBrowserProps> = ({ className, pro
                                                 </DropdownMenu>
                                             );
                                         })}
-                                        
-                                        {selectedSubCategories.length > 0 && (
-                                            <button 
-                                                onClick={() => setSelectedSubCategories([])}
-                                                className="text-sm font-medium text-muted-foreground hover:text-foreground underline underline-offset-4 ml-2"
-                                            >
-                                                Clear All
-                                            </button>
-                                        )}
                                     </div>
                                 </div>
                             )}
