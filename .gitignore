@@ -16,7 +16,6 @@ todos.json
 .netlify
 
 # Website cleanup
-scripts/
 src/data/products/archives/
 test-*.js
 .cta.json
