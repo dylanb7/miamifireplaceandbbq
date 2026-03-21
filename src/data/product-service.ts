@@ -1,40 +1,31 @@
 import { Product } from './types';
 
-import fireplacesNewUrl from './products/fireplaces-new.json?url';
-import grillsUrl from './products/grills.json?url';
-import gasLogsUrl from './products/gas-logs.json?url';
-import outdoorKitchensNewUrl from './products/outdoor-kitchens-new.json?url';
-
 export type DataSource = 'legacy' | 'scraped' | 'luxe';
 export const ACTIVE_DATA_SOURCE: DataSource = 'scraped';
 
-const fetchJson = async <T>(url: string): Promise<T> => {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Failed to fetch ${url}`);
-    return res.json() as Promise<T>;
-};
+const parseRawJson = <T>(rawModule: { default: string }) => JSON.parse(rawModule.default) as T;
 
 const fireplaceLoaders: Record<DataSource, () => Promise<Product[]>> = {
     legacy: () => Promise.resolve([]),
-    scraped: () => fetchJson<Product[]>(fireplacesNewUrl),
+    scraped: () => import('./products/fireplaces-new.json?raw').then(parseRawJson<Product[]>),
     luxe: () => Promise.resolve([]),
 };
 
 const grillLoaders: Record<DataSource, () => Promise<Product[]>> = {
-    legacy: () => fetchJson<Product[]>(grillsUrl),
-    scraped: () => fetchJson<Product[]>(grillsUrl),
+    legacy: () => import('./products/grills.json?raw').then(parseRawJson<Product[]>),
+    scraped: () => import('./products/grills.json?raw').then(parseRawJson<Product[]>),
     luxe: () => Promise.resolve([]),
 };
 
 const gasLogLoaders: Record<DataSource, () => Promise<Product[]>> = {
-    legacy: () => fetchJson<Product[]>(gasLogsUrl),
-    scraped: () => fetchJson<Product[]>(gasLogsUrl),
+    legacy: () => import('./products/gas-logs.json?raw').then(parseRawJson<Product[]>),
+    scraped: () => import('./products/gas-logs.json?raw').then(parseRawJson<Product[]>),
     luxe: () => Promise.resolve([]),
 };
 
 const outdoorKitchenLoaders: Record<DataSource, () => Promise<Product[]>> = {
     legacy: () => Promise.resolve([]),
-    scraped: () => fetchJson<Product[]>(outdoorKitchensNewUrl),
+    scraped: () => import('./products/outdoor-kitchens-new.json?raw').then(parseRawJson<Product[]>),
     luxe: () => Promise.resolve([]),
 };
 
