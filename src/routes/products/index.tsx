@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { getAllProducts } from '@/data/product-service'
+import { getAllProducts, minifyProducts } from '@/data/product-service'
 import { promotions } from '@/data/promotions'
 import { ProductsBrowser } from '@/components/products/ProductsBrowser'
 import PageLayout from '@/components/PageLayout'
@@ -9,7 +9,7 @@ export const Route = createFileRoute('/products/')({
     loader: async () => {
         const products = await getAllProducts();
         return {
-            products,
+            products: minifyProducts(products),
             promotions
         }
     }

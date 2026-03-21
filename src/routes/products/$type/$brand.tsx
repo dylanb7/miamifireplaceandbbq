@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { generateSeo } from '@/lib/seo'
 import { ProductsBrowser } from '@/components/products/ProductsBrowser'
-import { getProductsByCategory } from '@/data/product-service'
+import { getProductsByCategory, minifyProducts } from '@/data/product-service'
 import { getBrandData } from '@/data/brands'
 import { promotions } from '@/data/promotions'
 import PageLayout from '@/components/PageLayout'
@@ -30,7 +30,7 @@ export const Route = createFileRoute('/products/$type/$brand')({
         const brandMetadata = getBrandData(realBrandName);
 
         return {
-            products: categoryProducts,
+            products: minifyProducts(categoryProducts),
             promotions,
             initialType: type,
             initialBrand: brand,

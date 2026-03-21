@@ -2,18 +2,12 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
 
-// Category URLs to scrape
-
-
 const OUTPUT_FILE = path.join(process.cwd(), 'src/data/scraped_products.json');
 
 const baseUrl = 'https://mail.eveningsdelight.com';
 
 
 type ProductCategory = "Outdoor Kitchens" | "Grills" | "Fireplaces" | "Gas Logs";
-
-// Category - Brand - Subtype - products url
-
 
 interface UrlInfo {
     url: string;
@@ -193,7 +187,6 @@ const scrapePaths: Record<ProductCategory, Record<string, BrandConfig>> = {
 
 }
 
-// const MAX_PRODUCTS = 10; // Uncomment for verification
 
 const IGNORED_TEXT = [
     "Call or Visit Our Showrooms TODAY!",
@@ -202,12 +195,7 @@ const IGNORED_TEXT = [
 
 function cleanText(text: string): string {
     let cleaned = text;
-    // Remove specific ignored phrases (and surrounding whitespace/newlines usually attached)
-    // We'll split by newlines, filter out lines containing the ignored phrases, then join.
-    // Or just replace specific blocks if they vary. The user provided a specific block locally, 
-    // but globally it might vary by whitespace.
 
-    // Strategy: Remove lines containing the ignored key phrases.
     const lines = cleaned.split('\n');
     const filteredLines = lines.filter(line => {
         const trimmed = line.trim();
@@ -234,7 +222,7 @@ const downloadImage = async (url: string, category: string, title: string): Prom
             fs.mkdirSync(outputDir, { recursive: true });
         }
 
-        // Check if file exists to avoid redownload (optional, but good for speed)
+
         if (fs.existsSync(outputPath)) {
             return `/${relativeDir}/${filename}`;
         }
@@ -249,7 +237,7 @@ const downloadImage = async (url: string, category: string, title: string): Prom
         return `/${relativeDir}/${filename}`;
     } catch (e) {
         console.error(`Failed to download image ${url}:`, e);
-        return url; // Fallback to remote URL
+        return url;
     }
 };
 
@@ -259,7 +247,7 @@ async function scrape() {
     const scrapedData: any[] = [];
     const globalVisited = new Set<string>();
 
-    // Helper to get links from a page
+
     const getLinks = async (url: string) => {
         try {
             await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
@@ -281,7 +269,7 @@ async function scrape() {
                         const isBad = badKeywords.some(bk => lower.includes(bk));
                         if (isBad) return false;
 
-                        // Exclude main category pages
+
                         const isCategory = lower.match(/\/(grills|fireplaces|outdoor-kitchens|gas-logs|accessories|specials)\.html$/);
                         return !isCategory;
                     });
@@ -292,7 +280,7 @@ async function scrape() {
         }
     };
 
-    // Helper to scrape product data
+
     const scrapeProduct = async (url: string, category: string, brand: string, subCategories: string[] = [], forceSingle = false) => {
         if (globalVisited.has(url) && !forceSingle) return null;
         globalVisited.add(url);
@@ -300,7 +288,7 @@ async function scrape() {
         try {
             await page.goto(url, { waitUntil: 'networkidle2', timeout: 90000 });
 
-            // Check if it's actually a product (must have tabs or be clearly a product page)
+
             const isProduct = await page.evaluate((forceSingle) => {
                 const hasProductIndicators = !!document.querySelector('.product-desc') || !!document.querySelector('.ui-tabs-nav') || !!document.querySelector('#tabs') || !!document.querySelector('.tabs');
                 const isCategoryGrid = document.querySelectorAll('.product-category').length > 0;
@@ -312,10 +300,10 @@ async function scrape() {
             console.log(`    -> Scraping Product: ${url}`);
             const rawData = await page.evaluate(() => {
                 let title = document.querySelector('.product-desc h3, .product-desc h2, h1, .page-title h1, h1.elementor-heading-title')?.textContent?.trim() || '';
-                // Clean city suffix from title
+
                 title = title.replace(/\s*Miami,\s*(?:Fl|Florida|Fort Lauderdale)\s*.*$/i, '').replace(/,\s*$/, '').trim();
 
-                // Description: distinct from title
+
                 let description = '';
                 const descEl = document.querySelector('.product-desc');
                 if (descEl) {
@@ -324,33 +312,30 @@ async function scrape() {
                     description = clone.textContent?.trim() || '';
                 }
 
-                // Dynamic Tab Scraping
+
                 const features: string[] = [];
                 const specs: string[] = [];
                 const accessories: string[] = [];
                 const misc: { name: string; content: string[] }[] = [];
 
-                // Improved helper to extract list items from raw text lines
+
                 const cleanAndFilterItems = (lines: string[], strict: boolean): string[] => {
                     return lines
                         .map(line => line.trim())
                         .filter(line => {
                             if (!strict) return line.length > 2;
-                            // Strict mode: MUST start with a marker.
+
                             return line.length > 2 && (/^[•\-–—*]/.test(line));
                         })
                         .map(line => line.replace(/^[•\-–—*]\s*/, ''));
                 };
 
-                // Wrapper for HTML string input
+
                 const extractListItems = (html: string, strict = true): string[] => {
                     const temp = document.createElement('div');
                     temp.innerHTML = html.replace(/<br\s*\/?>/gi, '\n');
                     const text = temp.textContent || '';
-                    // Use the improved splitting?
-                    // Actually, if we just use textContent here without the specific traversal, we risk the "messy text" issue.
-                    // But for simple tabs it might optionally be okay.
-                    // Let's replicate the splitting logic:
+
                     return cleanAndFilterItems(text.split('\n'), strict);
                 };
 
@@ -369,7 +354,7 @@ async function scrape() {
                         if (buffer.length > 0) {
                             const text = buffer.join('').trim();
                             if (text.length > 0) {
-                                // Split by our manually inserted newlines
+
                                 const lines = text.split('\n');
                                 const isStrict = currentSection === 'features' || currentSection === 'specs';
                                 const items = cleanAndFilterItems(lines, isStrict);
@@ -380,7 +365,7 @@ async function scrape() {
                                     else if (currentSection === 'accessories') sections.accessories.push(...items);
                                     else sections.misc.push(...items);
                                 } else if (!isStrict && text.length > 10) {
-                                    // Capture prose for misc if it didn't look like a list but is substantial
+
                                     sections.misc.push(text);
                                 }
                             }
@@ -389,18 +374,18 @@ async function scrape() {
                     };
 
                     const traverse = (node: Node) => {
-                        if (node.nodeType === 3) { // Text node
+                        if (node.nodeType === 3) {
                             const txt = node.textContent || '';
-                            // Don't modify buffer here, just push
+
                             buffer.push(txt);
-                        } else if (node.nodeType === 1) { // Element
+                        } else if (node.nodeType === 1) {
                             const el = node as Element;
                             const tagName = el.tagName.toLowerCase();
 
                             if (tagName === 'br') {
                                 buffer.push('\n');
                             } else if (['h1', 'h2', 'h3', 'h4', 'h5', 'strong', 'b'].includes(tagName) || (tagName === 'p' && (el.textContent || '').trim().endsWith(':') && (el.textContent || '').length < 30)) {
-                                flush(); // Flush previous content before switching section
+                                flush();
                                 const headerText = (el.textContent || '').toLowerCase();
                                 if (headerText.includes('feature')) currentSection = 'features';
                                 else if (headerText.includes('spec') || headerText.includes('dimen')) currentSection = 'specs';
@@ -408,7 +393,7 @@ async function scrape() {
                                 else currentSection = 'misc';
                             } else if (tagName === 'ul' || tagName === 'ol') {
                                 flush();
-                                // Handle lists explicitly
+
                                 Array.from(el.children).forEach(li => {
                                     const txt = li.textContent?.trim() || '';
                                     if (txt) {
@@ -418,9 +403,9 @@ async function scrape() {
                                         else sections.misc.push(txt);
                                     }
                                 });
-                                // Don't recurse into UL/OL since we handled it
+
                             } else if (tagName === 'p' || tagName === 'div') {
-                                buffer.push('\n'); // Ensure block separation
+                                buffer.push('\n');
                                 el.childNodes.forEach(traverse);
                                 buffer.push('\n');
                             } else {
@@ -429,10 +414,10 @@ async function scrape() {
                         }
                     };
 
-                    // Initial check if we should even parse headers
+
                     const headers = container.querySelectorAll('h1, h2, h3, h4, h5, strong, b');
                     if (headers.length === 0) {
-                        // Fallback: extract list-like items from the whole text
+
                         const temp = document.createElement('div');
                         temp.innerHTML = container.innerHTML.replace(/<br\s*\/?>/gi, '\n');
                         const text = temp.textContent || '';
@@ -448,7 +433,7 @@ async function scrape() {
                                 sections.features.push(line.replace(/^[•*]\s*/, ''));
                             }
                         });
-                        // Note: Description text is ignored here, correct.
+
                     } else {
                         traverse(container);
                         flush();
@@ -470,7 +455,7 @@ async function scrape() {
                             const contentEl = document.querySelector(tabId);
                             if (!contentEl) return;
 
-                            // If the tab NAME is explicit, trust it.
+
                             if (tabLower.includes('feature')) {
                                 features.push(...extractListItems(contentEl.innerHTML));
                             } else if (tabLower.includes('spec')) {
@@ -479,24 +464,24 @@ async function scrape() {
                                 const items = extractListItems(contentEl.innerHTML, false);
                                 if (items.length > 0) accessories.push(...items);
                                 else {
-                                    // Fallback: Try getting images/links titles
+
                                     const links = Array.from(contentEl.querySelectorAll('a, .product-name')).map(el => el.textContent?.trim()).filter(t => t && t.length > 2);
                                     const unique = Array.from(new Set(links)) as string[];
                                     if (unique.length > 0) accessories.push(...unique);
                                 }
                             } else if (tabLower.includes('details') || tabLower.includes('description') || tabLower === 'product') {
-                                // "Product Details" tab often contains mixed content
+
                                 const parsed = parseContentSections(contentEl);
                                 features.push(...parsed.features);
                                 specs.push(...parsed.specs);
                                 accessories.push(...parsed.accessories);
 
-                                // Push any leftover miscellaneous sections that were found
+
                                 if (parsed.misc.length > 0) {
                                     misc.push({ name: tabName, content: parsed.misc });
                                 }
                             } else {
-                                // Capture miscellaneous tabs
+
                                 const items = extractListItems(contentEl.innerHTML, false);
                                 if (items.length > 0) {
                                     misc.push({ name: tabName, content: items });
@@ -505,21 +490,19 @@ async function scrape() {
                         }
                     });
                 } else {
-                    // Non-tabbed page (like Profire)
-                    // Look for the main description container. 
+
                     const descEl = document.querySelector('.product-desc');
                     if (descEl) {
-                        // First, separate the main description text (first paragraph usually) from the lists
-                        // We'll traverse it.
+
                         const parsed = parseContentSections(descEl);
                         features.push(...parsed.features);
                         specs.push(...parsed.specs);
                         accessories.push(...parsed.accessories);
 
-                        // If we didn't find anything structured, but there are list items, maybe it's just a features list?
+
                         if (features.length === 0 && specs.length === 0) {
                             const allItems = extractListItems(descEl.innerHTML);
-                            // Heuristic: if it looks like a list, it's probably features
+
                             if (allItems.length > 2) features.push(...allItems);
                         }
                     } else {

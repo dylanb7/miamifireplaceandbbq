@@ -1,6 +1,6 @@
 import { createFileRoute, Outlet, useMatchRoute } from '@tanstack/react-router'
 import { ProductsBrowser } from '@/components/products/ProductsBrowser'
-import { getProductsByCategory } from '@/data/product-service'
+import { getProductsByCategory, minifyProducts } from '@/data/product-service'
 import { promotions } from '@/data/promotions'
 import PageLayout from '@/components/PageLayout'
 
@@ -24,7 +24,7 @@ export const Route = createFileRoute('/products/$type')({
         const products = await getProductsByCategory(typeSlug);
 
         return {
-            products: products,
+            products: minifyProducts(products),
             promotions,
             typeSlug,
             categoryName: category

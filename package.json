@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "bun --bun vite dev",
+    "prebuild": "bun run scripts/generate-sitemap.ts",
     "build": "bun --bun vite build",
     "serve": "bun --bun vite preview"
   },

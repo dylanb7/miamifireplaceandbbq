@@ -175,10 +175,10 @@ export const ProductsBrowser: React.FC<ProductsBrowserProps> = ({ className, pro
                 }
             });
 
-            denseGroups.sort((a, b) => a.title.localeCompare(b.title));
+            denseGroups.sort((a, b) => a.title.localeCompare(b.title, 'en-US'));
 
             if (sparseProducts.length > 0) {
-                sparseProducts.sort((a, b) => (a.brand || "").localeCompare(b.brand || "") || a.name.localeCompare(b.name));
+                sparseProducts.sort((a, b) => (a.brand || "").localeCompare(b.brand || "", 'en-US') || a.name.localeCompare(b.name, 'en-US'));
 
                 const isOnlyGroup = denseGroups.length === 0;
                 const title = isOnlyGroup ? "All Models" : "Other Premium Options";
@@ -342,13 +342,18 @@ export const ProductsBrowser: React.FC<ProductsBrowserProps> = ({ className, pro
                                 )}
 
                                 {isAllMode ? (
-                                    <TypeGroupView products={group.products} promotions={promotions} />
+                                    <TypeGroupView 
+                                        products={group.products} 
+                                        promotions={promotions} 
+                                        baseCategorySlug={slugify(group.title)}
+                                    />
                                 ) : (
                                     <BrandSection
                                         brandName={group.title}
                                         products={group.products}
                                         promotions={promotions}
                                         hideHeader={isSingleBrandMode}
+                                        baseCategorySlug={slugify(selectedType)}
                                     />
                                 )}
                             </div>
@@ -369,7 +374,7 @@ export const ProductsBrowser: React.FC<ProductsBrowserProps> = ({ className, pro
 };
 
 // Sub-component to handle grouping by brand WITHIN a type when in "All" mode
-const TypeGroupView = ({ products, promotions }: { products: Product[], promotions: Promotion[] }) => {
+const TypeGroupView = ({ products, promotions, baseCategorySlug }: { products: Product[], promotions: Promotion[], baseCategorySlug: string }) => {
     // Group by brand
     const brandGroups = useMemo(() => {
         const groups: Record<string, Product[]> = {};
@@ -389,6 +394,7 @@ const TypeGroupView = ({ products, promotions }: { products: Product[], promotio
                     brandName={brand}
                     products={prods}
                     promotions={promotions}
+                    baseCategorySlug={baseCategorySlug}
                 />
             ))}
         </div>

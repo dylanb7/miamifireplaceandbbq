@@ -18,6 +18,8 @@ export const ProductImageCard: React.FC<ProductImageCardProps> = ({ product, pro
             <img
                 src={product.image}
                 alt={product.name}
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
 
@@ -55,11 +57,7 @@ export const ProductImageCard: React.FC<ProductImageCardProps> = ({ product, pro
                     <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
                         <div className="overflow-hidden">
                             <div className="flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out pointer-events-auto">
-                                {product.price > 0 && (
-                                    <p className="font-medium text-white/90 pt-1">
-                                        Starting at ${product.price.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
-                                    </p>
-                                )}
+
 
                                 <p className="text-xs text-white/80 line-clamp-2 py-1">
                                     {product.shortDescription || product.description}

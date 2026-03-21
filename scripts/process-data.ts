@@ -4,14 +4,12 @@ import path from 'path';
 const SCRAPED_FILE = path.join(process.cwd(), 'src/data/scraped_products.json');
 const OUTPUT_DIR = path.join(process.cwd(), 'src/data/products');
 
-// Read all scraped products
 const scrapedProducts = JSON.parse(fs.readFileSync(SCRAPED_FILE, 'utf-8'));
 
 console.log(`Read ${scrapedProducts.length} products from scraped_products.json`);
 
-// Process all products
+
 const processedProducts = scrapedProducts.map((p: any) => {
-    // Every item from the new scrape should have a brand. Fallback to 'Other' just in case.
     const brand = p.brand || 'Other';
 
     return {
@@ -31,7 +29,7 @@ const processedProducts = scrapedProducts.map((p: any) => {
     };
 });
 
-// Group by Category
+
 const productsByCategory: Record<string, any[]> = {
     'Grills': [],
     'Fireplaces': [],
@@ -41,7 +39,7 @@ const productsByCategory: Record<string, any[]> = {
 
 processedProducts.forEach((p: any) => {
     let catKey = p.category;
-    // Normalize category names
+
     if (catKey === 'Gas Grills' || catKey === 'Charcoal Grills') catKey = 'Grills';
     else if (catKey === 'Electric Fireplaces' || catKey === 'Gas Fireplaces') catKey = 'Fireplaces';
 
@@ -50,11 +48,11 @@ processedProducts.forEach((p: any) => {
             const subCat = (p.subCategories && p.subCategories.length > 0) ? p.subCategories[0] : (p.name || p.brand);
             const KitchenId = `${p.brand}-${subCat}`.toLowerCase().replace(/\s+/g, '-');
 
-            // Check if we already have this kitchen model
+
             let existingKitchen = productsByCategory[catKey].find(k => k.id === KitchenId);
 
             if (!existingKitchen) {
-                // Initialize the base Kitchen object
+
                 existingKitchen = {
                     id: KitchenId,
                     name: `${p.brand} ${subCat}`,
@@ -62,7 +60,7 @@ processedProducts.forEach((p: any) => {
                     price: 0,
                     category: 'Outdoor Kitchens',
                     brand: p.brand,
-                    image: p.image, // Use the first found image as the main hero
+                    image: p.image,
                     features: [],
                     specs: [],
                     accessories: [],
@@ -74,7 +72,7 @@ processedProducts.forEach((p: any) => {
                 productsByCategory[catKey].push(existingKitchen);
             }
 
-            // Add this specific image to the gallery if it's not already there
+
             if (p.image && !existingKitchen.gallery.includes(p.image)) {
                 existingKitchen.gallery.push(p.image);
             }
@@ -86,7 +84,7 @@ processedProducts.forEach((p: any) => {
     }
 });
 
-// Write to files
+
 Object.entries(productsByCategory).forEach(([category, items]) => {
     const slug = category.toLowerCase().replace(/\s+/g, '-');
     const filePath = path.join(OUTPUT_DIR, `${slug}.json`);
@@ -94,7 +92,7 @@ Object.entries(productsByCategory).forEach(([category, items]) => {
     console.log(`Updated ${slug}.json with ${items.length} items`);
 });
 
-// Generate Taxonomy (Categories -> Brands)
+
 const taxonomy: Record<string, string[]> = {};
 
 Object.entries(productsByCategory).forEach(([category, items]) => {

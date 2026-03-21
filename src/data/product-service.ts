@@ -1,17 +1,7 @@
 import { Product } from './types';
 
-/**
- * DATA SOURCE SWITCHER
- * 
- * Change this value to swap the fireplace data displayed on the site:
- *   'legacy'  → Original fireplaces.json (Dimplex old catalog)
- *   'scraped' → fireplaces-new.json (Tier 1 scraped: Heat & Glo, Heatilator, Dimplex)
- *   'luxe'    → fireplaces-luxe.json (702 products from Hearth LuX: Ortal, Regency, Astria, etc.)
- */
 export type DataSource = 'legacy' | 'scraped' | 'luxe';
 export const ACTIVE_DATA_SOURCE: DataSource = 'scraped';
-
-// ─── Loader Maps ────────────────────────────────────
 
 const fireplaceLoaders: Record<DataSource, () => Promise<Product[]>> = {
     legacy: () => Promise.resolve([]),
@@ -37,8 +27,6 @@ const outdoorKitchenLoaders: Record<DataSource, () => Promise<Product[]>> = {
     luxe: () => Promise.resolve([]),
 };
 
-// ─── Category Router ────────────────────────────────
-
 const categoryMap: Record<string, () => Promise<Product[]>> = {
     'grill': () => grillLoaders[ACTIVE_DATA_SOURCE](),
     'grills': () => grillLoaders[ACTIVE_DATA_SOURCE](),
@@ -50,7 +38,16 @@ const categoryMap: Record<string, () => Promise<Product[]>> = {
     'outdoor-kitchens': () => outdoorKitchenLoaders[ACTIVE_DATA_SOURCE](),
 };
 
-// ─── Public API (unchanged) ─────────────────────────
+
+const deduplicateProducts = (products: Product[]): Product[] => {
+    const uniqueMap = new Map<string, Product>();
+    for (const p of products) {
+        if (p?.id && !uniqueMap.has(p.id)) {
+            uniqueMap.set(p.id, p);
+        }
+    }
+    return Array.from(uniqueMap.values());
+};
 
 export const getProductsByCategory = async (categorySlug: string): Promise<Product[]> => {
     const loader = categoryMap[categorySlug.toLowerCase()];
@@ -58,7 +55,8 @@ export const getProductsByCategory = async (categorySlug: string): Promise<Produ
         console.warn(`No products found for category: ${categorySlug}`);
         return [];
     }
-    return await loader();
+    const data = await loader();
+    return deduplicateProducts(data);
 };
 
 export const getAllProducts = async (): Promise<Product[]> => {
@@ -70,7 +68,22 @@ export const getAllProducts = async (): Promise<Product[]> => {
     ];
 
     const results = await Promise.all(allLoaders);
-    return results.flat();
+    return deduplicateProducts(results.flat());
+};
+
+export const minifyProducts = (products: Product[]): Product[] => {
+    return products.map(p => ({
+        id: p.id,
+        name: p.name,
+        brand: p.brand,
+        model: p.model,
+        category: p.category,
+        subCategories: p.subCategories,
+        image: p.image,
+        price: p.price,
+        description: p.description?.substring(0, 300) + (p.description?.length > 300 ? '...' : ''),
+        // Explicitly omitting gallery, features, specs, models, colorways
+    })) as Product[];
 };
 
 export const getProductById = async (id: string): Promise<Product | undefined> => {

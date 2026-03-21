@@ -1,3 +1,4 @@
+import { slugify } from "@/lib/utils";
 import type { Product, Promotion } from "../../data/types";
 import { ProductGrid } from "./ProductGrid";
 import { ProductCarousel } from "./ProductCarousel";
@@ -10,9 +11,10 @@ interface BrandSectionProps {
     hideHeader?: boolean;
     layout?: "grid" | "carousel";
     rows?: 1 | 2;
+    baseCategorySlug?: string;
 }
 
-export const BrandSection: React.FC<BrandSectionProps> = ({ brandName, products, promotions, hideHeader, layout = "grid", rows }) => {
+export const BrandSection: React.FC<BrandSectionProps> = ({ brandName, products, promotions, hideHeader, layout = "grid", rows, baseCategorySlug }) => {
     // Filter Promotions for header
     const brandPromotion = promotions.find(p => p.eligibleBrands?.includes(brandName));
 
@@ -35,7 +37,12 @@ export const BrandSection: React.FC<BrandSectionProps> = ({ brandName, products,
             {layout === "carousel" ? (
                 <ProductCarousel products={products} promotions={promotions} className="px-4 md:px-0" rows={rows} />
             ) : (
-                <ProductGrid products={products} promotions={promotions} className="px-4 md:px-0" />
+                <ProductGrid 
+                    products={products} 
+                    promotions={promotions} 
+                    className="px-4 md:px-0" 
+                    viewAllParams={baseCategorySlug && !hideHeader ? { type: baseCategorySlug, brand: slugify(brandName) } : undefined}
+                />
             )}
         </section>
     );

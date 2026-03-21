@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 import { ProductView } from '@/components/products/ProductView'
-import { getAllProducts } from '@/data/product-service'
+import { getAllProducts, minifyProducts } from '@/data/product-service'
 import { promotions } from '@/data/promotions'
 import { PRODUCT_INFO } from '@/data/product-info'
 import PageLayout from '@/components/PageLayout'
@@ -25,7 +25,7 @@ export const Route = createFileRoute('/product/$productId')({
         return {
             product,
             info,
-            relatedProducts,
+            relatedProducts: minifyProducts(relatedProducts),
             promotions
         }
     },

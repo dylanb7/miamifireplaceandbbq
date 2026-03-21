@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 import { BrandSection } from '@/components/products/BrandSection'
-import { getAllProducts } from '@/data/product-service'
+import { getAllProducts, minifyProducts } from '@/data/product-service'
 import { getBrandData, brands } from '@/data/brands'
 
 import { promotions } from '@/data/promotions'
@@ -14,17 +14,16 @@ export const Route = createFileRoute('/brands/$brandId')({
     loader: async ({ params }) => {
         const products = await getAllProducts();
 
-        // 1. Find the canonical brand data first
-        const brandMetadata = brands.find(b => 
-            slugify(b.name) === params.brandId || 
+
+        const brandMetadata = brands.find(b =>
+            slugify(b.name) === params.brandId ||
             (b.brandName && slugify(b.brandName) === params.brandId)
         );
 
         if (!brandMetadata) {
-            // Fallback: try to find any brand in products that matches
             const allProductBrands = Array.from(new Set(products.map(p => p.brand).filter(Boolean))) as string[];
             const productBrandName = allProductBrands.find(b => slugify(b) === params.brandId);
-            
+
             if (!productBrandName) {
                 throw notFound();
             }
@@ -32,18 +31,17 @@ export const Route = createFileRoute('/brands/$brandId')({
             return {
                 brandName: productBrandName,
                 brandMetadata: getBrandData(productBrandName),
-                brandProducts: products.filter(p => p.brand === productBrandName),
+                brandProducts: minifyProducts(products.filter(p => p.brand === productBrandName)),
                 promotions
             };
         }
 
-        // 2. Identify all related brand strings (long name and short name)
         const relatedNames = [brandMetadata.name, brandMetadata.brandName].filter(Boolean) as string[];
 
         return {
             brandName: brandMetadata.name,
             brandMetadata,
-            brandProducts: products.filter(p => p.brand && relatedNames.includes(p.brand)),
+            brandProducts: minifyProducts(products.filter(p => p.brand && relatedNames.includes(p.brand))),
             promotions
         }
     },
