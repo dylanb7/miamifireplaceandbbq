@@ -222,9 +222,9 @@ export const ProductsBrowser: React.FC<ProductsBrowserProps> = ({ className, pro
                                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                                             {!isSingleBrandMode && (
                                                 <div>
-                                                    <h2 className="text-3xl font-bold tracking-tight">
+                                                    <h1 className="text-3xl font-bold tracking-tight">
                                                         {selectedType === "All" ? "Our Products" : selectedType}
-                                                    </h2>
+                                                    </h1>
                                                     <p className="text-muted-foreground mt-1">
                                                         {selectedType === "All"
                                                             ? "Browse our complete collection of premium outdoor living products."

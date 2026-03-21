@@ -2,7 +2,7 @@ import React from "react";
 import type { Product, Promotion } from "../../data/types";
 import { Link } from "@tanstack/react-router";
 import { Badge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
+import { cn, getOptimizedImage } from "@/lib/utils";
 
 interface ProductImageCardProps {
     product: Product;
@@ -16,7 +16,7 @@ export const ProductImageCard: React.FC<ProductImageCardProps> = ({ product, pro
         <div className={cn("group card card-bordered relative w-full overflow-hidden bg-muted aspect-[4/3] border border-transparent hover:border-primary/50 hover:shadow-sm transition-all duration-300", className)}>
             {/* Full size image */}
             <img
-                src={product.image}
+                src={getOptimizedImage(product.image, 800)}
                 alt={product.name}
                 loading="lazy"
                 decoding="async"
@@ -28,8 +28,9 @@ export const ProductImageCard: React.FC<ProductImageCardProps> = ({ product, pro
                 to="/product/$productId"
                 params={{ productId: product.id }}
                 className="absolute inset-0 z-20"
-                aria-label={`View details for ${product.name}`}
-            />
+            >
+                <span className="sr-only">View {product.name} details</span>
+            </Link>
 
             {/* Top Badge Overlay */}
             <div className="absolute top-3 left-3 right-3 flex justify-between items-start z-10 pointer-events-none">

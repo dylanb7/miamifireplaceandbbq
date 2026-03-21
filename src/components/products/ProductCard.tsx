@@ -5,6 +5,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
+import { getOptimizedImage } from "@/lib/utils";
 
 interface ProductCardProps {
     product: Product;
@@ -18,12 +19,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, promotion }) 
                 to="/product/$productId"
                 params={{ productId: product.id }}
                 className="absolute inset-0 z-10"
-                aria-label={`View details for ${product.name}`}
-            />
+            >
+                <span className="sr-only">View {product.name} details</span>
+            </Link>
             <CardHeader className="p-3">
                 <div className="relative">
                     <img
-                        src={product.image}
+                        src={getOptimizedImage(product.image, 600)}
                         alt={product.name}
                         loading="lazy"
                         className="w-full h-40 object-cover rounded-md bg-muted"

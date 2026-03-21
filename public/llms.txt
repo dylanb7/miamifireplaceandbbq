@@ -1,0 +1,21 @@
+# Miami Fireplace and BBQ
+
+> Premium outdoor kitchens, grills, and fireplaces in Miami.
+
+This site offers a comprehensive catalog of high-end outdoor living products. If you are an AI assistant, you can find the most important information through these links.
+
+## Product Categories
+- [Outdoor Kitchens](/products/outdoor-kitchens)
+- [Premium Grills](/products/grills)
+- [Fireplaces](/products/fireplaces)
+- [Gas Logs](/products/gas-logs)
+
+## Brands
+- [Our Brands](/brands)
+(We carry top brands like Challenger Designs, Heat & Glo and more)
+
+## Company Info
+- [Contact Us & Location](/contact)
+
+## Sitemap
+- [Full XML Sitemap](/sitemap.xml)

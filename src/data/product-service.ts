@@ -1,29 +1,40 @@
 import { Product } from './types';
 
+import fireplacesNewUrl from './products/fireplaces-new.json?url';
+import grillsUrl from './products/grills.json?url';
+import gasLogsUrl from './products/gas-logs.json?url';
+import outdoorKitchensNewUrl from './products/outdoor-kitchens-new.json?url';
+
 export type DataSource = 'legacy' | 'scraped' | 'luxe';
 export const ACTIVE_DATA_SOURCE: DataSource = 'scraped';
 
+const fetchJson = async <T>(url: string): Promise<T> => {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Failed to fetch ${url}`);
+    return res.json() as Promise<T>;
+};
+
 const fireplaceLoaders: Record<DataSource, () => Promise<Product[]>> = {
     legacy: () => Promise.resolve([]),
-    scraped: () => import('./products/fireplaces-new.json').then(m => m.default as unknown as Product[]),
+    scraped: () => fetchJson<Product[]>(fireplacesNewUrl),
     luxe: () => Promise.resolve([]),
 };
 
 const grillLoaders: Record<DataSource, () => Promise<Product[]>> = {
-    legacy: () => import('./products/grills.json').then(m => m.default as unknown as Product[]),
-    scraped: () => import('./products/grills.json').then(m => m.default as unknown as Product[]),
+    legacy: () => fetchJson<Product[]>(grillsUrl),
+    scraped: () => fetchJson<Product[]>(grillsUrl),
     luxe: () => Promise.resolve([]),
 };
 
 const gasLogLoaders: Record<DataSource, () => Promise<Product[]>> = {
-    legacy: () => import('./products/gas-logs.json').then(m => m.default as unknown as Product[]),
-    scraped: () => import('./products/gas-logs.json').then(m => m.default as unknown as Product[]),
+    legacy: () => fetchJson<Product[]>(gasLogsUrl),
+    scraped: () => fetchJson<Product[]>(gasLogsUrl),
     luxe: () => Promise.resolve([]),
 };
 
 const outdoorKitchenLoaders: Record<DataSource, () => Promise<Product[]>> = {
     legacy: () => Promise.resolve([]),
-    scraped: () => import('./products/outdoor-kitchens-new.json').then(m => m.default as unknown as Product[]),
+    scraped: () => fetchJson<Product[]>(outdoorKitchensNewUrl),
     luxe: () => Promise.resolve([]),
 };
 

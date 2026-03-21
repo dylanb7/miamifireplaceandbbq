@@ -35,6 +35,7 @@ export function BrandFilter({ availableBrands, selectedBrand, getBrandLink, clas
                     <Link
                         {...getBrandLink(undefined)}
                         className="text-sm font-medium text-muted-foreground hover:text-foreground hover:underline"
+                        aria-label="Clear brand filter"
                     >
                         Clear Filter
                     </Link>
@@ -53,6 +54,8 @@ export function BrandFilter({ availableBrands, selectedBrand, getBrandLink, clas
                         <Link
                             key={brand.name}
                             {...getBrandLink(isSelected ? undefined : brand.name)}
+                            aria-label={`Filter by ${brand.name}${isSelected ? ' (Currently selected)' : ''}`}
+                            aria-current={isSelected ? "true" : undefined}
                             className={cn(
                                 "group shrink-0 flex items-center justify-center p-1 rounded-xl border-2 transition-all w-[120px] h-[72px] overflow-hidden snap-start",
                                 isSelected
@@ -83,6 +86,8 @@ export function BrandFilter({ availableBrands, selectedBrand, getBrandLink, clas
                         <Link
                             key={brandName}
                             {...getBrandLink(isSelected ? undefined : brandName)}
+                            aria-label={`Filter by ${brandName}${isSelected ? ' (Currently selected)' : ''}`}
+                            aria-current={isSelected ? "true" : undefined}
                             className={cn(
                                 "shrink-0 flex items-center justify-center px-4 py-2 rounded-xl border-2 transition-all font-medium whitespace-nowrap h-[72px] snap-start",
                                 isSelected

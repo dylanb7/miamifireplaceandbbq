@@ -77,16 +77,9 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products, promotions, 
                         </Button>
                     </div>
                 ) : (
-                    <>
-                        <div ref={observerTarget} className="flex justify-center py-6">
-                            <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin opacity-50" />
-                        </div>
-                        <noscript>
-                            <div className="w-full text-center p-4 mt-4 border border-dashed rounded-lg bg-muted/20 text-muted-foreground text-sm">
-                                Please enable JavaScript to automatically load the remaining {products.length - initialLimit} products on this page.
-                            </div>
-                        </noscript>
-                    </>
+                    <div ref={observerTarget} className="flex justify-center py-6">
+                        <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin opacity-50" />
+                    </div>
                 )
             )}
         </div>

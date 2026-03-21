@@ -89,16 +89,17 @@ function DropdownMenuItem({
 }) {
   return (
     <li data-slot="dropdown-menu-item">
-      <a
+      <button
+        type="button"
         className={cn(
-          "flex items-center gap-2 rounded-md px-2 py-1.5 text-sm cursor-pointer select-none transition-colors",
+          "flex items-center gap-2 rounded-md px-2 py-1.5 text-sm cursor-pointer select-none transition-colors w-full text-left",
           className
         )}
         onClick={onClick as any}
         {...(props as any)}
       >
         {children}
-      </a>
+      </button>
     </li>
   )
 }

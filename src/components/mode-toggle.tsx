@@ -37,15 +37,15 @@ export function ModeToggle({ className, dropdownDirection = "dropdown-end" }: { 
 
             <ul tabIndex={0} className="dropdown-content menu rounded-box z-[100] p-2 shadow-2xl border border-base-content/10 max-h-[35vh] overflow-y-auto hidden md:flex flex-col flex-nowrap w-48 opacity-0 invisible pointer-events-none group-focus-within/dropdown:pointer-events-auto group-focus-within/dropdown:opacity-100 group-focus-within/dropdown:visible bg-base-100 text-base-content backdrop-blur-3xl">
                 <li>
-                    <a onClick={() => setTheme("system")} className={theme === "system" ? "active" : ""}>
+                    <button type="button" onClick={() => setTheme("system")} className={`w-full text-left ${theme === "system" ? "active" : ""}`}>
                         System
-                    </a>
+                    </button>
                 </li>
                 {themes.map((t) => (
                     <li key={t}>
-                        <a onClick={() => setTheme(t)} className={`capitalize ${theme === t ? "active" : ""}`}>
+                        <button type="button" onClick={() => setTheme(t)} className={`capitalize w-full text-left ${theme === t ? "active" : ""}`}>
                             {t}
-                        </a>
+                        </button>
                     </li>
                 ))}
             </ul>
