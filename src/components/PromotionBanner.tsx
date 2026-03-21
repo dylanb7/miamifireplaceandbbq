@@ -14,7 +14,7 @@ interface PromotionBannerProps {
     compact?: boolean;
 }
 
-export function PromotionBanner({ promotion, className, compact = false }: PromotionBannerProps) {
+export function PromotionBanner({ promotion, className }: PromotionBannerProps) {
     const TriggerContent = (
         <div className={cn(
             "inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 transition-colors hover:bg-primary/20 cursor-default",

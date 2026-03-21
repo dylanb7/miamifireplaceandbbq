@@ -21,7 +21,7 @@ export const Route = createFileRoute('/products/$type/$brand')({
 
         const category = typeMap[type];
 
-        const categoryProducts = await getProductsByCategory(type);
+        const categoryProducts = await getProductsByCategory({ data: type });
         const resolvedBrandName = brand.split('-').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ');
 
         // Let's accurately match the brandName from the available products or fallback to the URL decoded one

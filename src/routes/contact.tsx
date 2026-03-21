@@ -23,7 +23,7 @@ export const Route = createFileRoute('/contact')({
     },
     loader: async ({ deps: { productId } }) => {
         if (!productId) return { product: undefined };
-        const product = await getProductById(productId);
+        const product = await getProductById({ data: productId });
         return { product };
     },
     head: () => generateSeo({

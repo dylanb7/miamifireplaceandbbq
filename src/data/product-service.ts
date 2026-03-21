@@ -1,4 +1,5 @@
 import { Product } from './types';
+import { createServerFn } from '@tanstack/react-start';
 
 export type DataSource = 'legacy' | 'scraped' | 'luxe';
 export const ACTIVE_DATA_SOURCE: DataSource = 'scraped';
@@ -51,7 +52,7 @@ const deduplicateProducts = (products: Product[]): Product[] => {
     return Array.from(uniqueMap.values());
 };
 
-export const getProductsByCategory = async (categorySlug: string): Promise<Product[]> => {
+const _getProductsByCategory = async (categorySlug: string): Promise<Product[]> => {
     const loader = categoryMap[categorySlug.toLowerCase()];
     if (!loader) {
         console.warn(`No products found for category: ${categorySlug}`);
@@ -61,7 +62,13 @@ export const getProductsByCategory = async (categorySlug: string): Promise<Produ
     return deduplicateProducts(data);
 };
 
-export const getAllProducts = async (): Promise<Product[]> => {
+export const getProductsByCategory = createServerFn({ method: "GET" })
+    .inputValidator((categorySlug: string) => categorySlug)
+    .handler(async ({ data: categorySlug }): Promise<Product[]> => {
+        return _getProductsByCategory(categorySlug);
+    });
+
+const _getAllProducts = async (): Promise<Product[]> => {
     const allLoaders = [
         categoryMap['grills'](),
         categoryMap['fireplaces'](),
@@ -72,6 +79,11 @@ export const getAllProducts = async (): Promise<Product[]> => {
     const results = await Promise.all(allLoaders);
     return deduplicateProducts(results.flat());
 };
+
+export const getAllProducts = createServerFn({ method: "GET" })
+    .handler(async (): Promise<Product[]> => {
+        return _getAllProducts();
+    });
 
 export const minifyProducts = (products: Product[]): Product[] => {
     return products.map(p => ({
@@ -88,7 +100,9 @@ export const minifyProducts = (products: Product[]): Product[] => {
     })) as Product[];
 };
 
-export const getProductById = async (id: string): Promise<Product | undefined> => {
-    const all = await getAllProducts();
-    return all.find(p => p.id === id || p.name === id);
-};
+export const getProductById = createServerFn({ method: "GET" })
+    .inputValidator((id: string) => id)
+    .handler(async ({ data: id }): Promise<Product | undefined> => {
+        const all = await _getAllProducts();
+        return all.find(p => p.id === id || p.name === id);
+    });

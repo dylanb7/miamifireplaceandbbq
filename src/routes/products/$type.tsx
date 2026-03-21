@@ -21,7 +21,7 @@ export const Route = createFileRoute('/products/$type')({
         const category = typeMap[typeSlug] || "Products";
 
         // Fetch products dynamically
-        const products = await getProductsByCategory(typeSlug);
+        const products = await getProductsByCategory({ data: typeSlug });
 
         return {
             products: minifyProducts(products),
