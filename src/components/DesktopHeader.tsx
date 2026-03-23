@@ -15,18 +15,20 @@ export const DesktopHeader: React.FC<{ visible: boolean }> = ({ visible }) => {
     const navRefs = React.useRef<Map<string, HTMLElement>>(new Map());
 
     const movePillTo = (name: string) => {
-        const el = navRefs.current.get(name);
-        if (el && navContainerRef.current) {
-            const containerRect = navContainerRef.current.getBoundingClientRect();
-            const elRect = el.getBoundingClientRect();
-            setPillStyle({
-                left: elRect.left - containerRect.left,
-                top: elRect.top - containerRect.top,
-                width: elRect.width,
-                height: elRect.height,
-                opacity: 1,
-            });
-        }
+        requestAnimationFrame(() => {
+            const el = navRefs.current.get(name);
+            if (el && navContainerRef.current) {
+                const containerRect = navContainerRef.current.getBoundingClientRect();
+                const elRect = el.getBoundingClientRect();
+                setPillStyle({
+                    left: elRect.left - containerRect.left,
+                    top: elRect.top - containerRect.top,
+                    width: elRect.width,
+                    height: elRect.height,
+                    opacity: 1,
+                });
+            }
+        });
     };
 
     const handleMouseEnter = (name: string) => {

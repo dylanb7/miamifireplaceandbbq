@@ -45,17 +45,24 @@ export const FloatingToc: React.FC<FloatingTocProps> = ({ items, className }) =>
 
     // Visibility scroll listener
     useEffect(() => {
+        let ticking = false;
         const handleScroll = () => {
-            const isPastTopThreshold = window.scrollY > 400;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const isPastTopThreshold = window.scrollY > 400;
 
-            // Calculate distance from bottom
-            const distanceToBottom = document.body.scrollHeight - (window.innerHeight + window.scrollY);
-            const isNearBottom = distanceToBottom < 800; // Increased threshold to avoid footer overlap
+                    // Calculate distance from bottom
+                    const distanceToBottom = document.body.scrollHeight - (window.innerHeight + window.scrollY);
+                    const isNearBottom = distanceToBottom < 800; // Increased threshold to avoid footer overlap
 
-            if (isPastTopThreshold && !isNearBottom) {
-                setIsVisible(true);
-            } else {
-                setIsVisible(false);
+                    if (isPastTopThreshold && !isNearBottom) {
+                        setIsVisible(true);
+                    } else {
+                        setIsVisible(false);
+                    }
+                    ticking = false;
+                });
+                ticking = true;
             }
         };
 
@@ -94,13 +101,15 @@ export const FloatingToc: React.FC<FloatingTocProps> = ({ items, className }) =>
 
         // Set initial active ID to the first item just in case we are at the top
         if (!activeId) {
-            const firstElement = document.getElementById(items[0].id);
-            if (firstElement) {
-                const rect = firstElement.getBoundingClientRect();
-                if (rect.top >= 0 && rect.top <= window.innerHeight) {
-                    setActiveId(items[0].id);
+            window.requestAnimationFrame(() => {
+                const firstElement = document.getElementById(items[0].id);
+                if (firstElement) {
+                    const rect = firstElement.getBoundingClientRect();
+                    if (rect.top >= 0 && rect.top <= window.innerHeight) {
+                        setActiveId(items[0].id);
+                    }
                 }
-            }
+            });
         }
 
         return () => observer.disconnect();

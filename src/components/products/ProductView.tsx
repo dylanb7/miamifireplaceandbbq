@@ -74,6 +74,7 @@ export function ProductView({ product, info, relatedProducts, promotions }: Prod
                             src={activeImage}
                             alt={product.name}
                             className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                            fetchPriority="high"
                         />
                         {/* Overlay Promos */}
                         <div className="absolute top-4 left-4 flex flex-col gap-2">

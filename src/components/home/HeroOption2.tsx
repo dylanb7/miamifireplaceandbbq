@@ -32,18 +32,15 @@ export function HeroOption2() {
         <section className="relative min-h-[90vh] mt-[104px] w-full flex items-center justify-center overflow-hidden bg-zinc-950">
 
             <AnimatePresence mode="popLayout" initial={false}>
-                <motion.div
+                <motion.img
+                    src={activeHook.image}
                     key={index}
-                    className="absolute inset-0 z-0 opacity-50"
+                    className="absolute inset-0 z-0 w-full h-full object-cover"
                     initial={{ scale: 1.05, opacity: 0 }}
                     animate={{ scale: 1, opacity: 0.5 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1.5, ease: "easeInOut" }}
-                    style={{
-                        backgroundImage: `url(${activeHook.image})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                    }}
+                    fetchPriority={index === 0 ? "high" : "auto"}
                 />
             </AnimatePresence>
 

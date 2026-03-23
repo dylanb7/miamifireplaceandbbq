@@ -35,6 +35,7 @@ export function OutdoorKitchen({ product }: { product: Product }) {
                     src={product.image}
                     alt={product.name}
                     className="absolute inset-0 w-full h-full object-cover opacity-80"
+                    fetchPriority="high"
                 />
                 <div className="relative flex-1 bg-gradient-to-t from-black/90 via-black/40 to-transparent md:from-black/80 md:via-black/20 flex flex-col pt-6 pb-12 px-6 md:px-12 lg:px-24">
                     {/* Top Row: Back button */}

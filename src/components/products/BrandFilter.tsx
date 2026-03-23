@@ -13,14 +13,13 @@ interface BrandFilterProps {
 export function BrandFilter({ availableBrands, selectedBrand, getBrandLink, className }: BrandFilterProps) {
     if (availableBrands.length === 0) return null;
 
-    // Filter our known brands to only those available in the current category
-    const activeBrands = brands.filter(b => 
-        availableBrands.includes(b.name) || 
+
+    const activeBrands = brands.filter(b =>
+        availableBrands.includes(b.name) ||
         (b.brandName && availableBrands.includes(b.brandName))
     );
 
-    // Some brands might be in the products data but not in our featured brands list with logos.
-    // We should include them as text-only buttons.
+
     const knownBrandNames = brands.flatMap(b => [b.name, b.brandName].filter(Boolean) as string[]);
     const unknownBrands = availableBrands.filter(b => !knownBrandNames.includes(b) && b !== "Other");
 
@@ -42,9 +41,9 @@ export function BrandFilter({ availableBrands, selectedBrand, getBrandLink, clas
                 )}
             </div>
 
-            <SimpleCarousel 
+            <SimpleCarousel
                 minimalArrows
-                className="-mx-4 md:mx-0 w-[calc(100%+2rem)] md:w-full" 
+                className="-mx-4 md:mx-0 w-[calc(100%+2rem)] md:w-full"
                 scrollContainerClassName="px-4 md:px-0 gap-3 pb-2"
             >
                 {/* Known brands with logos */}

@@ -70,14 +70,15 @@ export function HeroOption3() {
                         style={{ flexBasis: 0 }}
                     >
                         {/* Background Image */}
-                        <motion.div
-                            className="absolute inset-0 w-full h-full bg-cover bg-center"
-                            style={{ backgroundImage: `url(${item.image})` }}
+                        <motion.img
+                            src={item.image}
+                            className="absolute inset-0 w-full h-full object-cover"
                             animate={{
                                 scale: hoveredIndex === index ? 1.05 : 1,
                                 filter: hoveredIndex === index ? "brightness(1.1)" : "brightness(0.4) saturate(0.5)",
                             }}
                             transition={{ duration: 0.7, ease: "easeOut" }}
+                            fetchPriority={index === 0 ? "high" : "auto"}
                         />
                         
                         {/* Gradient Overlay for text */}
