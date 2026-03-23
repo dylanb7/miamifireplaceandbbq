@@ -96,13 +96,12 @@ export const minifyProducts = (products: Product[]): Product[] => {
         image: p.image,
         price: p.price,
         description: p.description?.substring(0, 300) + (p.description?.length > 300 ? '...' : ''),
-        // Explicitly omitting gallery, features, specs, models, colorways
     })) as Product[];
 };
 
 export const getProductById = createServerFn({ method: "GET" })
-    .inputValidator((id: string) => id)
-    .handler(async ({ data: id }): Promise<Product | undefined> => {
-        const all = await _getAllProducts();
+    .inputValidator((data: { id: string, categorySlug?: string }) => data)
+    .handler(async ({ data: { id, categorySlug } }): Promise<Product | undefined> => {
+        const all = categorySlug ? await _getProductsByCategory(categorySlug) : await _getAllProducts();
         return all.find(p => p.id === id || p.name === id);
     });

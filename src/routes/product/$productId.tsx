@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 import { ProductView } from '@/components/products/ProductView'
-import { getAllProducts, minifyProducts } from '@/data/product-service'
+import { getProductById, getProductsByCategory, minifyProducts } from '@/data/product-service'
 import { promotions } from '@/data/promotions'
 import { PRODUCT_INFO } from '@/data/product-info'
 import PageLayout from '@/components/PageLayout'
@@ -9,8 +9,7 @@ import { generateSeo } from '@/lib/seo'
 
 export const Route = createFileRoute('/product/$productId')({
     loader: async ({ params }) => {
-        const products = await getAllProducts();
-        const product = products.find((p) => p.id === params.productId)
+        const product = await getProductById({ data: { id: params.productId } });
 
         if (!product) {
             throw notFound()
@@ -18,9 +17,14 @@ export const Route = createFileRoute('/product/$productId')({
 
         const info = PRODUCT_INFO[product.id]
 
-        const relatedProducts = products
-            .filter(p => p.brand === product.brand && p.id !== product.id)
-            .slice(0, 8)
+        // Only load the products from its own category for related products
+        let relatedProducts: any[] = [];
+        if (product.category) {
+            const categoryProducts = await getProductsByCategory({ data: product.category });
+            relatedProducts = categoryProducts
+                .filter(p => p.brand === product.brand && p.id !== product.id)
+                .slice(0, 8);
+        }
 
         return {
             product,
@@ -30,7 +34,7 @@ export const Route = createFileRoute('/product/$productId')({
         }
     },
     head: ({ loaderData }) => {
-        if (!loaderData) return { meta: [] }; // Safety check for loaderData
+        if (!loaderData) return { meta: [] };
         return generateSeo({
             title: `${loaderData.product.name} | ${loaderData.product.brand}`,
             description: loaderData.product.description,
