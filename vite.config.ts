@@ -5,6 +5,7 @@ import viteReact from '@vitejs/plugin-react'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 import { nitro } from "nitro/vite"
+import netlify from '@netlify/vite-plugin-tanstack-start'
 
 const config = defineConfig({
   server: {
@@ -13,8 +14,8 @@ const config = defineConfig({
   },
   plugins: [
     devtools(),
-    nitro({ preset: "bun" }),
-    //netlify({}),
+    //nitro({ preset: "bun" }),
+    netlify({}),
     viteTsConfigPaths({
       projects: ['./tsconfig.json'],
     }),
