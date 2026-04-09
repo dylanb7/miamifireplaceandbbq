@@ -1,13 +1,14 @@
-import { createFileRoute, Link, Outlet } from '@tanstack/react-router'
+import { createFileRoute, Link, Outlet, redirect } from '@tanstack/react-router'
 import { LayoutDashboard, LogOut, Tag, Folders } from 'lucide-react'
 import { getTaxonomy } from '../server/admin'
 
+const ADMIN_ENABLED = false
+
 export const Route = createFileRoute('/admin')({
-  beforeLoad: async () => {
-
-
-    throw new Error('Admin access disabled')
-
+  beforeLoad: () => {
+    if (!ADMIN_ENABLED) {
+      throw redirect({ to: '/' })
+    }
   },
   component: AdminLayout,
   loader: async () => {
