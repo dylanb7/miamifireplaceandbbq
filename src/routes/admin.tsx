@@ -4,7 +4,7 @@ import { getTaxonomy } from '../server/admin'
 
 export const Route = createFileRoute('/admin')({
   beforeLoad: async () => {
-    const adminEnabled = import.meta.env.VITE_ENABLE_ADMIN === 'true'
+
 
     throw new Error('Admin access disabled')
 
