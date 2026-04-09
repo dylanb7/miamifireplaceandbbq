@@ -1,6 +1,6 @@
 import PageLayout from '@/components/PageLayout'
 import { FeaturedBrands } from '@/components/home/FeaturedBrands'
-import { FinancingSection } from '@/components/home/FinancingSection'
+//import { FinancingSection } from '@/components/home/FinancingSection'
 import { HeroOption2 } from '@/components/home/HeroOption2'
 import { Showrooms } from '@/components/home/Showrooms'
 import { Testimonials } from '@/components/home/Testimonials'
@@ -30,9 +30,9 @@ function HomePage() {
       <HeroOption3 /> */}
 
       <FeaturedBrands />
-      <FinancingSection />
+      {/*<FinancingSection />*/}
       <Showrooms />
-      <Testimonials />
+      {/*<Testimonials />*/}
     </PageLayout>
   )
 }

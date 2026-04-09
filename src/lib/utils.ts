@@ -5,10 +5,12 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const slugify = (text: string) =>
-  text.toLowerCase()
+export const slugify = (text: string) => {
+  if (!text) return 'misc';
+  return text.toLowerCase()
     .replace(/\s+/g, '-')
     .replace(/[^\w-]+/g, '');
+}
 
 export const getOptimizedImage = (url: string | undefined, width = 800) => {
     if (!url) return '';

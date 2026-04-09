@@ -42,7 +42,7 @@ export function Showrooms() {
                                 </h3>
                                 <div className="space-y-2 text-muted-foreground">
                                     <p><a href="tel:+13056663312" className="hover:text-primary transition-colors">(305) 666-3312</a></p>
-                                    <p><a href="mailto:sales@miamifireplace.com" className="hover:text-primary transition-colors">sales@miamifireplace.com</a></p>
+                                    <p><a href="mailto:eve9621@aol.com" className="hover:text-primary transition-colors">eve9621@aol.com</a></p>
                                 </div>
                             </div>
                             <div>
@@ -52,7 +52,7 @@ export function Showrooms() {
                                 <div className="space-y-2 text-muted-foreground text-sm">
                                     <div className="flex justify-between">
                                         <span>Mon - Sat</span>
-                                        <span className="font-medium text-foreground">9:00 AM - 6:00 PM</span>
+                                        <span className="font-medium text-foreground">10:00 AM - 6:00 PM</span>
                                     </div>
 
                                     <div className="flex justify-between">
@@ -92,8 +92,8 @@ export function Showrooms() {
                                     <Phone className="text-primary h-4 w-4" /> Contact
                                 </h3>
                                 <div className="space-y-2 text-muted-foreground">
-                                    <p><a href="tel:+13056663312" className="hover:text-primary transition-colors">(305) 666-3312</a></p>
-                                    <p><a href="mailto:sales@miamifireplace.com" className="hover:text-primary transition-colors">sales@miamifireplace.com</a></p>
+                                    <p><a href="tel:+19549150212" className="hover:text-primary transition-colors">(954) 915-0212</a></p>
+                                    <p><a href="mailto:eve9621@aol.com" className="hover:text-primary transition-colors">eve9621@aol.com</a></p>
                                 </div>
                             </div>
                             <div>
@@ -103,7 +103,7 @@ export function Showrooms() {
                                 <div className="space-y-2 text-muted-foreground text-sm">
                                     <div className="flex justify-between">
                                         <span>Mon - Sat</span>
-                                        <span className="font-medium text-foreground">9:00 AM - 6:00 PM</span>
+                                        <span className="font-medium text-foreground">10:00 AM - 6:00 PM</span>
                                     </div>
 
                                     <div className="flex justify-between">

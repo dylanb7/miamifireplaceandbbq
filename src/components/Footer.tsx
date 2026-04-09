@@ -86,7 +86,7 @@ export function Footer({ showContactForm = true }: FooterProps) {
                                 </a>
                                 <div className="flex items-center gap-2">
                                     <Clock size={14} />
-                                    <span>Mon-Sat 10:00 AM - 5:00 PM</span>
+                                    <span>Mon-Sat 10:00 AM - 6:00 PM</span>
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <Phone size={14} />

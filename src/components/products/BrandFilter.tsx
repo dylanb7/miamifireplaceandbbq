@@ -1,7 +1,9 @@
-import { brands } from "@/data/brands";
+import type { BrandData } from "@/data/brands";
 import { cn } from "@/lib/utils";
 import { SimpleCarousel } from "@/components/ui/simple-carousel";
-import { Link } from "@tanstack/react-router";
+import { Link, getRouteApi } from "@tanstack/react-router";
+
+const rootRoute = getRouteApi('__root__');
 
 interface BrandFilterProps {
     availableBrands: string[];
@@ -13,18 +15,17 @@ interface BrandFilterProps {
 export function BrandFilter({ availableBrands, selectedBrand, getBrandLink, className }: BrandFilterProps) {
     if (availableBrands.length === 0) return null;
 
+    const { brands } = rootRoute.useLoaderData();
 
-    const activeBrands = brands.filter(b =>
+    const activeBrands = brands.filter((b: BrandData) =>
         availableBrands.includes(b.name) ||
         (b.brandName && availableBrands.includes(b.brandName))
     );
 
-
-    const knownBrandNames = brands.flatMap(b => [b.name, b.brandName].filter(Boolean) as string[]);
+    const knownBrandNames = brands.flatMap((b: BrandData) => [b.name, b.brandName].filter(Boolean) as string[]);
     const unknownBrands = availableBrands.filter(b => !knownBrandNames.includes(b) && b !== "Other");
 
     if (activeBrands.length === 0 && unknownBrands.length === 0) return null;
-
 
     return (
         <div className={cn("w-full relative", className)}>
@@ -47,7 +48,7 @@ export function BrandFilter({ availableBrands, selectedBrand, getBrandLink, clas
                 scrollContainerClassName="px-4 md:px-0 gap-3 pb-2"
             >
                 {/* Known brands with logos */}
-                {activeBrands.map((brand) => {
+                {activeBrands.map((brand: BrandData) => {
                     const isSelected = selectedBrand === brand.name;
                     return (
                         <Link

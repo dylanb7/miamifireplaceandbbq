@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import type { Product, ProductType, Promotion } from "../../data/types";
 import { BrandSection } from "./BrandSection";
-import { useParams } from '@tanstack/react-router';
+import { useParams, getRouteApi } from '@tanstack/react-router';
 import { PromotionBanner } from "../PromotionBanner";
 import { BrandFilter } from "./BrandFilter";
 import {
@@ -15,7 +15,8 @@ import {
 const PRODUCT_TYPES: (ProductType | "All")[] = ["All", "Outdoor Kitchens", "Grills", "Fireplaces", "Gas Logs"];
 
 import { slugify } from '../../lib/utils';
-import { brands } from '@/data/brands';
+
+const rootRoute = getRouteApi('__root__');
 
 const deslugify = (slug: string): ProductType | "All" => {
     if (!slug || slug === 'all') return "All";
@@ -39,6 +40,7 @@ interface ProductsBrowserProps {
 import { FloatingToc } from './FloatingToc';
 
 export const ProductsBrowser: React.FC<ProductsBrowserProps> = ({ className, products, promotions, initialType, initialBrand }) => {
+    const { brands } = rootRoute.useLoaderData();
     // ... (rest of the state setup)
     const [selectedType, setSelectedType] = useState<ProductType | "All">(initialType ? deslugify(initialType) : "All");
     const [selectedSubCategories, setSelectedSubCategories] = useState<string[]>([]);

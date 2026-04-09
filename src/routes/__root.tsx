@@ -1,12 +1,21 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 
-
-
 import appCss from '../styles.css?url'
 import { ThemeProvider } from '@/components/theme-provider'
 import { NotFound } from '@/components/NotFound'
+import { getTaxonomy } from '@/server/admin'
+import { getBrandsData } from '@/data/brands'
+import { buildNavigationStructure } from '@/data/navigation'
 
 export const Route = createRootRoute({
+  loader: async () => {
+    const [taxonomy, brands] = await Promise.all([
+      getTaxonomy(),
+      getBrandsData(),
+    ])
+    const navigation = buildNavigationStructure(taxonomy)
+    return { navigation, brands }
+  },
   head: () => ({
     meta: [
       {

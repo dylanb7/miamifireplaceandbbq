@@ -1,26 +1,63 @@
 import fs from 'fs';
 import path from 'path';
-import { getAllProducts } from '../src/data/product-service';
 import { slugify } from '../src/lib/utils';
-import { brands } from '../src/data/brands';
+import type { Product } from '../src/data/types';
+import type { BrandData } from '../src/data/brands';
+
+// Direct file reads for the build script (not running in TanStack Start context)
+const dataDir = path.join(process.cwd(), 'src', 'data');
+
+async function loadAllProducts(): Promise<Product[]> {
+    const productsDir = path.join(dataDir, 'products');
+    const entries = fs.readdirSync(productsDir, { withFileTypes: true });
+    const jsonFiles = entries
+        .filter(e => e.isFile() && e.name.endsWith('.json'))
+        .map(e => e.name);
+
+    const results = jsonFiles.map((f) => {
+        try {
+            const content = fs.readFileSync(path.join(productsDir, f), 'utf-8');
+            return JSON.parse(content) as Product[];
+        } catch {
+            return [];
+        }
+    });
+    return results.flat();
+}
+
+/** Get category slugs from all product JSON filenames */
+function getCategorySlugs(): string[] {
+    const productsDir = path.join(dataDir, 'products');
+    const entries = fs.readdirSync(productsDir, { withFileTypes: true });
+    return entries
+        .filter(e => e.isFile() && e.name.endsWith('.json'))
+        .map(e => e.name.replace('.json', ''));
+}
+
+function loadBrands(): BrandData[] {
+    const content = fs.readFileSync(path.join(dataDir, 'brands.json'), 'utf-8');
+    return JSON.parse(content) as BrandData[];
+}
 
 async function generateSitemap() {
     const domain = 'https://miamifireplaceandbbq.com';
     const sitemapPath = path.resolve(process.cwd(), 'public', 'sitemap.xml');
 
     console.log('Generating sitemap...');
-    const products = await getAllProducts();
+    const products = await loadAllProducts();
+    const brands = loadBrands();
+    const categorySlugs = getCategorySlugs();
 
     const urls = new Set<string>();
-
 
     urls.add('');
     urls.add('/contact');
     urls.add('/products/all');
-    urls.add('/products/outdoor-kitchens');
-    urls.add('/products/grills');
-    urls.add('/products/fireplaces');
-    urls.add('/products/gas-logs');
+
+    // Add category pages dynamically from the files on disk
+    for (const slug of categorySlugs) {
+        urls.add(`/products/${slug}`);
+    }
 
 
     const categoriesWithBrands = new Map<string, Set<string>>();

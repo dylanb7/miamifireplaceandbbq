@@ -1,12 +1,14 @@
 import React, { Fragment, useState } from 'react';
-import { Link } from "@tanstack/react-router";
+import { Link, getRouteApi } from "@tanstack/react-router";
 import { Transition, Dialog, TransitionChild } from '@headlessui/react';
 import { Phone, Facebook, Instagram, Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { ModeToggle } from "./mode-toggle";
-import { navigationStructure } from "@/data/navigation";
+
+const rootRoute = getRouteApi('__root__');
 
 export const MobileHeader: React.FC<{ visible: boolean }> = ({ visible }) => {
+    const { navigation: navigationStructure } = rootRoute.useLoaderData();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [mobileExpanded, setMobileExpanded] = useState<Record<string, boolean>>({});
 

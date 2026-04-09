@@ -1,46 +1,53 @@
 import { Product } from './types';
 import { createServerFn } from '@tanstack/react-start';
+import * as fs from 'fs/promises';
+import * as path from 'path';
 
-export type DataSource = 'legacy' | 'scraped' | 'luxe';
-export const ACTIVE_DATA_SOURCE: DataSource = 'scraped';
+const dataDir = path.join(process.cwd(), 'src', 'data');
+const productsDir = path.join(dataDir, 'products');
 
-const parseRawJson = <T>(rawModule: { default: string }) => JSON.parse(rawModule.default) as T;
-
-const fireplaceLoaders: Record<DataSource, () => Promise<Product[]>> = {
-    legacy: () => Promise.resolve([]),
-    scraped: () => import('./products/fireplaces-new.json?raw').then(parseRawJson<Product[]>),
-    luxe: () => Promise.resolve([]),
+const readProductFile = async (filename: string): Promise<Product[]> => {
+    try {
+        const content = await fs.readFile(path.join(productsDir, filename), 'utf-8');
+        return JSON.parse(content) as Product[];
+    } catch {
+        return [];
+    }
 };
 
-const grillLoaders: Record<DataSource, () => Promise<Product[]>> = {
-    legacy: () => import('./products/grills.json?raw').then(parseRawJson<Product[]>),
-    scraped: () => import('./products/grills.json?raw').then(parseRawJson<Product[]>),
-    luxe: () => Promise.resolve([]),
+/** List all .json files in the products directory (excludes subdirectories like archives/) */
+const listProductFiles = async (): Promise<string[]> => {
+    try {
+        const entries = await fs.readdir(productsDir, { withFileTypes: true });
+        return entries
+            .filter(e => e.isFile() && e.name.endsWith('.json'))
+            .map(e => e.name);
+    } catch {
+        return [];
+    }
 };
 
-const gasLogLoaders: Record<DataSource, () => Promise<Product[]>> = {
-    legacy: () => import('./products/gas-logs.json?raw').then(parseRawJson<Product[]>),
-    scraped: () => import('./products/gas-logs.json?raw').then(parseRawJson<Product[]>),
-    luxe: () => Promise.resolve([]),
-};
+/** Resolve a category slug to a filename by checking what exists on disk */
+const resolveFilename = async (categorySlug: string): Promise<string | null> => {
+    const slug = categorySlug.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+    const files = await listProductFiles();
 
-const outdoorKitchenLoaders: Record<DataSource, () => Promise<Product[]>> = {
-    legacy: () => Promise.resolve([]),
-    scraped: () => import('./products/outdoor-kitchens-new.json?raw').then(parseRawJson<Product[]>),
-    luxe: () => Promise.resolve([]),
-};
+    // Try exact match first (e.g. "grills" -> "grills.json")
+    const exact = files.find(f => f === `${slug}.json`);
+    if (exact) return exact;
 
-const categoryMap: Record<string, () => Promise<Product[]>> = {
-    'grill': () => grillLoaders[ACTIVE_DATA_SOURCE](),
-    'grills': () => grillLoaders[ACTIVE_DATA_SOURCE](),
-    'fireplace': () => fireplaceLoaders[ACTIVE_DATA_SOURCE](),
-    'fireplaces': () => fireplaceLoaders[ACTIVE_DATA_SOURCE](),
-    'gas-log': () => gasLogLoaders[ACTIVE_DATA_SOURCE](),
-    'gas-logs': () => gasLogLoaders[ACTIVE_DATA_SOURCE](),
-    'outdoor-kitchen': () => outdoorKitchenLoaders[ACTIVE_DATA_SOURCE](),
-    'outdoor-kitchens': () => outdoorKitchenLoaders[ACTIVE_DATA_SOURCE](),
-};
+    // Try without trailing 's' for singular lookups (e.g. "grill" -> "grills.json")
+    const withS = files.find(f => f === `${slug}s.json`);
+    if (withS) return withS;
 
+    // Try removing trailing 's' (e.g. "accessories" input, "accessorie.json" unlikely but just in case)
+    if (slug.endsWith('s')) {
+        const withoutS = files.find(f => f === `${slug.slice(0, -1)}.json`);
+        if (withoutS) return withoutS;
+    }
+
+    return null;
+};
 
 const deduplicateProducts = (products: Product[]): Product[] => {
     const uniqueMap = new Map<string, Product>();
@@ -53,12 +60,12 @@ const deduplicateProducts = (products: Product[]): Product[] => {
 };
 
 const _getProductsByCategory = async (categorySlug: string): Promise<Product[]> => {
-    const loader = categoryMap[categorySlug.toLowerCase()];
-    if (!loader) {
+    const filename = await resolveFilename(categorySlug);
+    if (!filename) {
         console.warn(`No products found for category: ${categorySlug}`);
         return [];
     }
-    const data = await loader();
+    const data = await readProductFile(filename);
     return deduplicateProducts(data);
 };
 
@@ -69,14 +76,8 @@ export const getProductsByCategory = createServerFn({ method: "GET" })
     });
 
 const _getAllProducts = async (): Promise<Product[]> => {
-    const allLoaders = [
-        categoryMap['grills'](),
-        categoryMap['fireplaces'](),
-        categoryMap['gas-logs'](),
-        categoryMap['outdoor-kitchens'](),
-    ];
-
-    const results = await Promise.all(allLoaders);
+    const allFiles = await listProductFiles();
+    const results = await Promise.all(allFiles.map(f => readProductFile(f)));
     return deduplicateProducts(results.flat());
 };
 

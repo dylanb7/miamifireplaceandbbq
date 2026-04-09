@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { generateSeo } from '@/lib/seo'
 import { ProductsBrowser } from '@/components/products/ProductsBrowser'
 import { getProductsByCategory, minifyProducts } from '@/data/product-service'
-import { getBrandData } from '@/data/brands'
+import { getBrandData, getBrandsData } from '@/data/brands'
 import { promotions } from '@/data/promotions'
 import PageLayout from '@/components/PageLayout'
 import { cn } from '@/lib/utils'
@@ -21,13 +21,15 @@ export const Route = createFileRoute('/products/$type/$brand')({
 
         const category = typeMap[type];
 
-        const categoryProducts = await getProductsByCategory({ data: type });
+        const [categoryProducts, brands] = await Promise.all([
+            getProductsByCategory({ data: type }),
+            getBrandsData(),
+        ]);
         const resolvedBrandName = brand.split('-').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ');
-
 
         const realBrandName = categoryProducts.find(p => p.brand && p.brand.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '') === brand)?.brand || resolvedBrandName;
 
-        const brandMetadata = getBrandData(realBrandName);
+        const brandMetadata = getBrandData(realBrandName, brands);
 
         return {
             products: minifyProducts(categoryProducts),

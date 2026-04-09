@@ -38,7 +38,7 @@ export interface ProductDetails {
 
 
 
-export type ProductType = "Outdoor Kitchens" | "Grills" | "Fireplaces" | "Gas Logs";
+export type ProductType = string;
 
 export interface Promotion {
     id: string;

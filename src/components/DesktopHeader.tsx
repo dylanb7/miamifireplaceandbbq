@@ -1,12 +1,15 @@
 import React from 'react';
-import { Link, useLocation } from "@tanstack/react-router";
+import { Link, useLocation, getRouteApi } from "@tanstack/react-router";
 import { Phone, Facebook, Instagram, MapPin } from "lucide-react";
 import { Logo } from "./Logo";
 import { ModeToggle } from "./mode-toggle";
-import { navigationStructure, isActive } from "@/data/navigation";
+import { isActive } from "@/data/navigation";
+
+const rootRoute = getRouteApi('__root__');
 
 export const DesktopHeader: React.FC<{ visible: boolean }> = ({ visible }) => {
     const location = useLocation();
+    const { navigation: navigationStructure } = rootRoute.useLoaderData();
 
     // Sliding Pill Logic
     const [isMounted, setIsMounted] = React.useState(false);
@@ -65,8 +68,8 @@ export const DesktopHeader: React.FC<{ visible: boolean }> = ({ visible }) => {
                         </a>
                     </div>
                     <div className="flex items-center gap-6">
-                        <a href="mailto:sales@miamifireplace.com" className="hover:text-primary-foreground transition-colors flex items-center gap-1.5 hidden lg:flex">
-                            sales@miamifireplace.com
+                        <a href="mailto:eve9621@aol.com" className="hover:text-primary-foreground transition-colors flex items-center gap-1.5 hidden lg:flex">
+                            eve9621@aol.com
                         </a>
                         <a href="tel:3056663312" className="hover:text-primary-foreground transition-colors flex items-center gap-1.5 text-primary font-semibold">
                             <Phone size={14} /> (305) 666-3312

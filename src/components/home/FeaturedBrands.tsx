@@ -1,13 +1,15 @@
 import { Card } from "@/components/ui/card";
-import { Link } from "@tanstack/react-router";
+import { Link, getRouteApi } from "@tanstack/react-router";
 import { SimpleCarousel } from "@/components/ui/simple-carousel";
 import { cn } from "@/lib/utils";
 
 const slugify = (text: string) => text.toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '-');
 
-import { brands } from "@/data/brands";
+const rootRoute = getRouteApi('__root__');
 
 export function FeaturedBrands() {
+    const { brands } = rootRoute.useLoaderData();
+
     return (
         <section className="py-20 bg-background border-t">
             <div className="container mx-auto px-4">
