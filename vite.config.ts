@@ -14,14 +14,14 @@ const config = defineConfig({
   },
   plugins: [
     devtools(),
-    //nitro({ preset: "bun" }),
-    netlify({}),
+    tanstackStart(),
+    viteReact(),
+    tailwindcss(),
     viteTsConfigPaths({
       projects: ['./tsconfig.json'],
     }),
-    tailwindcss(),
-    tanstackStart(),
-    viteReact(),
+    netlify({}),
+    //nitro({ preset: "bun" }),
   ],
 })
 
