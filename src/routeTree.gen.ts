@@ -99,12 +99,12 @@ export interface FileRoutesByFullPath {
   '/product/$productId': typeof ProductProductIdRoute
   '/products/$type': typeof ProductsTypeRouteWithChildren
   '/admin/': typeof AdminIndexRoute
-  '/products': typeof ProductsIndexRoute
+  '/products/': typeof ProductsIndexRoute
   '/admin/brands/$brandId': typeof AdminBrandsBrandIdRoute
   '/products/$type/$brand': typeof ProductsTypeBrandRoute
-  '/admin/brands': typeof AdminBrandsIndexRoute
+  '/admin/brands/': typeof AdminBrandsIndexRoute
   '/admin/products/$categoryId/$productId': typeof AdminProductsCategoryIdProductIdRoute
-  '/admin/products/$categoryId': typeof AdminProductsCategoryIdIndexRoute
+  '/admin/products/$categoryId/': typeof AdminProductsCategoryIdIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -146,12 +146,12 @@ export interface FileRouteTypes {
     | '/product/$productId'
     | '/products/$type'
     | '/admin/'
-    | '/products'
+    | '/products/'
     | '/admin/brands/$brandId'
     | '/products/$type/$brand'
-    | '/admin/brands'
+    | '/admin/brands/'
     | '/admin/products/$categoryId/$productId'
-    | '/admin/products/$categoryId'
+    | '/admin/products/$categoryId/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -219,7 +219,7 @@ declare module '@tanstack/react-router' {
     '/products/': {
       id: '/products/'
       path: '/products'
-      fullPath: '/products'
+      fullPath: '/products/'
       preLoaderRoute: typeof ProductsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
@@ -254,7 +254,7 @@ declare module '@tanstack/react-router' {
     '/admin/brands/': {
       id: '/admin/brands/'
       path: '/brands'
-      fullPath: '/admin/brands'
+      fullPath: '/admin/brands/'
       preLoaderRoute: typeof AdminBrandsIndexRouteImport
       parentRoute: typeof AdminRoute
     }
@@ -275,7 +275,7 @@ declare module '@tanstack/react-router' {
     '/admin/products/$categoryId/': {
       id: '/admin/products/$categoryId/'
       path: '/products/$categoryId'
-      fullPath: '/admin/products/$categoryId'
+      fullPath: '/admin/products/$categoryId/'
       preLoaderRoute: typeof AdminProductsCategoryIdIndexRouteImport
       parentRoute: typeof AdminRoute
     }
