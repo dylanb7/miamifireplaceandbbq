@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "bun --bun vite dev",
     "prebuild": "bun run scripts/generate-sitemap.ts",
-    "build": "vite build",
+    "build": "vite build && mkdir -p .netlify/functions-internal/server/src && cp -r src/data .netlify/functions-internal/server/src/",
     "serve": "bun --bun vite preview"
   },
   "dependencies": {
