@@ -7,4 +7,4 @@
 
 [functions]
   node_bundler = "esbuild"
-  format = "esm"
+
