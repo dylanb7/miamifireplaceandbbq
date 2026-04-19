@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Clock } from "lucide-react";
+import { BRAND_EMAIL } from "@/data/brand-info";
 
 export function Showrooms() {
     return (
@@ -42,7 +43,7 @@ export function Showrooms() {
                                 </h3>
                                 <div className="space-y-2 text-muted-foreground">
                                     <p><a href="tel:+13056663312" className="hover:text-primary transition-colors">(305) 666-3312</a></p>
-                                    <p><a href="mailto:eve9621@aol.com" className="hover:text-primary transition-colors">eve9621@aol.com</a></p>
+                                    <p><a href={`mailto:${BRAND_EMAIL}`} className="hover:text-primary transition-colors">{BRAND_EMAIL}</a></p>
                                 </div>
                             </div>
                             <div>
@@ -54,6 +55,7 @@ export function Showrooms() {
                                         <span>Mon - Sat</span>
                                         <span className="font-medium text-foreground">10:00 AM - 6:00 PM</span>
                                     </div>
+
 
                                     <div className="flex justify-between">
                                         <span>Sunday</span>
@@ -93,7 +95,7 @@ export function Showrooms() {
                                 </h3>
                                 <div className="space-y-2 text-muted-foreground">
                                     <p><a href="tel:+19549150212" className="hover:text-primary transition-colors">(954) 915-0212</a></p>
-                                    <p><a href="mailto:eve9621@aol.com" className="hover:text-primary transition-colors">eve9621@aol.com</a></p>
+                                    <p><a href={`mailto:${BRAND_EMAIL}`} className="hover:text-primary transition-colors">{BRAND_EMAIL}</a></p>
                                 </div>
                             </div>
                             <div>
@@ -102,8 +104,12 @@ export function Showrooms() {
                                 </h3>
                                 <div className="space-y-2 text-muted-foreground text-sm">
                                     <div className="flex justify-between">
-                                        <span>Mon - Sat</span>
+                                        <span>Mon - Fri</span>
                                         <span className="font-medium text-foreground">10:00 AM - 6:00 PM</span>
+                                    </div>
+                                    <div className="flex justify-between">
+                                        <span>Saturday</span>
+                                        <span className="font-medium text-foreground">10:00 AM - 5:00 PM</span>
                                     </div>
 
                                     <div className="flex justify-between">

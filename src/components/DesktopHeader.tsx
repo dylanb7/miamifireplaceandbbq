@@ -4,6 +4,7 @@ import { Phone, Facebook, Instagram, MapPin } from "lucide-react";
 import { Logo } from "./Logo";
 import { ModeToggle } from "./mode-toggle";
 import { isActive } from "@/data/navigation";
+import { BRAND_EMAIL } from "@/data/brand-info";
 
 const rootRoute = getRouteApi('__root__');
 
@@ -68,8 +69,8 @@ export const DesktopHeader: React.FC<{ visible: boolean }> = ({ visible }) => {
                         </a>
                     </div>
                     <div className="flex items-center gap-6">
-                        <a href="mailto:eve9621@aol.com" className="hover:text-primary-foreground transition-colors flex items-center gap-1.5 hidden lg:flex">
-                            eve9621@aol.com
+                        <a href={`mailto:${BRAND_EMAIL}`} className="hover:text-primary-foreground transition-colors flex items-center gap-1.5 hidden lg:flex">
+                            {BRAND_EMAIL}
                         </a>
                         <a href="tel:3056663312" className="hover:text-primary-foreground transition-colors flex items-center gap-1.5 text-primary font-semibold">
                             <Phone size={14} /> (305) 666-3312
