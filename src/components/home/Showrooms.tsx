@@ -104,13 +104,10 @@ export function Showrooms() {
                                 </h3>
                                 <div className="space-y-2 text-muted-foreground text-sm">
                                     <div className="flex justify-between">
-                                        <span>Mon - Fri</span>
-                                        <span className="font-medium text-foreground">10:00 AM - 6:00 PM</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span>Saturday</span>
+                                        <span>Mon - Sat</span>
                                         <span className="font-medium text-foreground">10:00 AM - 5:00 PM</span>
                                     </div>
+
 
                                     <div className="flex justify-between">
                                         <span>Sunday</span>

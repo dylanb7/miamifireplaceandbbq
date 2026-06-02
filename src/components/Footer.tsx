@@ -86,12 +86,9 @@ export function Footer({ showContactForm = true }: FooterProps) {
                                 </a>
                                 <div className="flex items-center gap-2">
                                     <Clock size={14} />
-                                    <span>Mon - Fri 10:00 AM - 6:00 PM</span>
+                                    <span>Mon - Sat 10:00 AM - 5:00 PM</span>
                                 </div>
-                                <div className="flex items-center gap-2">
-                                    <Clock size={14} />
-                                    <span>Saturday 10:00 AM - 5:00 PM</span>
-                                </div>
+
                                 <div className="flex items-center gap-2">
                                     <Phone size={14} />
                                     <a href="tel:+19549150212" className="hover:text-primary transition-colors">(954) 915-0212</a>
